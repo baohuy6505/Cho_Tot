@@ -10,9 +10,14 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     protected $fillable = [
-        'name','email','password','phone','role','reputation'
-    ];
-
+    'name',
+    'email',
+    'password',
+    'phone',       
+    'role',      
+    'reputation',
+    'avatar',
+];
     public function posts() {
         return $this->hasMany(Post::class);
     }

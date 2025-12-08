@@ -1,0 +1,181 @@
+/* public/css/login.css */
+
+/* BODY */
+body {
+    background-color: #fff; /* Nền trắng */
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Căn giữa Card ra giữa màn hình */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff; /* Hoặc thêm ảnh nền mờ nếu muốn */
+    padding: 20px;
+}
+
+/* CARD */
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
+    border: 1px solid #f0f0f0;
+}
+
+/* TITLE */
+.auth-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* NÚT SOCIAL (Google, FB, Apple) */
+.btn-social {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* khoảng cách giữa icon và chữ */
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.btn-social i {
+    font-size: 18px;
+}
+
+/* Hover tất cả nút social */
+.btn-social:hover {
+    opacity: 0.9;
+}
+
+/* Nút riêng theo màu nền */
+.btn-social.btn-google {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-social.btn-facebook {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+}
+
+.btn-social.btn-apple {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+/* DIVIDER "Hoặc" */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #999;
+    font-size: 0.8rem;
+}
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+.divider::before {
+    margin-right: 10px;
+}
+.divider::after {
+    margin-left: 10px;
+}
+
+/* INPUT FORM */
+.form-control-custom {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding-left: 15px;
+    font-size: 0.95rem;
+    outline: none;
+    box-sizing: border-box;
+}
+.form-control-custom:focus {
+    border-color: #222;
+    box-shadow: none;
+}
+
+/* NÚT TIẾP TỤC / ĐĂNG NHẬP */
+.btn-continue {
+    width: 100%;
+    height: 48px;
+    background-color: #f0f0f0;
+    color: #222;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.btn-continue:hover {
+    background-color: #e0e0e0;
+}
+
+/* FOOTER LINKS */
+.footer-links {
+    margin-top: 25px;
+    font-size: 0.75rem;
+    color: #888;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+}
+.footer-links span {
+    color: #ddd;
+}
+
+/* BRAND FOOTER */
+.brand-footer {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0.8;
+    flex-wrap: wrap;
+}
+.brand-footer img {
+    height: 20px;
+}
+.brand-text {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+}
+.brand-footer span {
+    font-size: 0.75rem;
+    font-weight: 800;
+}
