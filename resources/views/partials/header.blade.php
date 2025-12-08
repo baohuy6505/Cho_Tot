@@ -2,10 +2,6 @@
     <div class="container d-flex align-items-center justify-content-between">
         <a href="{{ route('home') }}" class="brand-logo">Chợ Tốt</a>
 
-        <div class="search-bar-header d-none d-md-block mx-3">
-            <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm...">
-            <i class="bi bi-search search-icon"></i>
-        </div>
 
         <div class="d-flex align-items-center">
             @auth
@@ -32,8 +28,6 @@
                     <a href="{{ route('register') }}" class="fw-bold text-dark text-decoration-none small">Đăng ký</a>
                 </div>
             @endauth
-
-            <a href="#" class="btn btn-dangtin text-decoration-none ms-3">ĐĂNG TIN</a>
         </div>
     </div>
 </header>

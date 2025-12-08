@@ -56,7 +56,7 @@ public function checkAccount(Request $request)
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect()->route('login')
             ->with('success', 'Đăng ký thành công! Vui lòng đăng nhập.')
-            ->withInput(); // Giữ lại email/sđt để user đỡ phải nhập lại
+            ->withInput(); 
         }
         return redirect()->route('login');
     }
