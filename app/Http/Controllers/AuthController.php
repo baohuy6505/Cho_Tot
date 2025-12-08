@@ -1,86 +1,127 @@
 <?php
+
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+
 class AuthController extends Controller
 {
-    public function showLogin() { return view('client.auth.login'); }
-    public function showRegister() { return view('client.auth.register'); }
-// Xử lý kiểm tra tài khoản (Bước 1)
-public function checkAccount(Request $request)
-{
-    $request->validate(['email' => 'required']); // 'email' ở đây là tên input, chứa cả SĐT hoặc Email
-
-    $login = $request->input('email');
-    
-    // Kiểm tra xem input là Email hay Số điện thoại
-    $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
-
-    // Tìm trong database
-    $user = User::where($field, $login)->first();
-
-    // TRƯỜNG HỢP 1: Tài khoản CHƯA TỒN TẠI -> Chuyển sang Đăng ký
-    if (!$user) {
-        // withInput() sẽ giúp điền sẵn dữ liệu sang form đăng ký
-        return redirect()->route('register')->withInput([
-            'email' => $field === 'email' ? $login : '',
-            'phone' => $field === 'phone' ? $login : '',
-            'name' => '' // Reset tên
-        ])->with('warning', 'Tài khoản chưa tồn tại. Vui lòng đăng ký mới!');
+    //
+    public function showLogin()
+    {
+        return view('client.auth.login');
     }
 
-    return view('client.auth.login', [
-        'email' => $login,
-        'showPassword' => true
-    ]);
-}
-    public function register(Request $request) {
+    public function showRegister()
+    {
+        return view('client.auth.register');
+    }
+
+
+    //
+    public function checkAccount(Request $request)
+    {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required',
+            'email' => 'required'
+        ], [
+            'email.required' => 'Vui lòng nhập Email hoặc Số điện thoại.'
+        ]);
+
+        $loginInput = $request->email;
+
+        //
+        $field = filter_var($loginInput, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+//
+        $user = User::where($field, $loginInput)->first();
+
+        //
+        if (!$user) {
+            return redirect()->route('register')
+                ->withInput([
+                    'email' => $field === 'email' ? $loginInput : '',
+                    'phone' => $field === 'phone' ? $loginInput : '',
+                    'name'  => ''
+                ])
+                ->with('warning', 'Tài khoản chưa tồn tại. Vui lòng đăng ký mới!');
+        }
+
+        /** Nếu tồn tại → hiển thị form nhập mật khẩu */
+        return view('client.auth.login', [
+            'email' => $loginInput,
+            'showPassword' => true
+        ]);
+    }
+
+// dang ky
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email|unique:users,email',
+            'phone'    => ['required', 'unique:users,phone', 'regex:/(0)[0-9]{9}/'],
             'password' => 'required|min:6|confirmed',
         ]);
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'password' => Hash::make($request->password),
-            'role' => 'user', 
+        $user = User::create([
+            'name'       => $request->name,
+            'email'      => $request->email,
+            'phone'      => $request->phone,
+            'password'   => Hash::make($request->password),
+            'role'       => 'user',
             'reputation' => 0
         ]);
 
-        if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('login')
-            ->with('success', 'Đăng ký thành công! Vui lòng đăng nhập.')
-            ->withInput(); 
-        }
-        return redirect()->route('login');
-    }
-    public function login(Request $request) {
-        $request->validate(['email' => 'required', 'password' => 'required']);
+        Auth::login($user);
+        $request->session()->regenerate();
 
-        if (Auth::attempt($request->only('email', 'password'))) {
+        return redirect()
+            ->route('home')
+            ->with('success', 'Đăng ký thành công! Chào mừng bạn.');
+    }
+
+
+   //dang nhập
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email'    => 'required',
+            'password' => 'required'
+        ]);
+
+        $loginInput = $request->email;
+
+        $field = filter_var($loginInput, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+
+        $credentials = [
+            $field     => $loginInput,
+            'password' => $request->password
+        ];
+
+        if (Auth::attempt($credentials)) {
+
             $request->session()->regenerate();
 
-            if (Auth::user()->role === 'admin') {
-                return redirect()->route('admin.home');
-            }
-
-            return redirect()->route('home');
+            return Auth::user()->role === 'admin'
+                ? redirect()->route('admin.home')
+                : redirect()->route('home');
         }
 
-        return back()->withErrors(['email' => 'Thông tin đăng nhập không đúng.']);
+        return back()
+            ->withErrors(['email' => 'Mật khẩu hoặc tài khoản không chính xác.'])
+            ->withInput($request->only('email'));
     }
 
-    //logout
-    public function logout(Request $request) {
+
+        public function logout(Request $request)
+    {
         Auth::logout();
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect()->route('login');
     }
 }
