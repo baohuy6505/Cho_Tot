@@ -19,7 +19,7 @@ return new class extends Migration
         $table->text('description');
         $table->decimal('price', 12, 2)->nullable();
         $table->string('address')->nullable();
-        $table->enum('status', ['pending', 'active', 'sold', 'blocked'])->default('pending');
+        $table->enum('status', ['pending', 'active', 'blocked'])->default('pending');
         $table->timestamps();
     });
 }
