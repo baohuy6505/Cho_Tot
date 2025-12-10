@@ -7,46 +7,138 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use App\Models\PostImage;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    public function createUserPost() {
-        return view('client.posts.createUserPost');
+    public function index()
+    {
+        //$data = Post::all();
+        $dataPosts = Post::paginate(10);
+        return View('client.posts.index', compact('dataPosts'));
     }
-    public function storeUserPost(StorePostRequest $request) {
+    public function detail($slug)
+    {
+        //$dataPost = Post::findOrFail($id);
+        //$dataImages = PostImage::where('post_id', $id)->get();//lấy ra tat ca gia tri co post_id = $id
+        //return view('client.posts.detail', compact('dataPost', 'dataImages'));
+
+        $dataPost = Post::with('images')->where('slug',$slug)->firstOrFail();
+        return response()->json([
+            'message' => 'Post created successfully!',
+            'dataSlug' => $dataPost,
+        ]);
+    }
+    public function createUserPost()
+    {
+        return view('client.posts.create');
+    }
+    public function storeUserPost(StorePostRequest $request)
+    {
         $dataValidated = $request->validated();
+
+        $slug = Str::slug($dataValidated['title']);
+        $originalSlug = $slug;
+        $count = 1;
+
+        $imagePaths = [];
+        while(Post::where('slug',$slug)->exists()){
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+        $dataValidated['slug'] = $slug;
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imagePaths[] = $image->getClientOriginalName();
+            }
+        }
         $post = Post::create($dataValidated);
         // return response()->json([
         //     'message' => 'Post created successfully!',
-        //     'data' => $dataValidated
+        //     'data' => $dataValidated,
+        //     'imagePath' => $imagePaths,
         // ]);
 
-        if($request->hasFile('images')){
-            foreach($request -> file('images') as $image){
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
                 $imagePath = $image->store('post_images', 'public');
-                // PostImage::create([
-                //     'post_id' => $post->id, 
-                //     'image_url' => '/storage/' . $imagePath
-                // ]);
+                PostImage::create([
+                    'post_id' => $post->id,
+                    'image_url' => '/storage/' . $imagePath
+                ]);
             }
         }
         return redirect()->route('client.posts.create')->with('success', 'Tạo bài đăng thành công!');
     }
 
-    public function editUserPost($id){
+    public function editUserPost($id)
+    {
         $datdaPost = Post::findOrFail($id);
-        return view('client.posts.editUserPost', compact('datdaPost'));
+        return view('client.posts.edit', compact('datdaPost'));
     }
-    public function updateUserPost(StorePostRequest $request, $id){
+    public function updateUserPost(StorePostRequest $request, $id)
+    {
         $dataValidated = $request->validated();
+        // return response()->json([
+        //     'message' => 'Post created successfully!',
+        //     'data' => $dataValidated,
+        // ]);
         $post = Post::findOrFail($id);
+        if ($request->hasFile('images')) {
+            // Xóa hình ảnh cũ
+            $oldImages = PostImage::where('post_id', $id)->get();
+            foreach ($oldImages as $img) {
+                $relative = preg_replace('#^/storage/#', '', $img->image_url);
+                $relative = ltrim($relative, '/');
+                if (Storage::disk('public')->exists($relative)) {
+                    Storage::disk('public')->delete($relative);
+                } else {
+                    $full = storage_path('app/public/' . $relative);
+                    if (file_exists($full)) {
+                        @unlink($full);
+                    }
+                }
+                $img->delete();
+            }
+
+            // Lưu hình ảnh mới
+            foreach ($request->file('images') as $image) {
+                $imagePath = $image->store('post_images', 'public');
+                PostImage::create([
+                    'post_id' => $post->id,
+                    'image_url' => '/storage/' . $imagePath
+                ]);
+            }
+        }
         $post->update($dataValidated);
-        return redirect()->route('client.posts.edit', $id)->with('success', 'Cập nhật bài đăng thành công!');
+        return redirect()->route('client.posts.list')->with('success', 'Cập nhật bài đăng thành công!');
     }
 
-    public function deletePost($id){
-        $dataPost = Post::findOrFail($id);
-        $dataPost->delete();
-        return redirect()->route('client.posts.create')->with('success', 'Xóa bài đăng thành công!');
+
+    public function deletePost($id)
+    {
+        $post = Post::findOrFail($id);
+        $images = PostImage::where('post_id', $id)->get();
+
+        foreach ($images as $img) {
+            // 1) Lấy relative path cho disk 'public'
+            $relative = preg_replace('#^/storage/#', '', $img->image_url);
+            $relative = ltrim($relative, '/');
+
+            // 2) Xóa bằng Storage::disk('public') => chuẩn Laravel
+            if (Storage::disk('public')->exists($relative)) {
+                Storage::disk('public')->delete($relative);
+            } else {
+                // Fallback: xóa trực tiếp bằng đường dẫn đầy đủ (nếu disk ko tìm ra)
+                $full = storage_path('app/public/' . $relative);
+                if (file_exists($full)) {
+                    @unlink($full);
+                }
+            }
+            $img->delete();
+        }
+        $post->delete();
+        return redirect()->route('client.posts.list')->with('success', 'Xóa bài đăng thành công!');
     }
 }

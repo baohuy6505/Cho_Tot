@@ -16,10 +16,12 @@ return new class extends Migration
         $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
         $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         $table->string('title');
+        $table->string('slug');
         $table->text('description');
         $table->decimal('price', 12, 2)->nullable();
         $table->string('address')->nullable();
         $table->enum('status', ['pending', 'active', 'blocked'])->default('pending');
+        $table->string('slug', 255)->unique()->nullable()->after('title');
         $table->timestamps();
     });
 }
