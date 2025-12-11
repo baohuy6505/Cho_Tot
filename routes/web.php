@@ -37,3 +37,13 @@ Route::prefix('admin')
 
         Route::view('/', 'admin.homeAdmin')->name('admin.home');
     });
+
+    // Test session
+Route::get('/test-session', function () {
+    session(['name' => 'Duong']);
+    return 'Saved!';
+});
+
+Route::get('/get-session', function () {
+    return session('name');
+});
