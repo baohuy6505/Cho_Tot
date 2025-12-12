@@ -30,7 +30,7 @@
                                 <span class="badge bg-success">{{ $post->status }}</span>
                             </td>
                             <td>
-                                <a href="{{ route('client.posts.detail',$post->id)}}" class="btn btn-sm btn-success">Chi tiết</a>
+                                <a href="{{ route('client.posts.detail',$post->slug)}}" class="btn btn-sm btn-success">Chi tiết</a>
                                 <a href="{{ route('client.posts.edit', $post->id) }}" class="btn btn-sm btn-primary">Sửa</a>
                                 <form method="POST" action="{{ route('client.posts.delete', $post->id) }}">
                                          @csrf

@@ -12,13 +12,25 @@ class PostController extends Controller
 {
     public function listPosts()
     {
-        $dataPosts = Post::all();
-        return view('admin.posts.listPosts', $dataPosts);
+        // $dataPosts = Post::all();
+        $dataPosts = Post::with('images')->get();
+        return view('admin.posts.index', compact('dataPosts'));
     }
 
-    public function detailPost($id){
-        $dataPost = Post::with('images') -> findOrFail($id);
-        return view('admin.posts.detail',compact('dataPost'));
+    public function detailPost($id)
+    {
+        $dataPost = Post::with('images')->findOrFail($id);
+        return view('admin.posts.detail', compact('dataPost'));
+    }
+
+    public function updatePost(Request $request, $id)
+    {
+        $dataPost = Post::findOrFail($id);
+        return response()->json([
+            'message' => 'Post created successfully!',
+            'data' => $dataPost,
+            'request' => $request
+        ]);
     }
 
     public function deletePost($id)

@@ -7,10 +7,9 @@
     {{-- <link rel="icon" href="/images/logofile.png" type="image/x-icon" /> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}">
 </head>
-
+    
 <body>
     <div class="admin-container">
         <!-- Sidebar -->
@@ -32,9 +31,9 @@
                     </a>
                 </li>
                 <li class="admin-nav-item">
-                    <a href="/Admin/Home/ListOder" class="admin-nav-link">
+                    <a href="{{ route('admin.posts.list') }}" class="admin-nav-link">
                         <span class="admin-icon admin-order-list-icon"></span>
-                        <span class="admin-label">List Order</span>
+                        <span class="admin-label">Quản lí bài viết</span>
                     </a>
                 </li>
                 <li class="admin-nav-item">
@@ -108,7 +107,7 @@
             </div>
         </main>
     </div>
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/admin/admin.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
