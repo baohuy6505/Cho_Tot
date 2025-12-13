@@ -22,13 +22,11 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer|exists:users,id',
             'category_id' => 'required|integer|exists:categories,id',
             'title' => 'required|string|min:5|max:200',
             'description' => 'required|string|min:20|max:1000',
             'price' => 'required|numeric|min:0',
             'address' => 'required|string|max:255',
-            'status' => 'required|string|in:pending,active,blocked',
             // QUAN TRỌNG – Rule dành cho mảng ảnh
             'images' => 'nullable|array|max:5',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048' // Mỗi ảnh không quá 2MB
@@ -42,7 +40,6 @@ class StorePostRequest extends FormRequest
             'max' => 'Trường :attribute chỉ được có tối đa :max ký tự (hoặc giá trị).',
             'string' => 'Trường :attribute phải là chuỗi ký tự.',
 
-            'user_id.exists' => 'ID người dùng không hợp lệ.',
             'category_id.exists' => 'Danh mục đã chọn không tồn tại.',
 
             'price.numeric' => 'Giá tiền phải là một giá trị số.',

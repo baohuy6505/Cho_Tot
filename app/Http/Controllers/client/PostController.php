@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\client;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostImage;
 use Illuminate\Support\Facades\Storage;
@@ -32,12 +33,15 @@ class PostController extends Controller
     }
     public function createUserPost()
     {
-        return view('client.posts.create');
+        $categories = Category::all();
+        return view('client.posts.create', compact('categories'));
     }
     public function storeUserPost(StorePostRequest $request)
     {
+        
         $dataValidated = $request->validated();
-
+        $dataValidated['user_id'] =  Auth::id();
+        $dataValidated['status'] = 'pending';
         $slug = Str::slug($dataValidated['title']);
         $originalSlug = $slug;
         $count = 1;
@@ -57,7 +61,6 @@ class PostController extends Controller
         // return response()->json([
         //     'message' => 'Post created successfully!',
         //     'data' => $dataValidated,
-        //     'imagePath' => $imagePaths,
         // ]);
 
         if ($request->hasFile('images')) {
