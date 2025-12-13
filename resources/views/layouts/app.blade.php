@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
     <title>@yield('title', 'Tên Website của Bạn')</title> {{-- Vị trí động cho tiêu đề trang --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('styles') {{-- Vị trí động để chèn CSS riêng của từng trang --}}

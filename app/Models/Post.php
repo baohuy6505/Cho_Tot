@@ -3,11 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\PostImage;
+use App\Models\Favorite;
+use App\Models\Report;
 
 class Post extends Model
 {
     protected $fillable = [
-        'user_id','category_id','title','description','price','address','status'
+        'user_id','category_id','title','slug','description','price','address','status'
     ];
 
     public function user() {
