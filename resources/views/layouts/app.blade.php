@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Tên Website của Bạn')</title> {{-- Vị trí động cho tiêu đề trang --}}
+    
+    {{-- Lấy tiêu đề động từ code Dev (xịn hơn), fallback là tên Web --}}
+    <title>@yield('title', 'Chợ Tốt Clone')</title>
+    
+    {{-- Dùng Bootstrap 5.3.2 (Mới nhất từ Dev) --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    {{-- Giữ Icons từ code HEAD --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    {{-- Giữ cả 2 file CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    @yield('styles') {{-- Vị trí động để chèn CSS riêng của từng trang --}}
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    
+    {{-- Hỗ trợ cả 2 cách inject CSS --}}
+    @yield('styles') 
+    @stack('styles')
 </head>
-<body>
+ 
+@if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+<body class="bg-light">
 
-    @include('partials.header') {{-- Sử dụng @include để chèn partial view --}}
-    <main class="container">
-        @yield('content') {{-- Vị trí BẮT BUỘC cho nội dung riêng của từng trang --}}
+    @include('partials.header')  
+
+    <main class="py-4">
+        @yield('content')
     </main>
-    @include('partials.footer') {{-- Sử dụng @include để chèn partial view --}}
-
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('scripts') {{-- Vị trí động để chèn JS riêng của từng trang --}}
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

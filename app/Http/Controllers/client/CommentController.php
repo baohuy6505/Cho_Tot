@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\client;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Post;
