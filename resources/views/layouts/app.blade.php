@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chợ Tốt Clone</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- Lấy tiêu đề động từ code Dev (xịn hơn), fallback là tên Web --}}
+    <title>@yield('title', 'Chợ Tốt Clone')</title>
+    
+    {{-- Dùng Bootstrap 5.3.2 (Mới nhất từ Dev) --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    {{-- Giữ Icons từ code HEAD --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
+    {{-- Giữ cả 2 file CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     
-
-    @stack('styles') 
-
+    {{-- Hỗ trợ cả 2 cách inject CSS --}}
+    @yield('styles') 
+    @stack('styles')
 </head>
  
 @if (session('error'))

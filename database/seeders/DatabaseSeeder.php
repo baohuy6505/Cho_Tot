@@ -20,6 +20,11 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => '12345678',
+            'phone' => '0123456789',
+            'role' => 'user',
+            'reputation' => 100,
         ]);
+        $this->call(CategorySeeder::class);
     }
 }
