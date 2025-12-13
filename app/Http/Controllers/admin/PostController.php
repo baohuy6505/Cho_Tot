@@ -13,7 +13,9 @@ class PostController extends Controller
     public function listPosts()
     {
         // $dataPosts = Post::all();
-        $dataPosts = Post::with('images')->get();
+        $dataPosts = Post::with('images')
+        ->where('status','!=','blocked')
+        ->get();
         return view('admin.posts.index', compact('dataPosts'));
     }
 
@@ -26,11 +28,17 @@ class PostController extends Controller
     public function updatePost(Request $request, $id)
     {
         $dataPost = Post::findOrFail($id);
-        return response()->json([
-            'message' => 'Post created successfully!',
-            'data' => $dataPost,
-            'request' => $request
-        ]);
+           $status = $request->input('status');
+           if($status){
+            $dataPost->status = $status;
+            $dataPost->save();
+           }
+        return redirect()->back()->with('success', 'Trạng thái bài đăng đã được cập nhật!');
+        // return response()->json([
+        //     'message' => 'Post created successfully!',
+        //     'data' => $dataPost,
+        //     'status' => $status
+        // ]);
     }
 
     public function deletePost($id)
