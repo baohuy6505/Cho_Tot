@@ -1,8 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\client\AuthController;
-use App\Http\Controllers\client\PostController ;
+use App\Http\Controllers\client\PostController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\client\CommentController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/posts/{id}/comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
+});
 
 Route::view('/', 'client.home')->name('home');
 Route::middleware('guest')->group(function () {
@@ -25,7 +33,6 @@ Route::middleware('guest')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-
     // 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -38,7 +45,7 @@ Route::prefix('admin')
         Route::view('/', 'admin.homeAdmin')->name('admin.home');
     });
 
-    // Test session
+// Test session
 Route::get('/test-session', function () {
     session(['name' => 'Duong']);
     return 'Saved!';
@@ -49,7 +56,7 @@ Route::get('/get-session', function () {
 });
 // Client routes
 Route::get('/posts', [PostController::class, 'index'])->name('client.posts.list');
-Route::get('/posts/detail/{slug}', [PostController::class, 'detail']) -> name('client.posts.detail');
+Route::get('/posts/detail/{slug}', [PostController::class, 'detail'])->name('client.posts.detail');
 Route::get('/posts/create', [PostController::class, 'createUserPost'])->name('client.posts.create');
 Route::post('/posts/store', [PostController::class, 'storeUserPost'])->name('client.posts.store');
 Route::get('/posts/edit/{id}', [PostController::class, 'editUserPost'])->name('client.posts.edit');
