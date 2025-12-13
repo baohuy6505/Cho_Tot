@@ -1,0 +1,35 @@
+.auth-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 32px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+    border: none;
+}
+.form-control-custom {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 12px;
+}
+.form-control-custom:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    border-color: #ffc107;
+}
+.btn-continue-yellow {
+    background-color: #ffba00;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 12px;
+    width: 100%;
+    transition: 0.2s;
+}
+.btn-continue-yellow:hover {
+    background-color: #ffc833;
+}
+.form-check-input:checked {
+    background-color: #ffba00;
+    border-color: #ffba00;
+}

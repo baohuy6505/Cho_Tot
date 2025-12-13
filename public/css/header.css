@@ -1,0 +1,113 @@
+/* resources/css/header.css */
+
+.navbar-chotot {
+    background-color: #ffba00; /* Màu vàng thương hiệu */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #222;
+    text-decoration: none;
+    margin-right: 20px;
+    letter-spacing: -0.5px;
+}
+
+/* Thanh tìm kiếm */
+.search-bar-header {
+    flex-grow: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-input {
+    border: none;
+    border-radius: 4px;
+    padding: 9px 40px 9px 15px; /* Chừa chỗ cho icon kính lúp */
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #444;
+    background: #ffba00; /* Nền icon màu vàng */
+    padding: 4px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Các nút icon (Chat, Thông báo) */
+.nav-icon-link {
+    color: #222;
+    font-size: 1.3rem;
+    margin: 0 10px;
+    position: relative;
+    transition: 0.2s;
+}
+
+.nav-icon-link:hover {
+    color: #444;
+}
+
+/* Nút Đăng Tin */
+.btn-dangtin {
+    background-color: #222;
+    color: #ffba00 !important; /* Chữ vàng trên nền đen */
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-dangtin:hover {
+    background-color: #444;
+}
+
+/* User Menu */
+.user-avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #222;
+}
+
+/* Dropdown */
+.dropdown-menu-custom {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+.dropdown-item:active {
+    background-color: #ffba00;
+    color: #000;
+}
