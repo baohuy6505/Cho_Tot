@@ -26,9 +26,9 @@ class Post extends Model
     public function images() {
         return $this->hasMany(PostImage::class);
     }
-
-    public function favorites() {
-        return $this->hasMany(Favorite::class);
+    // khi người yêu thích tin này thì nó sẽ trả về danh sách user đã yêu thích
+   public function favoritedBy() {
+        return $this->belongsToMany(User::class, 'favorites', 'post_id', 'user_id')->withTimestamps();
     }
 
     public function reports() {

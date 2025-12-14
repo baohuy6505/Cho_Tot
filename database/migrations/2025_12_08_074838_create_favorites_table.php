@@ -1,31 +1,33 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration
+class CreateFavoritesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-{
-    Schema::create('favorites', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        $table->foreignId('post_id')->constrained('posts')->onDelete('cascade');
-        $table->timestamps();
-    });
-}
+    public function up()
+    {
+        Schema::create('favorites', function (Blueprint $table) {
+            $table->increments('id'); // PK
+            
+            // khóa ngoại : user ID
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
+            // khóa ngoại: post id
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
 
+            $table->timestamps();
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+            // 1 user chỉ yêu thích post 1 lần 
+            $table->unique(['user_id', 'post_id']);
+        });
+    }
+
+    public function down()
     {
         Schema::dropIfExists('favorites');
     }
-};
+}

@@ -29,21 +29,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password'          => 'hashed',
     ];
-
-
-    //qh post 
+// quan hệ đệ quy
+    // 1 user đăng nhiều post
     public function posts()
     {
         return $this->hasMany(Post::class);
     }
 
-    // sp yeu thích 
+    // danh sách favorite
+  
     public function favorites()
     {
-        return $this->hasMany(Favorite::class);
+        // user thích post thông qua  favorites
+        return $this->belongsToMany(Post::class, 'favorites', 'user_id', 'post_id')->withTimestamps();
     }
-
-   
 
     // gd khi user là ng mua
     public function buyerTransactions()
@@ -51,13 +50,13 @@ class User extends Authenticatable
         return $this->hasMany(Transaction::class, 'buyer_id');
     }
 
-    // gd khi user là ng bán 
+    //gd  khi user là người bán
     public function sellerTransactions()
     {
         return $this->hasMany(Transaction::class, 'seller_id');
     }
 
-    // cmt
+    // user bình luận
     public function comments()
     {
         return $this->hasMany(Comment::class);
