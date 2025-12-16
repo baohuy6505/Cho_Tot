@@ -11,21 +11,10 @@
             <h3 class="auth-title">Đăng nhập/Đăng ký</h3>
 
             @if(!$isLoginStep)
-                <button class="btn-social btn-google">
+                <a href='{{ route('google.redirect') }}' class="btn-social btn-google text-decoration-none">
                     <i class="fa-brands fa-google"></i>
                     Tiếp tục với Google
-                </button>
-
-                <button class="btn-social btn-facebook">
-                    <i class="fa-brands fa-facebook"></i>
-                    Tiếp tục với Facebook
-                </button>
-
-                <button class="btn-social btn-apple">
-                    <i class="fa-brands fa-apple"></i>
-                    Tiếp tục với Apple
-                </button>
-
+                </a>
                 <div class="divider">Hoặc</div>
             @endif
 
