@@ -3,831 +3,837 @@
 // =========== header
 
 .header {
-  position: absolute;
-  width: 100%;
-  z-index: 4;
-  display: flex;
-  padding: 1.2rem 3.2rem;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  background-color: transparent;
-  transition: all 0.3s ease;
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+    display: flex;
+    padding: 1.2rem 3.2rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
 // Fixed/Slide-down state
 .header.fixed {
-  position: fixed;
-  top: -60px;
-  left: 0;
-  background-color: $color-white;
-  z-index: 999;
-  width: 100%;
+    position: fixed;
+    top: -60px;
+    left: 0;
+    background-color: $color-white;
+    z-index: 999;
+    width: 100%;
 }
 
 .header.slide-down {
-  top: 0;
+    top: 0;
 }
 
 // Header Left
 .header__left {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .header__left-btn {
-  cursor: pointer;
-  background-color: $color-white;
-  border: none;
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    cursor: pointer;
+    background-color: $color-white;
+    border: none;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header__left-btn:hover {
-  background-color: #f1eaea;
+    background-color: #f1eaea;
 }
 
 .header__left-modal-box {
-  display: flex;
+    display: flex;
 }
 
 .header__left-sub-modal {
-  display: none;
+    display: none;
 }
 
 .header__left-sub-modal-link {
-  color: $color-gray-dark;
-  padding: 1.65rem 1.4rem;
-  display: block;
+    color: $color-gray-dark;
+    padding: 1.65rem 1.4rem;
+    display: block;
 }
 
 .header__left-sub-modal-link:hover {
-  background-color: $color-gray-light;
+    background-color: $color-gray-light;
 }
 
 .header__left-sub-modal-item {
-  width: 30rem;
+    width: 30rem;
 }
 
 .header__left-modal-item {
-  width: 30rem;
+    width: 30rem;
 }
 
 .header__left-modal-item .header__left-modal-link-img {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-right: 1.2rem;
-  color: #ccc;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1.2rem;
+    color: #ccc;
 }
 
 .header__left-modal-item.hover {
-  background-color: $color-gray-light;
+    background-color: $color-gray-light;
 }
 
 .header__left-modal-list {
-  border-right: 1px solid $color-gray-light;
+    border-right: 1px solid $color-gray-light;
 }
 
 .header__left-sub-modal.open {
-  display: block;
+    display: block;
 }
 
 .header__left-modal {
-  display: none;
-  border-radius: 1rem;
-  border: 3px solid #ece8e8;
-  position: absolute;
-  z-index: 4;
-  top: 5.7rem;
-  left: 0;
-  background-color: $color-white;
+    display: none;
+    border-radius: 1rem;
+    border: 3px solid #ece8e8;
+    position: absolute;
+    z-index: 4;
+    top: 5.7rem;
+    left: 0;
+    background-color: $color-white;
 }
 
 .header__left-modal-title {
-  color: $color-secondary;
-  font-weight: bold;
-  padding: 1.2rem 1.4rem;
-  border-bottom: 1px solid $color-gray-light;
+    color: $color-secondary;
+    font-weight: bold;
+    padding: 1.2rem 1.4rem;
+    border-bottom: 1px solid $color-gray-light;
 }
 
 .header__left-modal-link {
-  color: $color-gray-dark;
-  padding: 1.2rem 1.4rem;
-  display: flex;
-  align-items: center;
+    color: $color-gray-dark;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: center;
 }
 
 .header__left-modal.open {
-  display: block;
+    display: block;
 }
 
 .header__left-img {
-  width: 10rem;
-  height: 100%;
-  padding: 0.8rem 1.4rem;
-  background-color: $color-white;
-  border-radius: 2.4rem;
+    width: 10rem;
+    height: 100%;
+    padding: 0.8rem 1.4rem;
+    background-color: $color-white;
+    border-radius: 2.4rem;
 }
 
 // Navbar (Middle menu)
 .navbar.navbarNone {
-  display: none;
+    display: none;
 }
 
 .navbar__list {
-  display: flex;
-  gap: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 
 .navbar__list .navbar__item-link {
-  color: #9c9494;
-  font-size: 1.4rem;
-  font-weight: 600;
+    color: #9c9494;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .navbar__list .navbar__item-link:hover {
-  color: #222222;
+    color: #222222;
 }
 
 // Search Input
 .header__input.header__input-block {
-  display: block;
+    display: block;
 }
 
 .header__input {
-  display: none;
-  flex: 1;
-  position: relative;
+    display: none;
+    flex: 1;
+    position: relative;
 }
 
 .header__input .icon-1 {
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.5rem;
 }
 
 .header__input .icon-1 i {
-  color: #ccc;
+    color: #ccc;
 }
 
 .header__input .close {
-  display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 4rem;
-  font-size: 1.2rem;
-  background-color: $color-secondary;
-  color: $color-white;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4rem;
+    font-size: 1.2rem;
+    background-color: $color-secondary;
+    color: $color-white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .header__input .icon {
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: $color-primary;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $color-primary;
 }
 
 .header__input .icon i {
-  color: $color-secondary;
-  font-size: 1.2rem;
+    color: $color-secondary;
+    font-size: 1.2rem;
 }
 
 .header__input .header__inp {
-  border-radius: 999px;
-  width: 100%;
-  padding: 1.2rem 3.6rem;
-  background-color: $color-gray-light;
-  border: none;
-  outline: none;
+    border-radius: 999px;
+    width: 100%;
+    padding: 1.2rem 3.6rem;
+    background-color: $color-gray-light;
+    border: none;
+    outline: none;
 }
 
 // Header Right
 .header__right {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .header__right .header__action {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .header__right .header__action-item {
-  cursor: pointer;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  border: none;
-  background-color: $color-white;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    background-color: $color-white;
 }
 
 .header__right .header__action-item i {
-  font-size: 2.4rem;
+    font-size: 2.4rem;
 }
 
 .header__right .header__action-item:hover {
-  background-color: $color-gray-light;
+    background-color: $color-gray-light;
 }
 
 // Header Action Buttons (Login/Sign Up)
 .header__action-btn {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .header__action-btn .header__login {
-  display: inline-block;
-  color: $color-secondary;
-  line-height: 1.6;
-  cursor: pointer;
-  background-color: $color-white;
-  border-radius: 2.4rem;
-  border: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 0.8rem 1.4rem;
+    display: inline-block;
+    color: $color-secondary;
+    line-height: 1.6;
+    cursor: pointer;
+    background-color: $color-white;
+    border-radius: 2.4rem;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.8rem 1.4rem;
 }
 
 .header__action-btn .header__login.custom {
-  border: 1px solid $color-gray-light;
+    border: 1px solid $color-gray-light;
 }
 
 .header__action-btn .header__up {
-  background-color: $color-secondary;
-  border-radius: 2.4rem;
-  color: $color-white;
-  cursor: pointer;
-  border: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 0.8rem 1.4rem;
+    background-color: $color-secondary;
+    border-radius: 2.4rem;
+    color: $color-white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.8rem 1.4rem;
 }
 
 .header__action-btn .header__up.custom__up {
-  background-color: $color-primary;
-  color: $color-secondary;
+    background-color: $color-primary;
+    color: $color-secondary;
 }
 
 .header__action-btn .header__user {
-  position: relative;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  background-color: $color-white;
-  border-radius: 2.4rem;
-  color: $color-secondary;
-  border: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 0.8rem 1.4rem;
-  cursor: pointer;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 2.4rem;
+    color: $color-secondary;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.8rem 1.4rem;
+    cursor: pointer;
 }
 
 .header__action-btn .header__action-btn-modal {
-  display: none;
-  position: absolute;
-  background-color: $color-gray-light;
-  padding: 1.2rem;
-  min-width: 40rem;
-  top: 8rem;
-  right: 3rem;
-  border-radius: 1.2rem;
+    display: none;
+    position: absolute;
+    background-color: $color-gray-light;
+    padding: 1.2rem;
+    min-width: 40rem;
+    top: 8rem;
+    right: 3rem;
+    border-radius: 1.2rem;
 }
 
 .header__action-btn-modal-top {
-  background-color: $color-white;
-  padding: 1.2rem;
-  position: relative;
-  border-radius: 1.2rem;
+    background-color: $color-white;
+    padding: 1.2rem;
+    position: relative;
+    border-radius: 1.2rem;
 }
 
 .header__action-btn-modal-top-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 0.6rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
 }
 
 .header__action-btn-modal-top-desc {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .header__action-btn-modal-top-action {
-  display: flex;
-  margin-top: 2.4rem;
-  gap: 2rem;
+    display: flex;
+    margin-top: 2.4rem;
+    gap: 2rem;
 }
 
 .header__action-btn-modal-top-action-register {
-  padding: 1.2rem 2.4rem;
-  width: 50%;
-  border-radius: 1.2rem;
-  border: 1px solid $color-gray-light;
-  text-align: center;
+    padding: 1.2rem 2.4rem;
+    width: 50%;
+    border-radius: 1.2rem;
+    border: 1px solid $color-gray-light;
+    text-align: center;
 }
 
 .header__action-btn-modal-top-action-login {
-  padding: 1.2rem 2.4rem;
-  width: 50%;
-  border-radius: 1.2rem;
-  background-color: $color-primary;
-  text-align: center;
+    padding: 1.2rem 2.4rem;
+    width: 50%;
+    border-radius: 1.2rem;
+    background-color: $color-primary;
+    text-align: center;
 }
 
 .header__action-btn-modal-top-image {
-  width: 6rem;
-  position: absolute;
-  top: 0;
-  right: 0;
+    width: 6rem;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .header__action-btn-modal-top-image .header__action-btn-modal-top-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .header__action-btn-modal-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: $color-gray-dark;
-  margin-top: 1.4rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: $color-gray-dark;
+    margin-top: 1.4rem;
 }
 
 .header__action-btn-modal-extensions {
-  border-radius: 1.2rem;
-  overflow: hidden;
-  margin-top: 1.2rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-top: 1.2rem;
 }
 
 .header__action-btn-modal-extensions-list {
-  background-color: $color-white;
+    background-color: $color-white;
 }
 
 .header__action-btn-modal-extensions-list
-  .header__action-btn-modal-extensions-item {
-  padding: 1.2rem 2.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    .header__action-btn-modal-extensions-item {
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__action-btn-modal-extensions-list
-  .header__action-btn-modal-extensions-item:hover {
-  background-color: #ada8a8;
+    .header__action-btn-modal-extensions-item:hover {
+    background-color: #ada8a8;
 }
 
 .header__action-btn-modal-extensions-list
-  .header__action-btn-modal-extensions-item
-  .header__action-btn-modal-extensions-link {
-  color: $color-secondary;
+    .header__action-btn-modal-extensions-item
+    .header__action-btn-modal-extensions-link {
+    color: $color-secondary;
 }
 
 .header__action-btn-modal-service {
-  border-radius: 1.2rem;
-  overflow: hidden;
-  margin-top: 1.2rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-top: 1.2rem;
 }
 
 .header__action-btn-modal-service-list {
-  background-color: $color-white;
+    background-color: $color-white;
 }
 
 .header__action-btn-modal-service-list .header__action-btn-modal-service-item {
-  padding: 1.2rem 2.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__action-btn-modal-service-list
-  .header__action-btn-modal-service-item:hover {
-  background-color: #ada8a8;
+    .header__action-btn-modal-service-item:hover {
+    background-color: #ada8a8;
 }
 
 .header__action-btn-modal-service-list
-  .header__action-btn-modal-service-item
-  .header__action-btn-modal-service-link {
-  color: $color-secondary;
+    .header__action-btn-modal-service-item
+    .header__action-btn-modal-service-link {
+    color: $color-secondary;
 }
 
 .header__action-btn-modal-service-list
-  .header__action-btn-modal-service-item
-  .header__action-btn-modal-service-create-now {
-  font-size: 1.2rem;
-  color: $color-secondary;
-  border-radius: 999px;
-  background-color: $color-gray-light;
-  font-weight: bold;
-  padding: 0.4rem 0.6rem;
+    .header__action-btn-modal-service-item
+    .header__action-btn-modal-service-create-now {
+    font-size: 1.2rem;
+    color: $color-secondary;
+    border-radius: 999px;
+    background-color: $color-gray-light;
+    font-weight: bold;
+    padding: 0.4rem 0.6rem;
 }
 
 .header__action-btn-modal-sale {
-  border-radius: 1.2rem;
-  overflow: hidden;
-  margin-top: 1.2rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-top: 1.2rem;
 }
 
 .header__action-btn-modal-sale-list {
-  background-color: $color-white;
+    background-color: $color-white;
 }
 
 .header__action-btn-modal-sale-list .header__action-btn-modal-sale-item {
-  padding: 1.2rem 2.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__action-btn-modal-sale-list .header__action-btn-modal-sale-item:hover {
-  background-color: #ada8a8;
+    background-color: #ada8a8;
 }
 
 .header__action-btn-modal-sale-list
-  .header__action-btn-modal-sale-item
-  .header__action-btn-modal-sale-link {
-  color: $color-secondary;
+    .header__action-btn-modal-sale-item
+    .header__action-btn-modal-sale-link {
+    color: $color-secondary;
 }
 
 .header__action-btn-modal-other {
-  border-radius: 1.2rem;
-  overflow: hidden;
-  margin-top: 1.2rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-top: 1.2rem;
 }
 
 .header__action-btn-modal-other-list {
-  background-color: $color-white;
+    background-color: $color-white;
 }
 
 .header__action-btn-modal-other-list .header__action-btn-modal-other-item {
-  padding: 1.2rem 2.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__action-btn-modal-other-list
-  .header__action-btn-modal-other-item:hover {
-  background-color: #ada8a8;
+    .header__action-btn-modal-other-item:hover {
+    background-color: #ada8a8;
 }
 
 .header__action-btn-modal-other-list
-  .header__action-btn-modal-other-item
-  .header__action-btn-modal-other-link {
-  color: $color-secondary;
+    .header__action-btn-modal-other-item
+    .header__action-btn-modal-other-link {
+    color: $color-secondary;
 }
 
 .header__action-btn .header__user.custom__user {
-  border: 1px solid $color-gray-light;
+    border: 1px solid $color-gray-light;
 }
 
 // Header Left Title/Address
 .header__left-title {
-  position: relative;
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding: 1.2rem 1.8rem;
-  cursor: pointer;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.2rem 1.8rem;
+    cursor: pointer;
 }
 
 .header__left-title .fa-angle-down {
-  margin-left: 1.2rem;
+    margin-left: 1.2rem;
 }
 
 .header__left-title:hover {
-  background-color: rgba($color-white, 0.1);
+    background-color: rgba($color-white, 0.1);
 }
 
 .header__left-title-modal {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  display: none;
-  position: absolute;
-  top: 5rem;
-  left: -1rem;
-  background-color: $color-white;
-  border-radius: 1.8rem;
-  min-width: 25rem;
-  overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: -1rem;
+    background-color: $color-white;
+    border-radius: 1.8rem;
+    min-width: 25rem;
+    overflow: hidden;
 }
 
 .header__left-title-modal .header__left-title-modal-link {
-  padding: 1.8rem 1.2rem;
-  font-size: 1.4rem;
-  color: #222222;
-  display: block;
-  cursor: pointer;
+    padding: 1.8rem 1.2rem;
+    font-size: 1.4rem;
+    color: #222222;
+    display: block;
+    cursor: pointer;
+    width: 100%;
 }
 
-.header__left-title-modal .header__left-title-modal-link:hover {
-  background-color: $color-gray-light;
+.header__left-title-modal-item {
+    padding: 0 1.2rem;
+    display: flex;
+}
+
+.header__left-title-modal .header__left-title-modal-item:hover {
+    background-color: $color-gray-light;
 }
 
 .header__left-title-modal.show {
-  display: block;
+    display: block;
 }
 
 .header__left-title.none {
-  display: none;
+    display: none;
 }
 
 // Header Address
 .header__address {
-  cursor: pointer;
-  display: none;
-  position: relative;
-  gap: 1rem;
-  align-items: center;
-  background-color: $color-gray-light;
-  border-radius: 999px;
-  padding: 1rem 2.4rem;
-  font-weight: bold;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    gap: 1rem;
+    align-items: center;
+    background-color: $color-gray-light;
+    border-radius: 999px;
+    padding: 1rem 2.4rem;
+    font-weight: bold;
 }
 
 .header__address .header__form-adress-modal {
-  display: none;
-  position: absolute;
-  top: 6rem;
-  left: 0;
-  background-color: $color-white;
-  min-width: 35rem;
-  border-radius: 1.2rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    background-color: $color-white;
+    min-width: 35rem;
+    border-radius: 1.2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .header__address .header__form-adress-modal-title {
-  padding: 1.6rem;
-  border-bottom: 1px solid $color-gray-light;
-  text-align: center;
+    padding: 1.6rem;
+    border-bottom: 1px solid $color-gray-light;
+    text-align: center;
 }
 
 .header__address .header__form-adress-modal-address {
-  padding: 2.4rem;
-  border-bottom: 1px solid $color-gray-light;
+    padding: 2.4rem;
+    border-bottom: 1px solid $color-gray-light;
 }
 
 .header__address .header__form-adress-modal-conscious {
-  padding: 1.2rem 1.2rem;
-  border: 2px solid #ccc;
-  border-radius: 1.6rem;
-  margin-bottom: 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1.2rem 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 1.6rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__address .header__form-adress-modal-conscious:hover {
-  border: 2px solid $color-secondary;
+    border: 2px solid $color-secondary;
 }
 
 .header__address .header__form-adress-modal-conscious-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
 }
 
 .header__address .header__form-adress-modal-conscious-desc {
-  font-size: 1.4rem;
-  font-weight: 300;
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
 .header__address .header__form-adress-modal-district {
-  padding: 1.2rem 1.2rem;
-  border: 2px solid #ccc;
-  border-radius: 1.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1.2rem 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__address .header__form-adress-modal-district:hover {
-  border: 2px solid $color-secondary;
+    border: 2px solid $color-secondary;
 }
 
 .header__address .header__form-adress-modal-district-title {
-  font-size: 1.2rem;
-  padding: 0.75rem 0;
+    font-size: 1.2rem;
+    padding: 0.75rem 0;
 }
 
 .header__address .header__form-adress-modal-district-desc {
-  font-size: 1.4rem;
-  font-weight: 300;
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
 .header__address .header__form-adress-modal-action {
-  margin: 2.4rem;
-  cursor: pointer;
-  width: 86%;
-  padding: 1.2rem 0;
-  border-radius: 1.6rem;
-  background-color: $color-primary;
-  border: none;
-  font-weight: bold;
+    margin: 2.4rem;
+    cursor: pointer;
+    width: 86%;
+    padding: 1.2rem 0;
+    border-radius: 1.6rem;
+    background-color: $color-primary;
+    border: none;
+    font-weight: bold;
 }
 
 .header__address .header__form-adress-modal-action:hover {
-  background-color: rgba($color-primary, 0.478);
+    background-color: rgba($color-primary, 0.478);
 }
 
 .header__address .header__form-adress-sub-modal-district,
 .header__address .header__form-adress-sub-modal-conscious {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: $color-white;
-  min-width: 35rem;
-  border-radius: 1.2rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  max-height: 40rem;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-white;
+    min-width: 35rem;
+    border-radius: 1.2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-height: 40rem;
 }
 
 .header__address .header__form-adress-sub-modal-district .fa-arrow-left,
 .header__address .header__form-adress-sub-modal-conscious .fa-arrow-left {
-  position: absolute;
-  top: 1.5rem;
-  left: 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .header__address .header__form-adress-sub-modal-district-container-list,
 .header__address .header__form-adress-sub-modal-conscious-container-list {
-  max-height: 25rem;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    max-height: 25rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-container-list::-webkit-scrollbar,
+    .header__form-adress-sub-modal-district-container-list::-webkit-scrollbar,
 .header__address
-  .header__form-adress-sub-modal-conscious-container-list::-webkit-scrollbar {
-  display: none;
+    .header__form-adress-sub-modal-conscious-container-list::-webkit-scrollbar {
+    display: none;
 }
 
 .header__address .header__form-adress-sub-modal-district-title,
 .header__address .header__form-adress-sub-modal-conscious-title {
-  padding: 1.6rem;
-  border-bottom: 1px solid $color-gray-light;
-  text-align: center;
+    padding: 1.6rem;
+    border-bottom: 1px solid $color-gray-light;
+    text-align: center;
 }
 
 .header__address .header__form-adress-sub-modal-district-input,
 .header__address .header__form-adress-sub-modal-conscious-input {
-  padding: 1.2rem;
-  position: relative;
+    padding: 1.2rem;
+    position: relative;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-input
-  .fa-magnifying-glass,
+    .header__form-adress-sub-modal-district-input
+    .fa-magnifying-glass,
 .header__address
-  .header__form-adress-sub-modal-conscious-input
-  .fa-magnifying-glass {
-  position: absolute;
-  left: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  color: #ccc;
+    .header__form-adress-sub-modal-conscious-input
+    .fa-magnifying-glass {
+    position: absolute;
+    left: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-input
-  .header__form-adress-sub-modal-district-inp,
+    .header__form-adress-sub-modal-district-input
+    .header__form-adress-sub-modal-district-inp,
 .header__address
-  .header__form-adress-sub-modal-conscious-input
-  .header__form-adress-sub-modal-conscious-inp {
-  width: 100%;
-  padding: 1.2rem 3.2rem;
-  border-radius: 999px;
-  border: none;
-  outline: none;
-  background-color: $color-gray-light;
+    .header__form-adress-sub-modal-conscious-input
+    .header__form-adress-sub-modal-conscious-inp {
+    width: 100%;
+    padding: 1.2rem 3.2rem;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    background-color: $color-gray-light;
 }
 
 .header__address .header__form-adress-sub-modal-district-item,
 .header__address .header__form-adress-sub-modal-conscious-item {
-  padding: 1.6rem;
+    padding: 1.6rem;
 }
 
 .header__address .header__form-adress-sub-modal-district-item label,
 .header__address .header__form-adress-sub-modal-conscious-item label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-item
-  label
-  input[type="radio"]:checked
-  + .custom__radaio,
+    .header__form-adress-sub-modal-district-item
+    label
+    input[type="radio"]:checked
+    + .custom__radaio,
 .header__address
-  .header__form-adress-sub-modal-conscious-item
-  label
-  input[type="radio"]:checked
-  + .custom__radaio {
-  background-color: $color-primary;
-  border: 2px solid $color-primary;
+    .header__form-adress-sub-modal-conscious-item
+    label
+    input[type="radio"]:checked
+    + .custom__radaio {
+    background-color: $color-primary;
+    border: 2px solid $color-primary;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-item
-  label
-  input[type="radio"]:checked
-  + .custom__radaio
-  .fa-check,
+    .header__form-adress-sub-modal-district-item
+    label
+    input[type="radio"]:checked
+    + .custom__radaio
+    .fa-check,
 .header__address
-  .header__form-adress-sub-modal-conscious-item
-  label
-  input[type="radio"]:checked
-  + .custom__radaio
-  .fa-check {
-  opacity: 1;
+    .header__form-adress-sub-modal-conscious-item
+    label
+    input[type="radio"]:checked
+    + .custom__radaio
+    .fa-check {
+    opacity: 1;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-item
-  label
-  input[type="radio"],
+    .header__form-adress-sub-modal-district-item
+    label
+    input[type="radio"],
 .header__address
-  .header__form-adress-sub-modal-conscious-item
-  label
-  input[type="radio"] {
-  opacity: 0;
-  cursor: pointer;
+    .header__form-adress-sub-modal-conscious-item
+    label
+    input[type="radio"] {
+    opacity: 0;
+    cursor: pointer;
 }
 
 .header__address .header__form-adress-sub-modal-district-item .custom__radaio,
 .header__address .header__form-adress-sub-modal-conscious-item .custom__radaio {
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-item
-  .custom__radaio:hover,
+    .header__form-adress-sub-modal-district-item
+    .custom__radaio:hover,
 .header__address
-  .header__form-adress-sub-modal-conscious-item
-  .custom__radaio:hover {
-  border: 2px solid $color-secondary;
+    .header__form-adress-sub-modal-conscious-item
+    .custom__radaio:hover {
+    border: 2px solid $color-secondary;
 }
 
 .header__address
-  .header__form-adress-sub-modal-district-item
-  .custom__radaio
-  .fa-check,
+    .header__form-adress-sub-modal-district-item
+    .custom__radaio
+    .fa-check,
 .header__address
-  .header__form-adress-sub-modal-conscious-item
-  .custom__radaio
-  .fa-check {
-  opacity: 0;
+    .header__form-adress-sub-modal-conscious-item
+    .custom__radaio
+    .fa-check {
+    opacity: 0;
 }
 
 .header__address .fa-location-dot {
-  color: $color-primary;
+    color: $color-primary;
 }
 
 .header__address .fa-sort-down {
-  margin-bottom: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .header__left-title.hover {
-  background-color: rgba($color-white, 0.1);
+    background-color: rgba($color-white, 0.1);
 }
 
 .header__address.block {
-  display: flex;
+    display: flex;
 }

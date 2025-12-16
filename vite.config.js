@@ -22,7 +22,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 // Đặt file CSS vào thư mục 'css/' trong outDir (public)
-                asset   FileNames: (assetInfo) => {
+                assetFileNames: (assetInfo) => {
                     if (assetInfo.name === "main.scss") {
                         return "css/styles.css";
                     }

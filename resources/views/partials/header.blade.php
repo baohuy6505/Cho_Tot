@@ -4,7 +4,7 @@
           <i class="fa-solid fa-list"></i>
         </button>
 
-        <img src="./assets/img/logo.png" alt="" class="header__left-img" />
+        <img src="{{ asset('images/client/logo.png')}}" alt="" class="header__left-img" />
 
         <span class="header__left-title"
           >Dành cho người bán <i class="fa-solid fa-angle-down"></i>
@@ -12,12 +12,15 @@
           <div class="header__left-title-modal">
             <ul class="header__left-title-modal-list">
               <li class="header__left-title-modal-item">
+                <img src="{{ asset('images/client/QuanlyTin/qly-tin.svg')}}" alt="" class="header__left-title-modal-img">
                 <a href="" class="header__left-title-modal-link">Quản lí tin</a>
               </li>
               <li class="header__left-title-modal-item">
+                <img src="{{ asset('images/client/QuanlyTin/goi-pro.svg')}}" alt="" class="header__left-title-modal-img">
                 <a href="" class="header__left-title-modal-link">Gói Pro</a>
               </li>
               <li class="header__left-title-modal-item">
+                <img src="{{ asset('images/client/QuanlyTin/shield-check.svg')}}" alt="" class="header__left-title-modal-img">
                 <a href="" class="header__left-title-modal-link"
                   >Dành cho đối tác</a
                 >
@@ -288,7 +291,7 @@
               <li data-sub="sub1" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img1.png"
+                    src="{{ asset('images/client/submodalheader/img1.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -298,7 +301,7 @@
               <li data-sub="sub2" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img2.png"
+                    src="{{ asset('images/client/submodalheader/img2.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -308,7 +311,7 @@
               <li data-sub="sub3" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img3.png"
+                    src="{{ asset('images/client/submodalheader/img3.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -318,7 +321,7 @@
               <li data-sub="sub4" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img4.png"
+                    src="{{ asset('images/client/submodalheader/img4.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -328,7 +331,7 @@
               <li data-sub="sub5" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img5.png"
+                    src="{{ asset('images/client/submodalheader/img5.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -338,7 +341,7 @@
               <li data-sub="sub6" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img6.png"
+                    src="{{ asset('images/client/submodalheader/img6.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -348,7 +351,7 @@
               <li data-sub="sub7" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img7.png"
+                    src="{{ asset('images/client/submodalheader/img7.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -358,7 +361,7 @@
               <li data-sub="sub8" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img8.png"
+                    src="{{ asset('images/client/submodalheader/img8.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -368,7 +371,7 @@
               <li data-sub="sub9" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img9.png"
+                    src="{{ asset('images/client/submodalheader/img9.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -378,7 +381,7 @@
               <li data-sub="sub10" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img10.png"
+                    src="{{ asset('images/client/submodalheader/img10.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -388,7 +391,7 @@
               <li data-sub="sub11" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img11.png"
+                    src="{{ asset('images/client/submodalheader/img11.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -398,7 +401,7 @@
               <li data-sub="sub12" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img12.png"
+                    src="{{ asset('images/client/submodalheader/img12.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -408,7 +411,7 @@
               <li data-sub="sub13" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img13.png"
+                    src="{{ asset('images/client/submodalheader/img13.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />
@@ -418,7 +421,7 @@
               <li data-sub="sub14" class="header__left-modal-item">
                 <a href="" class="header__left-modal-link">
                   <img
-                    src="./assets/img/submodalheader/img14.png"
+                    src="{{ asset('images/client/submodalheader/img14.png')}}"
                     alt=""
                     class="header__left-modal-link-img"
                   />

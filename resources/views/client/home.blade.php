@@ -8,7 +8,7 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/1000.webp"
+                  src="{{ asset('images/client/1000.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
@@ -21,12 +21,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op2.webp"
+                  src="{{ asset('images/client/options/op2.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Xe cộ
             </a>
           </li>
 
@@ -34,12 +34,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op3.webp"
+                  src="{{ asset('images/client/options/op3.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Thú cưng
             </a>
           </li>
 
@@ -47,12 +47,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op4.webp"
+                  src="{{ asset('images/client/options/op4.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Đồ gia dụng, nội thất, cây cảnh
             </a>
           </li>
 
@@ -60,12 +60,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op5.webp"
+                  src="{{ asset('images/client/options/op5.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Giải trí, Thể thao, Sở thích
             </a>
           </li>
 
@@ -73,12 +73,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op6.webp"
+                  src="{{ asset('images/client/options/op6.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Mẹ và bé
             </a>
           </li>
 
@@ -86,12 +86,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op7.webp"
+                  src="{{ asset('images/client/options/op7.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Dịch vụ, Du lịch
             </a>
           </li>
 
@@ -99,12 +99,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op8.webp"
+                  src="{{ asset('images/client/options/op8.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Cho tặng miễn phí
             </a>
           </li>
 
@@ -112,12 +112,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op9.webp"
+                  src="{{ asset('images/client/options/op9.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Việc làm
             </a>
           </li>
 
@@ -125,12 +125,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op10.webp"
+                  src="{{ asset('images/client/options/op10.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Đồ điện tử
             </a>
           </li>
 
@@ -138,12 +138,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op11.webp"
+                  src="{{ asset('images/client/options/op11.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Tủ lanh, máy lạnh, máy giặt
             </a>
           </li>
 
@@ -151,12 +151,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op12.webp"
+                  src="{{ asset('images/client/options/op12.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Đồ dùng văn phòng, công nông nghiệp
             </a>
           </li>
 
@@ -164,12 +164,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op13.webp"
+                  src="{{ asset('images/client/options/op13.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Thời trang , đồ dùng cá nhân
             </a>
           </li>
 
@@ -177,12 +177,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op14.webp"
+                  src="{{ asset('images/client/options/op14.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Đồ ăn, thực phẩm và các loại khác
             </a>
           </li>
 
@@ -190,12 +190,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op15.webp"
+                  src="{{ asset('images/client/options/op15.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Dịch vụ chăm sóc nhà cửa
             </a>
           </li>
 
@@ -203,12 +203,12 @@
             <a href="" class="options__link">
               <div class="option__img-wrap">
                 <img
-                  src="./assets/img/options/op16.webp"
+                  src="{{ asset('images/client/options/op16.webp') }}"
                   alt=""
                   class="option__item-img"
                 />
               </div>
-              Bất động sản
+              Tất cả danh mục
             </a>
           </li>
         </ul>
