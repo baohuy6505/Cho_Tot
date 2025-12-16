@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\client\AuthController;
 use App\Http\Controllers\client\PostController;
 use App\Http\Controllers\client\CommentController;
-
+use App\Http\Controllers\client\FavoriteController;
 // ==========================================
 // 1. PUBLIC ROUTES (Ai cũng xem được)
 // ==========================================
@@ -35,6 +35,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login/check', [AuthController::class, 'checkAccount'])->name('login.check');
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
+    Route::get('/auth/google/redirect',[AuthController::class, 'redirectWithGoogle'])->name('google.redirect');
+    Route::get('/auth/google/callback',[AuthController::class, 'loginWithGoogle'])->name('google.callback');
 });
 
 
@@ -56,11 +58,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/posts/store', [PostController::class, 'storeUserPost'])->name('client.posts.store');
     Route::get('/posts/edit/{id}', [PostController::class, 'editUserPost'])->name('client.posts.edit');
     Route::post('/posts/update/{id}', [PostController::class, 'updateUserPost'])->name('client.posts.update');
-    Route::post('/posts/delete/{id}', [PostController::class, 'deletePost'])->name('client.posts.delete');
+    Route::delete('/posts/delete/{id}', [PostController::class, 'deletePost'])->name('client.posts.delete');
+
     // FAVORITE chức năng
    //  thao tác với tim (thả tim bỏ tim))
-    Route::post('/posts/favorite/{id}', [App\Http\Controllers\client\FavoriteController::class, 'toggle'])->name('client.favorites.toggle');
+    Route::post('/posts/favorite/{id}', [FavoriteController::class, 'toggle'])->name('client.favorites.toggle');
     
     // danh sách trang yêu thích của user
-    Route::get('/userfavorites', [App\Http\Controllers\client\FavoriteController::class, 'index'])->name('client.favorites.index');
+    Route::get('/userfavorites', [FavoriteController::class, 'index'])->name('client.favorites.index');
 }); 

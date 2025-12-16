@@ -42,7 +42,7 @@
                                 <td>{{ $item->created_at }}</td>
                                 <td>
                                     <a href="{{ route('admin.posts.detail', $item->id )}}" class="btn btn-sm btn-primary">Xem</a>
-                                    <a href="{{ route('admin.posts.delete', $item->id )}}" class="btn btn-sm btn-danger">Xóa</a>
+                                    {{-- <a href="{{ route('admin.posts.delete', $item->id )}}" class="btn btn-sm btn-danger">Xóa</a> --}}
                                 </td>
                             </tr>
                         @endforeach

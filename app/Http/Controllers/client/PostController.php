@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\client;
+
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,17 +16,30 @@ class PostController extends Controller
 {
     public function index()
     {
-        //$data = Post::all();
-        $dataPosts = Post::paginate(10);
-        return View('client.posts.index', compact('dataPosts'));
+        $dataPosts = 10;
+        $blockedPosts = Post::where('status', 'blocked')
+            ->latest() // Sắp xếp theo mới nhất
+            ->paginate($dataPosts, ['*'], 'blocked_page'); 
+        $pendingPosts = Post::where('status', 'pending')
+            ->latest()
+            ->paginate($dataPosts, ['*'], 'pending_page');
+        $activePosts = Post::where('status', 'active')
+            ->latest()
+            ->paginate($dataPosts, ['*'], 'active_page'); 
+        // return View('client.posts.index', compact('activePosts','pendingPosts','blockedPosts'));
+        return response()->json([
+            'message' => 'Post created successfully!',
+            'dataSlug' => $blockedPosts,$pendingPosts,$activePosts
+        ]);
     }
+
     public function detail($slug)
     {
         //$dataPost = Post::findOrFail($id);
         //$dataImages = PostImage::where('post_id', $id)->get();//lấy ra tat ca gia tri co post_id = $id
         //return view('client.posts.detail', compact('dataPost', 'dataImages'));
 
-        $dataPost = Post::with('images')->where('slug',$slug)->firstOrFail();
+        $dataPost = Post::with('images')->where('slug', $slug)->firstOrFail();
         return response()->json([
             'message' => 'Post created successfully!',
             'dataSlug' => $dataPost,
@@ -38,7 +52,7 @@ class PostController extends Controller
     }
     public function storeUserPost(StorePostRequest $request)
     {
-        
+
         $dataValidated = $request->validated();
         $dataValidated['user_id'] =  Auth::id();
         $dataValidated['status'] = 'pending';
@@ -47,7 +61,7 @@ class PostController extends Controller
         $count = 1;
 
         $imagePaths = [];
-        while(Post::where('slug',$slug)->exists()){
+        while (Post::where('slug', $slug)->exists()) {
             $slug = $originalSlug . '-' . $count;
             $count++;
         }
