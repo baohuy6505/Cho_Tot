@@ -6,7 +6,7 @@
 
         <img src="{{ asset('images/client/logo.png')}}" alt="" class="header__left-img" />
 
-        <span class="header__left-title"
+        <div class="header__left-title"
           >Dành cho người bán <i class="fa-solid fa-angle-down"></i>
 
           <div class="header__left-title-modal">
@@ -27,7 +27,7 @@
               </li>
             </ul>
           </div>
-        </span>
+        </div>
         <div class="header__address">
           <i class="fa-solid fa-location-dot"></i><span>Đà Nẵng</span
           ><i class="fa-solid fa-sort-down"></i>
@@ -84,7 +84,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Tp Hồ Chí Minh</span
                       >
                       <input id="category1" type="radio" name="category" />
                       <span class="custom__radaio">
@@ -96,7 +96,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Hà Nội</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -108,7 +108,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Đà Nẵng</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -120,7 +120,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Cần Thơ</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -132,7 +132,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Bình Dương</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -144,7 +144,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >An Giang</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -156,7 +156,7 @@
                   <li class="header__form-adress-sub-modal-conscious-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Bà Rịa - Vũng Tàu</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -187,7 +187,7 @@
                 <ul class="header__form-adress-sub-modal-district-list">
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
-                      ><span class="label-text">Tất cả danh mục</span>
+                      ><span class="label-text">Tất cả</span>
                       <input id="category" type="radio" name="category" />
                       <span class="custom__radaio">
                         <i class="fas fa-check"></i>
@@ -198,7 +198,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Cẩm Lệ</span
                       >
                       <input id="category1" type="radio" name="category" />
                       <span class="custom__radaio">
@@ -210,7 +210,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Hải Châu</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -222,7 +222,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Liên Chiểu</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -234,7 +234,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Ngũ Hành Sơn</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -246,7 +246,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Sơn Trà</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -258,7 +258,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Thanh Khê</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -270,7 +270,7 @@
                   <li class="header__form-adress-sub-modal-district-item">
                     <label
                       ><span class="label-text-header-address"
-                        >Tất cả danh mục</span
+                        >Quận Hòa Vang</span
                       >
                       <input type="radio" name="category" />
                       <span class="custom__radaio">
@@ -663,159 +663,210 @@
       </div>
 
       <div class="header__right">
-        <div class="header__action">
-          <button class="header__action-item">
-            <i class="fa-regular fa-heart"></i>
-          </button>
-          <button class="header__action-item">
-            <i class="fa-regular fa-message"></i>
-          </button>
-          <button class="header__action-item">
-            <i class="fa-regular fa-bell"></i>
-          </button>
+  <div class="header__action">
+    <button class="header__action-item">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+    <button class="header__action-item">
+      <i class="fa-regular fa-message"></i>
+    </button>
+    <button class="header__action-item">
+      <i class="fa-regular fa-bell"></i>
+    </button>
+  </div>
+
+  <div class="header__action-btn">
+    <a href="./manager.html" class="header__login">Đăng nhập</a>
+    <button class="header__up">Đăng tin</button>
+    <button class="header__user">
+      <i class="fa-regular fa-user"></i>
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+
+    <div class="header__action-btn-modal">
+      <div
+        
+        class="header__action-btn-modal-top"
+      >
+        <div class="header__action-btn-modal-top-content">
+          <h4 class="header__action-btn-modal-top-title">
+            Mua thì hời, bán thì lời
+          </h4>
+          <p class="header__action-btn-modal-top-desc">
+            Đăng nhập cái đã!
+          </p>
         </div>
-        <div class="header__action-btn">
-          <a href="./manager.html" class="header__login">Đăng nhập</a>
-          <button class="header__up">Đăng tin</button>
-          <button class="header__user">
-            <i class="fa-regular fa-user"></i>
-            <i class="fa-solid fa-angle-down"></i>
-          </button>
 
-          <div class="header__action-btn-modal">
-            <div class="header__action-btn-modal-top">
-              <div class="header__action-btn-modal-top-content">
-                <h4 class="header__action-btn-modal-top-title">
-                  Mua thì hời, bán thì lời
-                </h4>
-                <p class="header__action-btn-modal-top-desc">
-                  Đăng nhập cái đã!
-                </p>
-              </div>
+        <div class="header__action-btn-modal-top-image">
+          <img
+            src="{{ asset('images/client/happy_right.webp') }}"
+            alt=""
+            class="header__action-btn-modal-top-img"
+          />
+        </div>
 
-              <div class="header__action-btn-modal-top-image">
-                <img
-                  src="./assets/img/happy_right.webp"
-                  alt=""
-                  class="header__action-btn-modal-top-img"
-                />
-              </div>
-
-              <div class="header__action-btn-modal-top-action">
-                <div class="header__action-btn-modal-top-action-register">
-                  Đăng kí
-                </div>
-                <div class="header__action-btn-modal-top-action-login">
-                  Đăng nhập
-                </div>
-              </div>
-            </div>
-            <h5 class="header__action-btn-modal-title">Tiện ích</h5>
-            <div class="header__action-btn-modal-extensions">
-              <ul class="header__action-btn-modal-extensions-list">
-                <li class="header__action-btn-modal-extensions-item">
-                  <a href="" class="header__action-btn-modal-extensions-link"
-                    >Tin đăng đã lưu</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-extensions-item">
-                  <a href="" class="header__action-btn-modal-extensions-link"
-                    >Tìm kiếm đã lưu</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-extensions-item">
-                  <a href="" class="header__action-btn-modal-extensions-link"
-                    >Lịch sử xem tin</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-extensions-item">
-                  <a href="" class="header__action-btn-modal-extensions-link"
-                    >Đánh giá từ tôi</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-              </ul>
-            </div>
-            <h5 class="header__action-btn-modal-title">Dịch vụ trả phí</h5>
-            <div class="header__action-btn-modal-service">
-              <ul class="header__action-btn-modal-service-list">
-                <li class="header__action-btn-modal-service-item">
-                  <a href="" class="header__action-btn-modal-service-link"
-                    >Đồng tốt</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-service-item">
-                  <a href="" class="header__action-btn-modal-service-link"
-                    >Gói PRO</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-service-item">
-                  <a href="" class="header__action-btn-modal-service-link"
-                    >Kênh đối tác</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-service-item">
-                  <a href="" class="header__action-btn-modal-service-link"
-                    >Lịch sử giao dịch</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-
-                <li class="header__action-btn-modal-service-item">
-                  <a href="" class="header__action-btn-modal-service-link"
-                    >Cửa hàng/Chuyên trang</a
-                  >
-
-                  <a href="" class="header__action-btn-modal-service-create-now"
-                    >Tạo ngay</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <h5 class="header__action-btn-modal-title">Ưu đãi, khuyến mãi</h5>
-            <div class="header__action-btn-modal-sale">
-              <ul class="header__action-btn-modal-sale-list">
-                <li class="header__action-btn-modal-sale-item">
-                  <a href="" class="header__action-btn-modal-sale-link"
-                    >Chợ Tốt ưu đãi</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-sale-item">
-                  <a href="" class="header__action-btn-modal-sale-link"
-                    >Ưu đãi của tôi</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-              </ul>
-            </div>
-            <h5 class="header__action-btn-modal-title">Khác</h5>
-            <div class="header__action-btn-modal-other">
-              <ul class="header__action-btn-modal-other-list">
-                <li class="header__action-btn-modal-other-item">
-                  <a href="" class="header__action-btn-modal-other-link"
-                    >Cài đặt tài khoản</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                <li class="header__action-btn-modal-other-item">
-                  <a href="" class="header__action-btn-modal-other-link"
-                    >Trợ giúp</a
-                  >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </li>
-              </ul>
-            </div>
+        <div class="header__action-btn-modal-top-action">
+          <div class="header__action-btn-modal-top-action-register">
+            Đăng kí
+          </div>
+          <div class="header__action-btn-modal-top-action-login">
+            Đăng nhập
           </div>
         </div>
       </div>
-    </header>
+  <!-- Box After Login -->
+      <div style="display: none;" class="header__action-btn-modal-top-after">
+        <div class="header__action-btn-modal-top-after-image">
+          <img
+            src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+            alt=""
+            class="header__action-btn-modal-top-after-img"
+          />
+          <i class="fa-solid fa-pen"></i>
+        </div>
+
+         <h3 class="header__action-btn-modal-top-after-name">
+            Xuan Trung
+          </h3>
+
+          <div class="header__action-btn-modal-top-after-desc">
+            <span class="header__action-btn-modal-top-after-desc-1">
+              Người theo dõi 0
+            </span>
+            <span class="header__action-btn-modal-top-after-desc-2">
+              Đang theo dõi 0
+            </span>
+          </div>
+
+       <div class="header__action-btn-top-after">
+        <div class="header__action-btn-top-after-list">
+          <div class="header__action-btn-top-after-item-1">
+            <span>TK Định danh</span>
+            <span>V000000000000000 <i class="fa-solid fa-copy"></i></span>
+          </div>
+
+           <div class="header__action-btn-top-after-item-2">
+            <span>Đồng Tốt</span>
+            <span>0</span>
+          </div>
+
+          <a href="" class="header__action-btn-top-after-item-action">Nạp ngay</a>
+        </div>
+      </div>
+
+    </div>
+
+      <h5 class="header__action-btn-modal-title">Tiện ích</h5>
+      <div class="header__action-btn-modal-extensions">
+        <ul class="header__action-btn-modal-extensions-list">
+          <li class="header__action-btn-modal-extensions-item">
+            <a href="" class="header__action-btn-modal-extensions-link">
+              Tin đăng đã lưu
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-extensions-item">
+            <a href="" class="header__action-btn-modal-extensions-link">
+              Tìm kiếm đã lưu
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-extensions-item">
+            <a href="" class="header__action-btn-modal-extensions-link">
+              Lịch sử xem tin
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-extensions-item">
+            <a href="" class="header__action-btn-modal-extensions-link">
+              Đánh giá từ tôi
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+        </ul>
+      </div>
+
+      <h5 class="header__action-btn-modal-title">Dịch vụ trả phí</h5>
+      <div class="header__action-btn-modal-service">
+        <ul class="header__action-btn-modal-service-list">
+          <li class="header__action-btn-modal-service-item">
+            <a href="" class="header__action-btn-modal-service-link">
+              Đồng tốt
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-service-item">
+            <a href="" class="header__action-btn-modal-service-link">
+              Gói PRO
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-service-item">
+            <a href="" class="header__action-btn-modal-service-link">
+              Kênh đối tác
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-service-item">
+            <a href="" class="header__action-btn-modal-service-link">
+              Lịch sử giao dịch
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-service-item">
+            <a href="" class="header__action-btn-modal-service-link">
+              Cửa hàng/Chuyên trang
+            </a>
+            <a
+              href=""
+              class="header__action-btn-modal-service-create-now"
+            >
+              Tạo ngay
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <h5 class="header__action-btn-modal-title">Ưu đãi, khuyến mãi</h5>
+      <div class="header__action-btn-modal-sale">
+        <ul class="header__action-btn-modal-sale-list">
+          <li class="header__action-btn-modal-sale-item">
+            <a href="" class="header__action-btn-modal-sale-link">
+              Chợ Tốt ưu đãi
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-sale-item">
+            <a href="" class="header__action-btn-modal-sale-link">
+              Ưu đãi của tôi
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+        </ul>
+      </div>
+
+      <h5 class="header__action-btn-modal-title">Khác</h5>
+      <div class="header__action-btn-modal-other">
+        <ul class="header__action-btn-modal-other-list">
+          <li class="header__action-btn-modal-other-item">
+            <a href="" class="header__action-btn-modal-other-link">
+              Cài đặt tài khoản
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="header__action-btn-modal-other-item">
+            <a href="" class="header__action-btn-modal-other-link">
+              Trợ giúp
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</header>
     <section class="banner">
       <h1 class="banner__title">Giá tốt, Gần bạn, Chốt nhanh!</h1>
 
@@ -839,7 +890,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category1"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Bất động sản - Mua bán</span>
                 <input id="category1" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -849,7 +900,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category2"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Xe cộ</span>
                 <input id="category2" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -859,7 +910,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category3"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Thời trang, Đồ dùng cá nhân</span>
                 <input id="category3" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -869,7 +920,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category4"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Giải trí, Thể thao, Sở thích</span>
                 <input id="category4" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -879,7 +930,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category5"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Đồ điện tử</span>
                 <input id="category5" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -889,7 +940,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category6"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Dịch vụ, Du lịch</span>
                 <input id="category6" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -899,7 +950,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category7"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Đồ ăn, Thực phẩm và các loại khác</span>
                 <input id="category7" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -909,7 +960,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category8"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Đồ dùng văn phòng, công nông nghiệp</span>
                 <input id="category8" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -919,7 +970,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category9"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Tủ lạnh, máy lạnh, máy giặt</span>
                 <input id="category9" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -929,7 +980,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category10"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Mẹ và bé</span>
                 <input id="category10" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -939,7 +990,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category11"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Thú cưng</span>
                 <input id="category11" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -949,7 +1000,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category12"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Việc làm</span>
                 <input id="category12" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -959,7 +1010,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category13"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Đồ gia dụng, nội thất, cây cảnh</span>
                 <input id="category13" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>
@@ -969,7 +1020,7 @@
 
             <li class="banner__form-category-modal-item">
               <label for="category14"
-                ><span class="label-text">Tất cả danh mục</span>
+                ><span class="label-text">Dịch vụ chăm sóc nhà cửa</span>
                 <input id="category14" type="radio" name="category" />
                 <span class="custom__radaio">
                   <i class="fas fa-check"></i>

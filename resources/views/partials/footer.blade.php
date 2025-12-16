@@ -4,16 +4,16 @@
           <h4 class="footer__item-title">Tải ứng dụng Chợ Tốt</h4>
           <div class="footer__item-action">
             <a href="" class="footer__item-action-qr">
-              <img src="./assets/img/qr-download.png" alt="" />
+              <img src="{{ asset('images/client/qr-download.png')}}" alt="" />
             </a>
 
             <div class="footer__download">
               <a href="" class="footer__download-item">
-                <img src="./assets/img/appstore-dowload.webp" alt="" />
+                <img src="{{ asset('images/client/appstore-dowload.webp')}}" alt="" />
               </a>
 
               <a href="" class="footer__download-item">
-                <img src="./assets/img/googleplay-dowload.webp" alt="" />
+                <img src="{{ asset('images/client/googleplay-dowload.webp')}}" alt="" />
               </a>
             </div>
           </div>
@@ -62,13 +62,13 @@
             <h4 class="footer__item-title">Liên kết</h4>
             <li class="footer__item">
               <a href="" class="footer__item-link-last"
-                ><img src="./assets/img/facebook.webp" alt="" />
+                ><img src="{{ asset('images/client/facebook.webp')}}" alt="" />
               </a>
               <a href="" class="footer__item-link-last">
-                <img src="./assets/img/linkedin.webp" alt="" />
+                <img src="{{ asset('images/client/linkedin.webp')}}" alt="" />
               </a>
               <a href="" class="footer__item-link-last">
-                <img src="./assets/img/youtube.webp" alt="" />
+                <img src="{{ asset('images/client/youtube.webp')}}" alt="" />
               </a>
             </li>
             <li class="footer__item">Email: trogiup@chotot.vn</li>
@@ -91,7 +91,7 @@
             dụng
           </p>
           <img
-            src="./assets/img/certificate.webp"
+            src="{{ asset('images/client/certificate.webp')}}"
             alt=""
             class="copyright__img"
           />

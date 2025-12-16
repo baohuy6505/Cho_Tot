@@ -310,6 +310,8 @@
 }
 
 .header__action-btn .header__action-btn-modal {
+    max-height: 60rem;
+    overflow-y: scroll;
     display: none;
     position: absolute;
     background-color: $color-gray-light;
@@ -320,11 +322,69 @@
     border-radius: 1.2rem;
 }
 
+.header__action-btn-modal::-webkit-scrollbar {
+    display: none;
+}
+.header__action-btn-modal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .header__action-btn-modal-top {
     background-color: $color-white;
     padding: 1.2rem;
     position: relative;
     border-radius: 1.2rem;
+}
+
+.header__action-btn-modal-top-after {
+    .header__action-btn-modal-top-after-name {
+        margin-top: 1.2rem;
+        text-align: center;
+    }
+
+    .header__action-btn-modal-top-after-desc {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #928b8b;
+        text-align: center;
+        margin-top: 0.8rem;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .header__action-btn-modal-top-after-image {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+
+        margin: 0 auto;
+        position: relative;
+
+        .fa-pen {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #fff;
+            background-color: #000;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .header__action-btn-modal-top-after-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
 }
 
 .header__action-btn-modal-top-title {
@@ -397,15 +457,43 @@
     align-items: center;
 }
 
-.header__action-btn-modal-extensions-list
-    .header__action-btn-modal-extensions-item:hover {
+.header__action-btn-modal-extensions-item:hover {
     background-color: #ada8a8;
 }
 
-.header__action-btn-modal-extensions-list
-    .header__action-btn-modal-extensions-item
-    .header__action-btn-modal-extensions-link {
+.header__action-btn-modal-extensions-link {
     color: $color-secondary;
+}
+
+.header__action-btn-top-after {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-top: 1.2rem;
+}
+
+.header__action-btn-top-after-list {
+    background-color: $color-white;
+    padding: 1.2rem 1.8rem;
+
+    .header__action-btn-top-after-item-1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__action-btn-top-after-item-2 {
+        margin-top: 1.4rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__action-btn-top-after-item-action {
+        display: block;
+        background-color: yellow;
+        padding: 1.2rem 2.3rem;
+        border-radius: 0.6rem;
+        text-align: center;
+        margin-top: 1.8rem;
+    }
 }
 
 .header__action-btn-modal-service {
@@ -430,15 +518,11 @@
     background-color: #ada8a8;
 }
 
-.header__action-btn-modal-service-list
-    .header__action-btn-modal-service-item
-    .header__action-btn-modal-service-link {
+.header__action-btn-modal-service-link {
     color: $color-secondary;
 }
 
-.header__action-btn-modal-service-list
-    .header__action-btn-modal-service-item
-    .header__action-btn-modal-service-create-now {
+.header__action-btn-modal-service-create-now {
     font-size: 1.2rem;
     color: $color-secondary;
     border-radius: 999px;
@@ -468,9 +552,7 @@
     background-color: #ada8a8;
 }
 
-.header__action-btn-modal-sale-list
-    .header__action-btn-modal-sale-item
-    .header__action-btn-modal-sale-link {
+.header__action-btn-modal-sale-link {
     color: $color-secondary;
 }
 
@@ -496,9 +578,7 @@
     background-color: #ada8a8;
 }
 
-.header__action-btn-modal-other-list
-    .header__action-btn-modal-other-item
-    .header__action-btn-modal-other-link {
+.header__action-btn-modal-other-link {
     color: $color-secondary;
 }
 

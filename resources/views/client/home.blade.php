@@ -245,7 +245,8 @@
             <i class="fa-regular fa-heart"></i>
             <div class="products__img">
               <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
+              
+                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
                 alt=""
                 class="products__image"
               />
@@ -274,7 +275,7 @@
             <i class="fa-regular fa-heart"></i>
             <div class="products__img">
               <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
+                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
                 alt=""
                 class="products__image"
               />
@@ -303,7 +304,7 @@
             <i class="fa-regular fa-heart"></i>
             <div class="products__img">
               <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
+                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
                 alt=""
                 class="products__image"
               />
@@ -332,7 +333,7 @@
             <i class="fa-regular fa-heart"></i>
             <div class="products__img">
               <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
+                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
                 alt=""
                 class="products__image"
               />
@@ -361,7 +362,7 @@
             <i class="fa-regular fa-heart"></i>
             <div class="products__img">
               <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
+                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
                 alt=""
                 class="products__image"
               />
@@ -390,7 +391,7 @@
             <i class="fa-regular fa-heart"></i>
             <div class="products__img">
               <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
+                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
                 alt=""
                 class="products__image"
               />
@@ -555,7 +556,7 @@
           <div class="banner-download__action">
             <a href="" class="banner-download__action-link">
               <img
-                src="./assets/img/appstore-dowload.webp"
+                src=" {{ asset('images/client/appstore-dowload.webp')}}"
                 alt=""
                 class="banner-download__action-img"
               />
@@ -563,7 +564,7 @@
 
             <a href="" class="banner-download__action-link">
               <img
-                src="./assets/img/googleplay-dowload.webp"
+                src="{{ asset('images/client/googleplay-dowload.webp')}}"
                 alt=""
                 class="banner-download__action-img"
               />
