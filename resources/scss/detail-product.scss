@@ -1,0 +1,347 @@
+.listing-manager {
+  background-color: #ffffff;
+  max-width: 980px;
+  margin: 100px auto;
+  padding: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222222;
+  .listing-manager__tab--active {
+    color: #f80;
+  }
+  /* 1. Top Bar */
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__breadcrumb {
+    font-size: 14px;
+    color: #777777;
+    &-link {
+      text-decoration: none;
+      color: #9b9b9b;
+
+      &:hover {
+        text-decoration: underline;
+        color: #38699f;
+      }
+    }
+
+    &-separator {
+      margin: 0 8px;
+      font-size: 18px;
+      position: relative;
+      top: 1px;
+    }
+
+    &-current {
+      color: #222222;
+    }
+  }
+
+  &__notification {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: #f8f8f8;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+
+  &__notify-icon {
+    position: relative;
+    font-size: 16px;
+    margin-right: 8px;
+    color: #d0021b;
+
+    .fa-bell {
+      color: #999999;
+    }
+  }
+
+  &__notify-badge {
+    background-color: #d0021b;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 4px;
+    text-transform: uppercase;
+  }
+
+  &__notify-text {
+    font-weight: normal;
+    font-size: 14px;
+    color: #222222;
+  }
+
+  /* 2. Toolbar */
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__shortcuts {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  &__pill {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #222222;
+    transition: all 0.2s;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #eeeeee;
+    }
+
+    &-icon {
+      margin-right: 6px;
+    }
+
+    /* Modifier for PRO badge */
+    &--pro {
+      .listing-manager__pill-badge {
+        background-color: #000000;
+        color: #ffba00;
+        font-size: 10px;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &__search {
+    position: relative;
+    width: 320px;
+
+    &-input {
+      width: 100%;
+      padding: 10px 12px 10px 40px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
+      color: #222222;
+
+      &:focus {
+        border-color: #777777;
+      }
+
+      &::placeholder {
+        color: #999999;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999999;
+      font-size: 16px;
+    }
+  }
+
+  /* 3. User Profile */
+  &__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__avatar {
+    width: 64px;
+    height: 64px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #eeeeee;
+    }
+  }
+
+  &__user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #222222;
+  }
+
+  &__create-shop {
+    text-decoration: none;
+    color: #38699f;
+    font-size: 15px;
+
+    i {
+      font-size: 12px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__balance-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f8f8;
+    padding: 6px 6px 6px 12px;
+    border-radius: 4px;
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: #222222;
+  }
+
+  &__coin-icon {
+    margin-right: 6px;
+    color: #e6b800;
+  }
+
+  &__deposit-btn {
+    background-color: #37a344;
+    color: #ffffff;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    font-size: 12px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  /* 4. Tabs */
+  &__tabs {
+    display: flex;
+    margin-bottom: 0;
+    overflow-x: auto;
+  }
+
+  &__tab {
+    padding: 12px 0;
+    margin-right: 32px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #222222;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+      color: #f80;
+    }
+
+    &--active {
+      opacity: 1;
+      border-bottom-color: #f80;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  /* 5. Content (Empty State) */
+  &__content {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+
+  &__empty-state {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+
+  &__empty-image {
+    width: 400px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  &__empty-text {
+    font-size: 16px;
+    color: #777777;
+    margin-bottom: 24px;
+  }
+
+  &__post-btn {
+    display: inline-block;
+    background-color: #ffba00;
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 32px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #e6a800;
+    }
+  }
+}

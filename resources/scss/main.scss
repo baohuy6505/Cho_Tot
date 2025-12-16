@@ -1,0 +1,19 @@
+// main.scss
+
+// 1. Abstracts (Variables, Mixins, etc.)
+@import "abstract/variables";
+
+// 2. Base styles and external imports
+@import "layout/base";
+@import "details.scss";
+@import "detail-product.scss";
+
+// 3. Layout (Major Structural Components)
+@import "layout/header";
+@import "layout/banner";
+@import "layout/footer";
+@import "layout/login-box-and-ads";
+
+// 4. Pages (Page-specific styles)
+@import "pages/home";
+@import "pages/responsive";

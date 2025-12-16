@@ -1,0 +1,454 @@
+// layout/_banner.scss
+
+//=========== Banner
+.banner {
+  position: relative;
+  background-image: url("../img/f22189d121c21189410279fcf9696c38-2941305024038426223.jpg"),
+    linear-gradient(180deg, #ffba01, #ffe62f);
+  height: 23vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  z-index: 3;
+}
+
+.banner__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+// Banner Form
+.banner__form {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  background-color: $color-white;
+  border-radius: 2.4rem;
+  padding: 1.2rem 4.8rem;
+  left: 50%;
+  gap: 1rem;
+  z-index: 3;
+  transition: all 0.3s linear;
+  max-width: 90rem;
+  width: 100%;
+}
+
+.banner__form:hover {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+.banner__form-category-modal {
+  border-top-left-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
+  display: none;
+  max-height: 48rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 7rem;
+  background-color: $color-white;
+  z-index: 3;
+}
+
+.banner__form-category-modal-item {
+  padding: 1.8rem 1.2rem;
+  min-width: 25rem;
+}
+
+.banner__form-category-modal-item:hover {
+  background-color: $color-gray-light;
+}
+
+//custom-radio for modal item
+.banner__form-category-modal-item label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.banner__form-category-modal-item
+  label
+  input[type="radio"]:checked
+  + .custom__radaio {
+  background-color: $color-primary;
+  border: 2px solid $color-primary;
+}
+
+.banner__form-category-modal-item
+  label
+  input[type="radio"]:checked
+  + .custom__radaio
+  .fa-check {
+  opacity: 1;
+}
+
+.banner__form-category-modal-item label input[type="radio"] {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.banner__form-category-modal-item .custom__radaio {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__form-category-modal-item .custom__radaio:hover {
+  border: 2px solid $color-secondary;
+}
+
+.banner__form-category-modal-item .custom__radaio .fa-check {
+  opacity: 0;
+}
+
+.banner__form-category-modal.show {
+  display: block;
+}
+
+.banner__form-category {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-right: 2.4rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-right: 1px solid #e0d8d8;
+  font-weight: bold;
+}
+
+.banner__form-category .fa-sort-down {
+  margin-left: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.banner__input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.banner__input .banner__form-inp {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.banner__form-adress {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid $color-gray-light;
+  border-radius: 1.2rem;
+  padding: 1rem 2.4rem;
+  font-weight: bold;
+}
+
+.banner__form-adress:hover {
+  background-color: $color-gray-light;
+}
+
+.banner__form-adress .fa-location-dot {
+  color: #ffe62f;
+}
+
+.banner__form-adress .fa-sort-down {
+  margin-bottom: 1.2rem;
+}
+
+.banner__form-adress-modal {
+  display: none;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  background-color: $color-white;
+  min-width: 35rem;
+  border-radius: 1.2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.banner__form-adress-modal-title {
+  padding: 1.6rem;
+  border-bottom: 1px solid $color-gray-light;
+  text-align: center;
+}
+
+.banner__form-adress-modal-address {
+  padding: 2.4rem;
+  border-bottom: 1px solid $color-gray-light;
+}
+
+.banner__form-adress-modal-conscious {
+  padding: 1.2rem 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 1.6rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__form-adress-modal-conscious:hover {
+  border: 2px solid $color-secondary;
+}
+
+.banner__form-adress-modal-conscious-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.banner__form-adress-modal-conscious-desc {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.banner__form-adress-modal-district {
+  padding: 1.2rem 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__form-adress-modal-district:hover {
+  border: 2px solid $color-secondary;
+}
+
+.banner__form-adress-modal-district-title {
+  font-size: 1.2rem;
+  padding: 0.75rem 0;
+}
+
+.banner__form-adress-modal-district-desc {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.banner__form-adress-modal-action {
+  margin: 2.4rem;
+  cursor: pointer;
+  width: 86%;
+  padding: 1.2rem 0;
+  border-radius: 1.6rem;
+  background-color: $color-primary;
+  border: none;
+  font-weight: bold;
+}
+
+.banner__form-adress-modal-action:hover {
+  background-color: rgba($color-primary, 0.478);
+}
+
+.banner__form-adress-sub-modal-district,
+.banner__form-adress-sub-modal-conscious {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  min-width: 35rem;
+  border-radius: 1.2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 40rem;
+}
+
+.banner__form-adress-sub-modal-district .fa-arrow-left,
+.banner__form-adress-sub-modal-conscious .fa-arrow-left {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.banner__form-adress-sub-modal-district-container-list,
+.banner__form-adress-sub-modal-conscious-container-list {
+  max-height: 25rem;
+  overflow-y: scroll;
+}
+
+.banner__form-adress-sub-modal-district-container-list::-webkit-scrollbar,
+.banner__form-adress-sub-modal-conscious-container-list::-webkit-scrollbar {
+  display: none;
+}
+
+.banner__form-adress-sub-modal-district-container-list,
+.banner__form-adress-sub-modal-conscious-container-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.banner__form-adress-sub-modal-district-title,
+.banner__form-adress-sub-modal-conscious-title {
+  padding: 1.6rem;
+  border-bottom: 1px solid $color-gray-light;
+  text-align: center;
+}
+
+.banner__form-adress-sub-modal-district-input,
+.banner__form-adress-sub-modal-conscious-input {
+  padding: 1.2rem;
+  position: relative;
+}
+
+.banner__form-adress-sub-modal-district-input .fa-magnifying-glass,
+.banner__form-adress-sub-modal-conscious-input .fa-magnifying-glass {
+  position: absolute;
+  left: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.banner__form-adress-sub-modal-district-input
+  .banner__form-adress-sub-modal-district-inp,
+.banner__form-adress-sub-modal-conscious-input
+  .banner__form-adress-sub-modal-conscious-inp {
+  width: 100%;
+  padding: 1.2rem 3.2rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background-color: $color-gray-light;
+}
+
+.banner__form-adress-sub-modal-district-item,
+.banner__form-adress-sub-modal-conscious-item {
+  padding: 1.6rem;
+}
+
+.banner__form-adress-sub-modal-district-item label,
+.banner__form-adress-sub-modal-conscious-item label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.banner__form-adress-sub-modal-district-item
+  label
+  input[type="radio"]:checked
+  + .custom__radaio,
+.banner__form-adress-sub-modal-conscious-item
+  label
+  input[type="radio"]:checked
+  + .custom__radaio {
+  background-color: $color-primary;
+  border: 2px solid $color-primary;
+}
+
+.banner__form-adress-sub-modal-district-item
+  label
+  input[type="radio"]:checked
+  + .custom__radaio
+  .fa-check,
+.banner__form-adress-sub-modal-conscious-item
+  label
+  input[type="radio"]:checked
+  + .custom__radaio
+  .fa-check {
+  opacity: 1;
+}
+
+.banner__form-adress-sub-modal-district-item label input[type="radio"],
+.banner__form-adress-sub-modal-conscious-item label input[type="radio"] {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.banner__form-adress-sub-modal-district-item .custom__radaio,
+.banner__form-adress-sub-modal-conscious-item .custom__radaio {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__form-adress-sub-modal-district-item .custom__radaio:hover,
+.banner__form-adress-sub-modal-conscious-item .custom__radaio:hover {
+  border: 2px solid $color-secondary;
+}
+
+.banner__form-adress-sub-modal-district-item .custom__radaio .fa-check,
+.banner__form-adress-sub-modal-conscious-item .custom__radaio .fa-check {
+  opacity: 0;
+}
+
+.banner__form-search {
+  cursor: pointer;
+  border-radius: 1.2rem;
+  padding: 1.6rem 3.2rem;
+  background-color: #ffe62f;
+  color: $color-secondary;
+  border: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+// Banner Download
+.banner-download {
+  background: linear-gradient(180deg, #ffba01, #ffe62f);
+  margin-top: 1.2rem;
+}
+
+.banner-content {
+  margin: 0 auto;
+  width: $container-width;
+  position: relative;
+  background-image: url("../img/bg-uni-homepage.webp");
+  height: 30vh;
+  background-position: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.banner-content .banner-download__content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2rem;
+}
+
+.banner-download__title {
+  font-weight: bold;
+  font-size: 3.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.banner-download__desc {
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.banner-download__action-link {
+  width: 15rem;
+  height: 5rem;
+  display: inline-block;
+}
+
+.banner-download__action-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
