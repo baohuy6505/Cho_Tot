@@ -1,4 +1,5 @@
 @extends('admin.layouts.admin')
+
 @section('content')
     <style>
         .table-img {
@@ -7,47 +8,139 @@
             object-fit: cover;
             border-radius: 6px;
         }
+
+        /* Thêm hiệu ứng hover cho card để người dùng biết bấm được */
+        .card-filter {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card-filter:hover {
+            transform: translateY(-5px);
+        }
     </style>
+
     <div class="container mt-5">
+
         <h2 class="mb-4 text-center">Danh Sách Bài Đăng</h2>
 
+        <div class="row mb-4">
+            {{-- Nút Tất cả --}}
+            <div class="col-md-4">
+                <a href="{{ route('admin.posts.list') }}"
+                    class="card card-filter text-center text-decoration-none shadow-sm border-0 
+               {{ !request()->has('status') ? 'bg-primary text-white' : 'bg-light' }}">
+                    <div class="card-body">
+                        <h6>Tất cả bài đăng</h6>
+                        <h3>{{ $totalPosts }}</h3>
+                    </div>
+                </a>
+            </div>
+
+            {{-- Nút Chờ duyệt --}}
+            <div class="col-md-4">
+                <a href="{{ route('admin.posts.list', ['status' => 'pending']) }}"
+                    class="card card-filter text-center text-decoration-none shadow-sm border-0 
+               {{ request('status') == 'pending' ? 'bg-warning text-dark' : 'bg-light' }}">
+                    <div class="card-body">
+                        <h6>Bài chờ duyệt</h6>
+                        <h3>{{ $pendingPosts }}</h3>
+                    </div>
+                </a>
+            </div>
+
+            {{-- Nút Đang hoạt động --}}
+            <div class="col-md-4">
+                <a href="{{ route('admin.posts.list', ['status' => 'active']) }}"
+                    class="card card-filter text-center text-decoration-none shadow-sm border-0 
+               {{ request('status') == 'active' ? 'bg-success text-white' : 'bg-light' }}">
+                    <div class="card-body">
+                        <h6>Bài đang hoạt động</h6>
+                        <h3>{{ $activePosts }}</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        {{-- ===== TABLE ===== --}}
         <div class="card shadow">
             <div class="card-body">
 
-                <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Tiêu đề</th>
-                            <th>Giá</th>
-                            <th>Ảnh</th>
-                            <th>Trạng thái</th>
-                            <th>Ngày tạo</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach($dataPosts as $item)
+                {{-- Kiểm tra nếu không có dữ liệu --}}
+                @if ($dataPosts->count() > 0)
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead class="table-dark">
                             <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->title }}</td>
-                                <td>{{ number_format($item->price) }}₫</td>
-                                <td>
-                                    @if($item->images->count() > 0)
-                                        <img src="{{ $item->images[0]->image_url }}" class="table-img">
-                                    @endif
-                                </td>
-                                <td><span class="badge bg-success">{{ $item->status }}</span></td>
-                                <td>{{ $item->created_at }}</td>
-                                <td>
-                                    <a href="{{ route('admin.posts.detail', $item->id )}}" class="btn btn-sm btn-primary">Xem</a>
-                                    {{-- <a href="{{ route('admin.posts.delete', $item->id )}}" class="btn btn-sm btn-danger">Xóa</a> --}}
-                                </td>
+                                <th>STT</th>
+                                <th style="width: 25%;">Tiêu đề</th> {{-- Giới hạn chiều rộng tiêu đề --}}
+                                <th>Giá</th>
+                                <th>Ảnh</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày tạo</th>
+                                <th>Hành động</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+
+                        <tbody>
+                            @foreach ($dataPosts as $item)
+                                <tr>
+                                    {{-- Dem so thu tu --}}
+                                    <td class="text-center">{{ $loop->iteration }}</td>
+                                    <td>{{ $item->title }}</td>
+                                    <td class="fw-bold text-danger">{{ number_format($item->price) }} ₫</td>
+
+                                    <td>
+                                        @if ($item->images->count() > 0)
+                                            <img src="{{ $item->images[0]->image_url }}" class="table-img">
+                                        @else
+                                            <span class="text-muted small">No image</span>
+                                        @endif
+                                    </td>
+
+                                    {{-- TRẠNG THÁI --}}
+                                    <td>
+                                        @php
+                                            $statusConfig = match ($item->status) {
+                                                'pending' => ['class' => 'warning', 'label' => 'Chờ duyệt'],
+                                                'active' => ['class' => 'success', 'label' => 'Hoạt động'],
+                                                'blocked' => ['class' => 'danger', 'label' => 'Đã khóa'],
+                                                default => ['class' => 'secondary', 'label' => $item->status],
+                                            };
+                                        @endphp
+
+                                        {{--Them gia tri tu bien o tren vao the span--}}
+                                        <span class="badge bg-{{ $statusConfig['class'] }}">
+                                            {{ $statusConfig['label'] }}
+                                        </span>
+                                    </td>
+
+                                    <td>{{ $item->created_at->format('d/m/Y') }}</td>
+
+                                    <td>
+                                        <a href="{{ route('admin.posts.detail', $item->id) }}"
+                                            class="btn btn-sm btn-outline-primary">
+                                            <i class="fa fa-eye"></i> Xem
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <div class="text-muted small">
+                            Hiển thị {{ $dataPosts->firstItem() }}
+                            – {{ $dataPosts->lastItem() }}
+                            trên {{ $dataPosts->total() }} bài đăng
+                        </div>
+
+                        {{ $dataPosts->links('pagination::bootstrap-5') }}
+                    </div>
+                @else
+                    <div class="text-center py-4">
+                        <p class="text-muted mb-0">Không tìm thấy bài đăng nào ở trạng thái này.</p>
+                    </div>
+                @endif
 
             </div>
         </div>

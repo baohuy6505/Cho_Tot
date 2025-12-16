@@ -64,7 +64,7 @@
                             <td>
                                 <span class="badge bg-info">{{ $category->posts->count() ?? 0 }}</span>
                             </td>
-                            <td class="text-muted small">{{ $category->created_at?->format('d/m/Y H:i') }}</td>
+                            <td class="text-muted small">{{ $category->created_at?->format('d/m/Y') }}</td>
                             <td class="text-end">
                                 <form class="d-inline" action="{{ route('admin.category.delete', $category->id) }}" method="post" 
                                       onsubmit="return confirm('Bạn có chắc muốn xóa category {{ $category->name}}?')">
