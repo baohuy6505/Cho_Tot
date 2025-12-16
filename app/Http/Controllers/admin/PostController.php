@@ -12,8 +12,6 @@ class PostController extends Controller
 {
     public function listPosts(Request $request)
     {
-        // 1. THỐNG KÊ (Luôn đếm tổng toàn bộ DB bất kể đang lọc cái gì)
-        // Lưu ý: Vẫn giữ điều kiện loại bỏ 'blocked' như logic cũ của bạn
         $totalPosts   = Post::where('status', '!=', 'blocked')->count();
         $pendingPosts = Post::where('status', 'pending')->count();
         $activePosts  = Post::where('status', 'active')->count();
@@ -23,15 +21,13 @@ class PostController extends Controller
             ->where('status', '!=', 'blocked')
             ->latest();
 
-        // 3. XỬ LÝ LỌC (FILTER)
-        // Nếu trên URL có ?status=pending hoặc ?status=active thì thêm điều kiện where
+        //nếu trên url có ?status=pending hoặc ?status=active thì thêm điều kiện where
         if ($request->filled('status')) {
             $query->where('status', $request->status);
         }
 
-        // 4. LẤY DỮ LIỆU CUỐI CÙNG
-        // Bạn có thể dùng ->paginate(10) thay vì ->get() nếu muốn phân trang
-        $dataPosts = $query->get(); 
+        //paginate(10) thay vì ->get() nếu muốn phân trang
+        $dataPosts = $query->paginate(10); 
 
         return view('admin.posts.index', compact(
             'dataPosts',
