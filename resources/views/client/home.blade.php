@@ -384,35 +384,6 @@
               </div>
             </div>
           </a>
-
-          <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-                src="./assets/img/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
-            </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
         </div>
         <div class="products__continute">Xem thêm</div>
       </div>

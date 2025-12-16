@@ -61,6 +61,6 @@ class PostController extends Controller
             $img->delete();
         }
         $post->delete();
-        return redirect()->route('client.posts.list')->with('success', 'Xóa bài đăng thành công!');
+        return redirect()->route('admin.posts.list')->with('success', 'Xóa bài đăng thành công!');
     }
 }

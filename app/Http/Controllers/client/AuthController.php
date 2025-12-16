@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\client;
+
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-    //
+    //  
     public function showLogin()
     {
         return view('client.auth.login');
@@ -34,7 +36,7 @@ class AuthController extends Controller
 
         //
         $field = filter_var($loginInput, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
-//
+        //
         $user = User::where($field, $loginInput)->first();
 
         //
@@ -55,7 +57,7 @@ class AuthController extends Controller
         ]);
     }
 
-// dang ky
+    // dang ky
     public function register(Request $request)
     {
         $request->validate([
@@ -83,7 +85,7 @@ class AuthController extends Controller
     }
 
 
-   //dang nhập
+    //dang nhập
     public function login(Request $request)
     {
         $request->validate([
@@ -115,7 +117,7 @@ class AuthController extends Controller
     }
 
 
-        public function logout(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
 
@@ -123,5 +125,35 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('login');
+    }
+
+    public function redirectWithGoogle()
+    {
+        return Socialite::driver('google')
+            // ->redirectUrl('http://localhost:8000/auth/google/callback')
+            ->redirect();
+    }
+
+    public function loginWithGoogle()
+    {
+        $googleUser = Socialite::driver('google')->stateless()->user();//do nhung van hoat dong
+        $dataUser = User::where('email',$googleUser->email)->first();
+        if(!$dataUser){
+           $dataUser = User::create([
+            'name' => $googleUser->name,
+            'email' => $googleUser->email,
+            'password' => bcrypt(uniqid()),//dung uniqid tao chuoi ngau nhien & ma hoa 
+            'role' => 'user',
+            'reputation' => 0,
+            'avatar' => $googleUser->avatar,
+           ]);
+        }
+        Auth::login($dataUser);//luu thong tin vao session
+        return redirect()->route('home');
+
+        // return response()->json([
+        //     'message' => 'Post created successfully!',
+        //     'dataSlug' => $googleUser
+        // ]);
     }
 }
