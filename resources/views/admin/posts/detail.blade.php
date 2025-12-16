@@ -85,6 +85,7 @@
                 <hr>
                 <form action="{{ route('admin.posts.delete', $dataPost->id) }}" method="post" onsubmit="return confirm('Xóa bài đăng này?');">
                     @csrf 
+                      @method('DELETE')
                     <button class="btn btn-outline-danger w-100">Xóa vĩnh viễn</button>
                 </form>
             </div>

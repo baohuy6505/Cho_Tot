@@ -8,8 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}">
+
 </head>
-    
+
 <body>
     <div class="admin-container">
         <!-- Sidebar -->
@@ -49,7 +51,7 @@
                     </a>
                 </li>
                 <li class="admin-nav-item">
-                    <a href="/Admin/Category" class="admin-nav-link">
+                    <a href="{{ route('admin.category.list') }}" class="admin-nav-link">
                         <span class="admin-icon admin-category-icon"></span>
                         <span class="admin-label">Category</span>
                     </a>
@@ -101,13 +103,57 @@
         <div class="admin-overlay"></div>
         <button class="admin-menu-toggle">☰</button>
         <main class="admin-main-content">
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                @if (session('error'))
+                    <div class="toast align-items-center text-white bg-danger border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Lỗi: {{ session('error') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
 
+                @if (session('success'))
+                    <div class="toast align-items-center text-white bg-success border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Thành công: {{ session('success') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                                data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
+
+            </div>
             <div class="container-fluid">
+
                 @yield('content')
             </div>
         </main>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+
+            // Khởi tạo Bootstrap Toast cho từng element
+            const toastList = toastElList.map(function(toastEl) {
+                const toast = new bootstrap.Toast(toastEl, {
+                    // Tự động ẩn sau 4000ms (4 giây) nếu không có data-bs-delay khác
+                    autohide: true,
+                });
+                toast.show();
+                return toast;
+            });
+        });
+    </script>
     <script src="{{ asset('js/admin/admin.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

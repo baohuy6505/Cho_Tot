@@ -35,6 +35,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login/check', [AuthController::class, 'checkAccount'])->name('login.check');
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
+    Route::get('/auth/google/redirect',[AuthController::class, 'redirectWithGoogle'])->name('google.redirect');
+    Route::get('/auth/google/callback',[AuthController::class, 'loginWithGoogle'])->name('google.callback');
 });
 
 
@@ -56,5 +58,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/posts/store', [PostController::class, 'storeUserPost'])->name('client.posts.store');
     Route::get('/posts/edit/{id}', [PostController::class, 'editUserPost'])->name('client.posts.edit');
     Route::post('/posts/update/{id}', [PostController::class, 'updateUserPost'])->name('client.posts.update');
-    Route::post('/posts/delete/{id}', [PostController::class, 'deletePost'])->name('client.posts.delete');
+    Route::delete('/posts/delete/{id}', [PostController::class, 'deletePost'])->name('client.posts.delete');
 });
