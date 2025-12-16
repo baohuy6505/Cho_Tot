@@ -35,6 +35,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login/check', [AuthController::class, 'checkAccount'])->name('login.check');
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
+    Route::get('/auth/google/redirect',[AuthController::class, 'redirectWithGoogle'])->name('google.redirect');
+    Route::get('/auth/google/callback',[AuthController::class, 'loginWithGoogle'])->name('google.callback');
 });
 
 
