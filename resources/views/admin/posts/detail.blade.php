@@ -63,7 +63,7 @@
                     <div>
                         <div class="text-muted small">Người đăng</div>
                         <div class="fw-semibold">{{ $dataPost->user->name ?? 'N/A' }}</div>
-                        <div class="small text-muted">Uy tín: {{ $dataPost->user->reputation ?? 0 }}</div>
+                        {{-- <div class="small text-muted">Uy tín: {{ $dataPost->user->reputation ?? 0 }}</div> --}}
                     </div>
                     <span class="badge bg-light text-primary">{{ $dataPost->created_at?->format('d/m/Y') }}</span>
                 </div>

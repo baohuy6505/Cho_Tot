@@ -5,26 +5,16 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\client\AuthController;
 use App\Http\Controllers\client\PostController;
 use App\Http\Controllers\client\CommentController;
-
+use App\Http\Controllers\client\HomeController;
 // ==========================================
 // 1. PUBLIC ROUTES (Ai cũng xem được)
 // ==========================================
 
-Route::view('/', 'client.home')->name('home');
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 // Xem danh sách và chi tiết bài viết thì không cần đăng nhập
 Route::get('/posts', [PostController::class, 'index'])->name('client.posts.list');
 Route::get('/posts/detail/{slug}', [PostController::class, 'detail'])->name('client.posts.detail');
-
-// Route test session (Xóa sau khi hoàn thành dự án)
-Route::get('/test-session', function () {
-    session(['name' => 'Duong']);
-    return 'Saved!';
-});
-Route::get('/get-session', function () {
-    return session('name');
-});
-
 
 // ==========================================
 // 2. GUEST ROUTES (Chưa đăng nhập mới vào được)
