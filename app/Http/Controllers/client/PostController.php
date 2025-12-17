@@ -33,7 +33,7 @@ class PostController extends Controller
             ->where('status', 'active')
             ->latest()
             ->paginate($perPage, ['*'], 'active_page');
-        return View('client.posts.index', compact('activePosts', 'pendingPosts',));
+        return View('client.posts.index', compact('activePosts', 'pendingPosts','blockedPosts'));
     }
 
     public function detail($slug)
