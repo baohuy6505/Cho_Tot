@@ -48,9 +48,18 @@
         </div>
     </div>
 
-   
+    {{-- do su dung js o file rieng nen su dung buoc nay de truyen du lieu vao  --}}
+    <script>
+        window.dashboardData = {
+            monthlyPosts: @json($monthlyPosts),
+            statusDistribution: {
+                active: {{ $active }},
+                pending: {{ $pending }},
+                blocked: {{ $blocked }}
+            }
+        };
+    </script>
     <script src="{{ asset('js/admin/dashboard.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
-        onload="if(typeof initCharts === 'function') initCharts(dashboardData)"
-        ></script>
+        onload="if(typeof initCharts === 'function') initCharts(dashboardData)"></script>
 @endsection

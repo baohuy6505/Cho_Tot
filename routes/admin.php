@@ -3,10 +3,10 @@
 use App\Http\Controllers\admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\PostController;
+use App\Http\Controllers\admin\Homecontroller;
 
-Route::get('/home', function () {
-    return view('admin.homeAdmin');
-});
+//ADMIN ROUTES HOME
+Route::get('/home', [Homecontroller::class, 'index'])->name('home');
 
 //ADMIN ROUTES CATEGORY
 Route::get('/category',[CategoryController::class,'index'])->name('category.list');

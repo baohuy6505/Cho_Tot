@@ -21,13 +21,13 @@
                     <img src="/images/logofile.png" alt="Logo" class="img-fluid" style="max-width: 50px;" />
                 </div>
 
-                <h2>Shop Shoes Manager</h2>
+                <h2>Cho Tot</h2>
             </div>
 
             <div class="admin-sidebar-section">Overview</div>
             <ul class="admin-nav-menu">
                 <li class="admin-nav-item">
-                    <a href="/Admin/Home" class="admin-nav-link">
+                    <a href="{{ route('admin.home') }}" class="admin-nav-link">
                         <span class="admin-icon admin-dashboard-icon"></span>
                         <span class="admin-label"> Dashboard</span>
                     </a>
@@ -38,18 +38,18 @@
                         <span class="admin-label">Quản lí bài viết</span>
                     </a>
                 </li>
-                <li class="admin-nav-item">
+               {{--  <li class="admin-nav-item">
                     <a href="/Admin/ProductVariant" class="admin-nav-link">
                         <span class="admin-icon admin-product-variant-icon"></span>
                         <span class="admin-label">ProductVariant</span>
                     </a>
-                </li>
+                </li> 
                 <li class="admin-nav-item">
                     <a href="/Admin/Product" class="admin-nav-link">
                         <span class="admin-icon admin-wallet-icon"></span>
                         <span class="admin-label">Product</span>
                     </a>
-                </li>
+                </li>--}}
                 <li class="admin-nav-item">
                     <a href="{{ route('admin.category.list') }}" class="admin-nav-link">
                         <span class="admin-icon admin-category-icon"></span>
