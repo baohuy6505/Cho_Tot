@@ -205,7 +205,7 @@
         const qrImage = document.getElementById('payment-qr-img');
         
         //cấu hình ngân hàng
-        const bankInfo = "BIDV-8880413951-compact.png"; 
+        const bankInfo = "BIDV-96247H6505-compact.png"; 
         const content = "NAPTIEN USER{{ Auth::id() }}";
 
         function updateQR() {

@@ -19,11 +19,12 @@ class PaymentController extends Controller
         $content = $request->input('content');
         // 2. Kiểm tra bảo mật (SePay có gửi kèm API Key trong Header nếu bạn cài)
         $sepayHeader = $request->header('Authorization');
-        $token = str_replace('Bearer ', '', $sepayHeader);
-        if ($token !== env('SEPAY_API_KEY')) 
-           {
-             return response()->json(['error' => 'Unauthorized'], 401);
-           }
+        // Sửa dòng này để cắt chữ "Apikey " thay vì "Bearer "
+        $token = str_replace('Apikey ', '', $sepayHeader);
+
+        if ($token !== env('SEPAY_API_KEY')) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
 
         //tach noi dung chuyen khoang lay id
         if (preg_match('/USER(\d+)/i', $content, $matches)) {
