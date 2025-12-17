@@ -52,9 +52,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/posts/delete/{id}', [PostController::class, 'deletePost'])->name('client.posts.delete');
 
     //Chuc nang nap tien vao tai khoan CHOTOT
-    Route::get('/nap-tien',[PaymentController::class,'index'])->name('payment');
-    Route::post('/api/webhook/payment',[PaymentController::class,'webhook']);
+    // Route::get('/nap-tien',[PaymentController::class,'index'])->name('payment');
+    // Route::post('/api/webhook/payment',[PaymentController::class,'webhook']);
 });
 
-//  Route::get('/nap-tien',[PaymentController::class,'index'])->name('payment');
-//  Route::post('/api/webhook/payment',[PaymentController::class,'webhook']);
+ Route::get('/nap-tien',[PaymentController::class,'index'])->name('payment');
+ Route::post('/api/webhook/payment',[PaymentController::class,'webhook']);
