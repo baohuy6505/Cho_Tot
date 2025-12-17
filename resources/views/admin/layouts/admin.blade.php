@@ -27,7 +27,7 @@
             <div class="admin-sidebar-section">Overview</div>
             <ul class="admin-nav-menu">
                 <li class="admin-nav-item">
-                    <a href="/Admin/Home" class="admin-nav-link">
+                    <a href="/admin/home" class="admin-nav-link">
                         <span class="admin-icon admin-dashboard-icon"></span>
                         <span class="admin-label"> Dashboard</span>
                     </a>
@@ -36,18 +36,6 @@
                     <a href="{{ route('admin.posts.list') }}" class="admin-nav-link">
                         <span class="admin-icon admin-order-list-icon"></span>
                         <span class="admin-label">Quản lí bài viết</span>
-                    </a>
-                </li>
-                <li class="admin-nav-item">
-                    <a href="/Admin/ProductVariant" class="admin-nav-link">
-                        <span class="admin-icon admin-product-variant-icon"></span>
-                        <span class="admin-label">ProductVariant</span>
-                    </a>
-                </li>
-                <li class="admin-nav-item">
-                    <a href="/Admin/Product" class="admin-nav-link">
-                        <span class="admin-icon admin-wallet-icon"></span>
-                        <span class="admin-label">Product</span>
                     </a>
                 </li>
                 <li class="admin-nav-item">

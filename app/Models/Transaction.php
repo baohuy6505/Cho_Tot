@@ -9,7 +9,7 @@ use App\Models\Post;
 class Transaction extends Model
 {
     protected $fillable = [
-        'buyer_id','seller_id','post_id','status','rating'
+        'buyer_id','seller_id','post_id'
     ];
 
     public function buyer() {

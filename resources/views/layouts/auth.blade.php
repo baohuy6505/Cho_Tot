@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/clients/login.css') }}">
     <link rel="stylesheet" href="{{ asset('css/clients/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/notify.css') }}">    
+
     @stack('styles') 
 
 </head>

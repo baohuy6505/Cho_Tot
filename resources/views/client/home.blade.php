@@ -243,142 +243,60 @@
 
         <!-- Danh sách sản phẩm -->
         <div class="products__list">
-          <!-- Item 1 -->
-          <div class="products__item-wrapper">
+          @foreach($dataPost as $post)
+    <div class="products__item-wrapper">
 
-              <!-- FORM YÊU THÍCH -->
-              <form class="favorite-form">
-                  <input type="checkbox" id="favorite" name="favorite" hidden>
+        <form class="favorite-form">
+            <input type="checkbox" id="favorite-{{ $post->id }}" name="favorite" hidden>
 
-                  <label for="favorite" class="heart-btn">
-                      <svg
-                          class="heart-icon"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                      >
-                          <path
-                              d="M12 21.35l-1.45-1.32
-                                C5.4 15.36 2 12.28 2 8.5
-                                2 5.42 4.42 3 7.5 3
-                                9.24 3 10.91 3.81 12 5.08
-                                13.09 3.81 14.76 3 16.5 3
-                                19.58 3 22 5.42 22 8.5
-                                22 12.28 18.6 15.36 13.45 20.04
-                                L12 21.35z"
-                          />
-                      </svg>
-                  </label>
-              </form>
+            <label for="favorite-{{ $post->id }}" class="heart-btn">
+                <svg class="heart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3 9.24 3 10.91 3.81 12 5.08 13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5 22 12.28 18.6 15.36 13.45 20.04 L12 21.35z"/>
+                </svg>
+            </label>
+        </form>
 
-              <!-- LINK SẢN PHẨM -->
-              <a href="./details.html" class="products__item">
+        <a href="{{ route('client.posts.detail', $post->slug) }}" class="products__item">
+            <div class="products__img">
+                <img 
+                    src="{{ $post->images->isNotEmpty() ? asset($post->images->first()->image_url) : asset('images/default.jpg') }}" 
+                    alt="{{ $post->title }}"
+                    class="products__image"
+                />
 
-                  <div class="products__img">
-                      <img
-                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
-                          alt=""
-                          class="products__image"
-                      />
+                <div class="products__img-bottom">
+                    <span class="products__img-bottom-title">
+                        {{ $post->created_at->diffForHumans() }}
+                    </span>
+                    <span class="products__img-quantity">
+                        {{ $post->images->count() }} <i class="fa-solid fa-image"></i>
+                    </span>
+                </div>
+            </div>
 
-                      <div class="products__img-bottom">
-                          <span class="products__img-bottom-title">Hôm qua</span>
-                          <span class="products__img-quantity">
-                              4 <i class="fa-solid fa-image"></i>
-                          </span>
-                      </div>
-                  </div>
+            <div class="products__content">
+                <h2 class="products__title">
+                    {{ Str::limit($post->title, 50) }}
+                </h2>
 
-                  <div class="products__content">
-                      <h2 class="products__title">
-                          Hehehehe xin chào tất cả bạn nhé
-                      </h2>
+                <p class="products__desc">
+                    {{ Str::limit($post->description, 60) }}
+                </p>
 
-                      <p class="products__desc">
-                          Xin chào các bạn
-                      </p>
+                <p class="products__price">
+                    {{ number_format($post->price, 0, ',', '.') }} đ
+                </p>
 
-                      <p class="products__price">
-                          30000
-                      </p>
-
-                      <div class="products__adress-options">
-                          <span class="products__address">
-                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
-                          </span>
-                          <i class="fa-solid fa-ellipsis-vertical"></i>
-                      </div>
-                  </div>
-
-              </a>
-          </div>
-          <!-- Item 1 -->
-          <div class="products__item-wrapper">
-
-              <!-- FORM YÊU THÍCH -->
-              <form id="favoriteForm" class="favorite-form">
-                  <input type="checkbox" id="favorite2" name="favorite" hidden>
-
-                  <label for="favorite2" class="heart-btn">
-                      <svg
-                          class="heart-icon"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                      >
-                          <path
-                              d="M12 21.35l-1.45-1.32
-                                C5.4 15.36 2 12.28 2 8.5
-                                2 5.42 4.42 3 7.5 3
-                                9.24 3 10.91 3.81 12 5.08
-                                13.09 3.81 14.76 3 16.5 3
-                                19.58 3 22 5.42 22 8.5
-                                22 12.28 18.6 15.36 13.45 20.04
-                                L12 21.35z"
-                          />
-                      </svg>
-                  </label>
-              </form>
-
-              <!-- LINK SẢN PHẨM -->
-              <a href="./details.html" class="products__item">
-
-                  <div class="products__img">
-                      <img
-                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
-                          alt=""
-                          class="products__image"
-                      />
-
-                      <div class="products__img-bottom">
-                          <span class="products__img-bottom-title">Hôm qua</span>
-                          <span class="products__img-quantity">
-                              4 <i class="fa-solid fa-image"></i>
-                          </span>
-                      </div>
-                  </div>
-
-                  <div class="products__content">
-                      <h2 class="products__title">
-                          Hehehehe xin chào tất cả bạn nhé
-                      </h2>
-
-                      <p class="products__desc">
-                          Xin chào các bạn
-                      </p>
-
-                      <p class="products__price">
-                          30000
-                      </p>
-
-                      <div class="products__adress-options">
-                          <span class="products__address">
-                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
-                          </span>
-                          <i class="fa-solid fa-ellipsis-vertical"></i>
-                      </div>
-                  </div>
-
-              </a>
-          </div>
+                <div class="products__adress-options">
+                    <span class="products__address">
+                        {{ $post->address }}
+                    </span>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+@endforeach
           <!-- Item 1 -->
           <div class="products__item-wrapper">
 

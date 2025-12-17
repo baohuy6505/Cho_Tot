@@ -26,9 +26,8 @@
         </div>
 
         {{-- Form Section: ID đổi thành postEditForm --}}
-        <form id="postEditForm" class="post-form" action="{{ route('client.posts.update', $datdaPost->id) }}" method="post" enctype="multipart/form-data">
+        <form id="postEditForm" class="post-form" action="{{ route('client.posts.update', $datdaPost->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
-            {{-- @method('PUT') Bắt buộc phải có để Laravel hiểu là Update --}}
             
             {{-- Tiêu đề --}}
             <div class="form-group">

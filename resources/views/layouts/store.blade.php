@@ -8,12 +8,13 @@
     <title>@yield('title', 'Chợ Tốt Clone')</title>
 
     @vite(['resources/scss/main-store.scss'])
-    
+    <link rel="stylesheet" href="{{ asset('css/notify.css') }}">    
+
     @yield('styles') 
     @stack('styles')
 </head>
  
-@if (session('error'))
+{{-- @if (session('error'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('error') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -24,23 +25,36 @@
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-@endif
+@endif --}}
 <body>
 
 <body class="bg-light">
     <div class="custom-toast-container">
-        @if (session('error'))
-        <div class="custom-toast error" data-autohide-delay="5000">
-            <span style="font-weight: 600;">Lỗi:</span> {{ session('error') }}
-            <button type="button" class="custom-toast__close">&times;</button>
-        </div>
-        @endif
-        @if (session('success'))
-        <div class="custom-toast success" data-autohide-delay="4000">
-            <span style="font-weight: 600;">Thành công:</span> {{ session('success') }}
-            <button type="button" class="custom-toast__close">&times;</button>
-        </div>
-        @endif
+          @if (session('error'))
+                    <div class="toast align-items-center text-white bg-danger border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Lỗi: {{ session('error') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
+
+                @if (session('success'))
+                    <div class="toast align-items-center text-white bg-success border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Thành công: {{ session('success') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                                data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
     </div>
     
     <header class="header" id="header">
@@ -433,8 +447,8 @@
           </button>
         </div>
         <div class="header__action-btn">
-          <button class="header__login">Quản lý tin</button>
-          <button class="header__up">Đăng tin</button>
+          <a href="{{route('client.posts.list')}}" class="header__login">Quản lý tin</a>
+          <a href="{{route('client.posts.create')}}" class="header__up">Đăng tin</a>
           <button class="header__user">
             <i class="fa-regular fa-user"></i>
             {{-- Kiểm tra xem người dùng đã đăng nhập chưa --}}

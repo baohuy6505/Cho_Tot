@@ -57,9 +57,9 @@
         <div class="listing-manager__balance-wrapper">
             <div class="listing-manager__balance">
                 <span class="listing-manager__coin-icon"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>
-                <span class="listing-manager__balance-text">Số dư: 0</span>
+                <span class="listing-manager__balance-text">Số dư: {{number_format(Auth::user()->balance, 0, ',', '.') }} đ</span>
             </div>
-            <button class="listing-manager__deposit-btn"><i class="fa-solid fa-plus"></i></button>
+            <a href="{{route('payment')}}" class="listing-manager__deposit-btn"><i class="fa-solid fa-plus"></i></a>
         </div>
     </div>
 
@@ -103,11 +103,11 @@
             <!-- Tiêu đề -->
             <td class="listing-table__cell listing-table__cell--title">
                 <div class="listing-table__item">
-                    <img 
+                    {{-- <img 
                         src="{{ asset($post->thumbnail ?? 'images/no-image.jpg') }}" 
                         alt="{{ $post->title }}"
                         class="listing-table__item-image"
-                    >
+                    > --}}
                     <div class="listing-table__item-info">
                         <div class="listing-table__item-name">
                             {{ Str::limit($post->title, 40) }}
@@ -133,12 +133,12 @@
 
             <!-- Thao tác -->
             <td class="listing-table__cell listing-table__cell--actions">
-                <a 
+                {{-- <a 
                     href="{{ route('client.posts.edit', $post->id) }}" 
                     class="listing-table__action listing-table__action--edit"
                 >
                     Sửa
-                </a>
+                </a> --}}
 
                 <form 
                     action="{{ route('client.posts.delete', $post->id) }}" 
@@ -181,7 +181,7 @@
                         <th class="post-table__header-title">Tiêu đề</th>
                         <th class="post-table__header-price">Giá</th>
                         <th class="post-table__header-status">Trạng thái</th>
-                        <th class="post-table__header-actions">Thao tác</th>
+                        {{-- <th class="post-table__header-actions">Thao tác</th> --}}
                     </tr>
                 </thead>
                 <tbody class="post-table__body">
@@ -189,11 +189,11 @@
                     <tr class="post-table__row">
                         <td class="post-table__cell post-table__cell--title">
                             <div class="post-table__item">
-                                <img 
+                                {{-- <img 
                                     src="{{ asset($post->thumbnail ?? 'images/no-image.jpg') }}" 
                                     alt="{{ $post->title }}"
                                     class="post-table__item-image"
-                                >
+                                > --}}
                                 <div class="post-table__item-content">
                                     <div class="post-table__item-title">{{ Str::limit($post->title, 40) }}</div>
                                     <div class="post-table__item-date">{{ $post->created_at->format('d/m/Y') }}</div>
@@ -204,7 +204,7 @@
                         <td class="post-table__cell post-table__cell--status">
                             <span class="post-table__status-badge">{{ $post->status }}</span>
                         </td>
-                        <td class="post-table__cell post-table__cell--actions">
+                        {{-- <td class="post-table__cell post-table__cell--actions">
                             <div class="post-table__actions">
                                 <a href="{{ route('client.posts.edit', $post->id) }}" class="post-table__action-btn post-table__action-btn--edit">
                                     <span class="post-table__action-icon post-table__action-icon--edit"></span>
@@ -222,7 +222,7 @@
                                     </button>
                                 </form>
                             </div>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
@@ -259,11 +259,11 @@
             <!-- Tiêu đề -->
             <td class="rejected-table__cell rejected-table__cell--title">
                 <div class="rejected-table__item">
-                    <img
+                    {{-- <img
                         src="{{ asset($post->thumbnail ?? 'images/no-image.jpg') }}"
                         alt="Thumbnail"
                         class="rejected-table__item-image"
-                    />
+                    /> --}}
                     <div class="rejected-table__item-info">
                         <div class="rejected-table__item-title">
                             {{ Str::limit($post->title, 40) }}

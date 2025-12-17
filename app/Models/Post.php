@@ -15,6 +15,10 @@ class Post extends Model
         'user_id','category_id','title','slug','description','price','address','status'
     ];
 
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
     public function user() {
         return $this->belongsTo(User::class);
     }
