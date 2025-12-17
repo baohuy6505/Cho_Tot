@@ -16,8 +16,6 @@ return new class extends Migration
         $table->foreignId('buyer_id')->constrained('users')->onDelete('cascade');
         $table->foreignId('seller_id')->constrained('users')->onDelete('cascade');
         $table->foreignId('post_id')->constrained('posts')->onDelete('cascade');
-        $table->enum('status', ['completed', 'failed', 'no-show'])->default('completed');
-        $table->tinyInteger('rating')->nullable(); // 1-5 sao
         $table->timestamps();
     });
 }

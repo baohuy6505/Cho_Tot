@@ -6,6 +6,7 @@ use App\Http\Controllers\client\AuthController;
 use App\Http\Controllers\client\PostController;
 use App\Http\Controllers\client\CommentController;
 use App\Http\Controllers\client\HomeController;
+use App\Http\Controllers\client\PaymentController;
 // ==========================================
 // 1. PUBLIC ROUTES (Ai cũng xem được)
 // ==========================================
@@ -49,4 +50,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/edit/{id}', [PostController::class, 'editUserPost'])->name('client.posts.edit');
     Route::post('/posts/update/{id}', [PostController::class, 'updateUserPost'])->name('client.posts.update');
     Route::delete('/posts/delete/{id}', [PostController::class, 'deletePost'])->name('client.posts.delete');
+
+    //Chuc nang nap tien vao tai khoan CHOTOT
+    Route::get('/nap-tien',[PaymentController::class,'index'])->name('payment');
+    Route::post('/api/webhook/payment',[PaymentController::class,'webhook']);
 });
+
+//  Route::get('/nap-tien',[PaymentController::class,'index'])->name('payment');
+//  Route::post('/api/webhook/payment',[PaymentController::class,'webhook']);

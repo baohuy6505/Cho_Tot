@@ -19,18 +19,14 @@ class PostController extends Controller
         $dataPosts = 10;
         $blockedPosts = Post::where('status', 'blocked')
             ->latest() // Sắp xếp theo mới nhất
-            ->paginate($dataPosts, ['*'], 'blocked_page'); 
+            ->paginate($dataPosts, ['*'], 'blocked_page');
         $pendingPosts = Post::where('status', 'pending')
             ->latest()
             ->paginate($dataPosts, ['*'], 'pending_page');
         $activePosts = Post::where('status', 'active')
             ->latest()
-            ->paginate($dataPosts, ['*'], 'active_page'); 
-        // return View('client.posts.index', compact('activePosts','pendingPosts','blockedPosts'));
-        return response()->json([
-            'message' => 'Post created successfully!',
-            'dataSlug' => $blockedPosts,$pendingPosts,$activePosts
-        ]);
+            ->paginate($dataPosts, ['*'], 'active_page');
+        return View('client.posts.index', compact('activePosts','pendingPosts','blockedPosts'));
     }
 
     public function detail($slug)
