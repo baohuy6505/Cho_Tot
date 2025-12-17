@@ -2,73 +2,354 @@
 @section('title', $dataPost->title ?? 'Chi Tiết Bài Đăng')
 @section('content')
 
-<div class="row g-3">
-    <div class="col-lg-8">
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h4 class="mb-1">{{ $dataPost->title }}</h4>
-                        <div class="text-muted small">{{ $dataPost->address }}</div>
-                    </div>
-                    <div class="text-end">
-                        <div class="h4 text-danger mb-1">{{ number_format($dataPost->price) }} đ</div>
-                        @php $map=['pending'=>'warning','active'=>'success','sold'=>'secondary','blocked'=>'danger']; @endphp
-                        <span class="badge bg-{{ $map[$dataPost->status] ?? 'secondary' }} badge-status">{{ $dataPost->status }}</span>
-                    </div>
-                </div>
-                <hr>
-                <h6 class="fw-bold">Mô tả chi tiết</h6>
-                <p class="mb-0">{{ $dataPost->description }}</p>
-            </div>
-        </div>
+    {{-- APP CONTAINER --}}
+    <div class="app-container">
+        {{-- Breadcrumb --}}
+        <nav class="breadcrumb">
+            <a href="{{ route('home') }}" class="breadcrumb__item">Trang chủ</a>
+            <i class="fas fa-chevron-right breadcrumb__icon"></i>
+            <a href="#" class="breadcrumb__item">{{ $dataPost->category->name ?? 'Danh mục' }}</a>
+            <i class="fas fa-chevron-right breadcrumb__icon"></i>
+            <p class="breadcrumb__item-right">{{ $dataPost->title }}</p>
+        </nav>
 
-        <div class="card card-hover">
-            <div class="card-header fw-bold">Hình ảnh</div>
-            <div class="card-body">
-                <div class="row g-2">
-                    @forelse($dataPost->images as $img)
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="ratio ratio-1x1 border rounded overflow-hidden">
-                                <img src="{{ $img->image_url }}" class="img-fluid object-fit-cover">
+        <div class="ad-layout">
+            <main class="ad-layout__main">
+                
+                {{-- Slide ảnh --}}
+                <div class="image">
+                    <div class="image__stage">
+
+                        <div class="image__top-actions">
+
+                          <div class="image__action-group">
+                            <button class="image__action-btn" id="share-toggle-btn">
+                                <i class="fas fa-share"></i>
+                            </button>
+
+                            <div class="image__share-dropdown" id="share-dropdown">
+                                <p class="share-title">Chia sẻ qua:</p>
+                                <div class="share-list">
+                                    <a href="#" class="share-item share-item-fb">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="share-item share-item-msg">
+                                        <i class="fab fa-facebook-messenger"></i>
+                                    </a>
+                                    <a href="#" class="share-item share-item-zalo">
+                                        Zalo
+                                    </a>
+                                    <button class="share-item share-item-link">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="image__action-group">
+                            <button class="image__action-btn" id="menu-toggle-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                              <div class="image__dropdown-menu" id="dropdown-menu">
+                                  <a href="#" class="image__dropdown-item">
+                                      <i class="far fa-flag"></i> Báo cáo tin đăng
+                                  </a>
+                                  <a href="#" class="image__dropdown-item">
+                                      <i class="fas fa-headset"></i> Cần trợ giúp?
+                                  </a>
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="image__main-image-wrap">
+                            @if($dataPost->images->count() > 0)
+                                <img src="{{ asset($dataPost->images[0]->image_url) }}" alt="{{ $dataPost->title }}" class="image__image" id="main-image">
+                            @else
+                                <img src="{{ asset('assets/img/default.png') }}" alt="No Image" class="image__image">
+                            @endif
+                        </div>
+
+                        <button class="image__nav-btn image__nav-btn-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="image__nav-btn image__nav-btn-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <span class="image__count">1 / {{ $dataPost->images->count() }}</span>
+                    </div>
+
+                    {{-- Thumbnails --}}
+                    @if($dataPost->images->count() > 0)
+                    <div class="image__thumbs-container">
+                        <div class="image__thumbs-list">
+                            @foreach($dataPost->images as $key => $img)
+                                <div class="image__thumb-item {{ $key == 0 ? 'image__thumb-item-active' : '' }}" 
+                                     onclick="changeImage(this, '{{ asset($img->image_url) }}')">
+                                    <img src="{{ asset($img->image_url) }}" alt="Thumb {{ $key }}">
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endif
+                </div>
+
+                {{-- Mô tả tin đăng --}}
+                <section class="ad-body" id="ad-body">
+                    <h3 class="ad-body__title">Mô tả chi tiết</h3>
+                    <p class="ad-body__text">
+                        {!! nl2br(e($dataPost->description)) !!}
+                        <br><br>
+                        <button class="ad-body__text-tag">
+                            <span>Liên hệ ngay: {{ $dataPost->user->phone ?? 'Chưa cập nhật' }}</span>
+                        </button>
+                    </p>
+                </section>
+
+                {{-- Thông số kỹ thuật (Ví dụ mẫu, bạn cần map field từ DB nếu có) --}}
+                <section class="ad-params" id="ad-params">
+                    <h2 class="ad-params__title">Thông số kỹ thuật</h2>
+                    <div class="ad-params__list">
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Danh mục:</span>
+                            <span class="ad-params__value">{{ $dataPost->category->name ?? 'Khác' }}</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Địa chỉ:</span>
+                            <span class="ad-params__value">{{ $dataPost->address }}</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Tình trạng:</span>
+                            <span class="ad-params__value">Đã sử dụng</span>
+                        </div>
+                         <div class="ad-params__item">
+                                <span class="ad-params__label">Hãng xe:</span>
+                                <a href="" class="ad-params__value">Honda</a>
+                        </div>
+                        <div class="ad-params__item">
+                                <span class="ad-params__label">Dòng xe:</span>
+                                <a href="" class="ad-params__value">Ari Blade</a>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Năm SX:</span>
+                            <span class="ad-params__value">2018</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Số Km:</span>
+                            <span class="ad-params__value">11.000 Km</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Năm SX:</span>
+                            <span class="ad-params__value">2018</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Loại xe:</span>
+                            <span class="ad-params__value">Xe ga</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Xuất xứ:</span>
+                            <span class="ad-params__value">Đang cập nhật</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Chính sách bảo hành:</span>
+                            <span class="ad-params__value">Bảo hành hãng</span>
+                        </div>
+                        <div class="ad-params__item">
+                            <span class="ad-params__label">Trọng lượng:</span>
+                            <span class="ad-params__value">> 50 kg</span>
+                        </div>
+                    </div>
+                </section>
+
+                {{-- Dịch vụ tiện ích (Tĩnh) --}}
+                <div class="utility-services">
+                    <h3 class="utility-services__title">Các dịch vụ tiện ích</h3>
+
+                    <div class="utility-services__banner">
+                        <img src="{{ asset('images/client/details/moto_purchasing_desktop.png')}}" alt="Banner dịch vụ" class="utility-services__banner-img">
+                    </div>
+
+                    <ul class="utility-services__list">
+                        <li class="utility-services__item">
+                            <i class="far fa-check-circle utility-services__icon"></i>
+                            <span class="utility-services__text">Bán xe nhanh trong 2 tiếng</span>
+                        </li>
+                        <li class="utility-services__item">
+                            <i class="far fa-check-circle utility-services__icon"></i>
+                            <span class="utility-services__text">Nhận tiền ngay</span>
+                        </li>
+                        <li class="utility-services__item">
+                            <i class="far fa-check-circle utility-services__icon"></i>
+                            <span class="utility-services__text">Hỗ trợ sang tên dễ dàng</span>
+                        </li>
+                    </ul>
+
+                    <button class="utility-services__action-btn"> Bán xe ngay </button>
+                </div>   
+
+            </main>
+
+            <main class="ad-layout__sidebar">
+                
+                <section class="ad-header">
+                    <div class="ad-header__top">
+                        <h1 class="ad-header__title">{{ $dataPost->title }}</h1>
+                        {{-- Tạm thời để action="#" hoặc để trống để không bị lỗi route --}}
+                        <form action="#" method="POST" style="display:inline;">
+                            @csrf
+                            <button class="ad-header__save-btn"> <i class="far fa-heart"></i> Lưu </button>
+                        </form>
+                    </div>
+
+                    <div class="ad-header__meta">
+                        2018 • 29000 km • Đang cập nhật
+                    </div>
+
+                    <div class="ad-header__price"> {{ number_format($dataPost->price, 0, ',', '.') }} đ</div>
+
+                    <div class="ad-header__actions">
+                        <button class="ad-header__chat-btn">Chat với người bán</button>
+                        <a href="tel:{{ $dataPost->user->phone ?? '' }}" class="ad-header__call-btn" style="text-decoration: none; display:flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-phone-alt" style="margin-right:5px;"></i> 
+                            {{ $dataPost->user->phone ?? 'Bấm để hiện số' }}
+                        </a>
+                    </div>
+                    
+                    <div class="ad-header__footer">
+                        <div class="ad-header__location"> <i class="fas fa-map-marker-alt ad-header__icon-small"></i>
+                            <div class="ad-header__location-text">
+                                <span class="ad-header__location-main">{{ $dataPost->address }}</span>
                             </div>
                         </div>
-                    @empty
-                        <div class="text-muted">Chưa có ảnh</div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <div class="text-muted small">Người bán</div>
-                        <div class="fw-semibold">{{ $dataPost->user->name ?? 'N/A' }}</div>
-                        <div class="small text-muted">Uy tín: {{ $dataPost->user->reputation ?? 0 }}</div>
+                        <div class="ad-header__time"> <i class="far fa-clock ad-header__icon-small"></i>
+                            <span>Đăng {{ $dataPost->created_at->diffForHumans() }}</span>
+                        </div>
                     </div>
-                    <span class="badge bg-light text-primary">{{ $dataPost->created_at?->format('d/m/Y') }}</span>
+                </section>
+
+                {{-- Thông tin người bán --}}
+                <div class="seller">
+                    <div class="seller__header">
+                        <div class="seller__avatar-wrap">
+
+                            @if( Auth::user()->avatar ) 
+                                <img src="{{ $dataPost->user->avatar }}" alt="Avatar" class="seller__avatar">
+                            @else
+                                <img src="{{ asset('images/client/profile/default-avatar.jpg')}}" alt="Avatar" class="seller__avatar">
+                            @endif
+
+                            <span class="seller__status-dot"></span>
+                        </div>
+                        
+                        <div class="seller__info">
+                            <h3 class="seller__name">{{ $dataPost->user->name ?? 'Người dùng Chợ Tốt' }}</h3>
+                            <div class="seller__rating">
+                                <span class="seller__score">5.0 <i class="fas fa-star text-yellow"></i></span>
+                                <span class="seller__count">(1 Đánh giá)</span>
+                            </div>
+                            <div class="seller__meta">
+                                <span class="seller__activity">• Hoạt động {{ $dataPost->user->last_activity ?? 'vài phút trước' }}</span>
+                                <span class="seller__reply">Phản hồi: 70%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seller__quick-chat">
+                        <span class="seller__chat-label">Chat nhanh:</span>
+                        <div class="seller__tags-list">
+                            <button class="seller__tag">Xe còn hay đã bán rồi ạ?</button>
+                            <button class="seller__tag">Xe chính chủ hay...</button>
+                            <button class="seller__tag-more"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-3 d-grid gap-2">
-                    <a href="tel:{{ $dataPost->user->phone ?? '' }}" class="btn btn-primary">Gọi người bán</a>
-                    <form action="{{ route('favorites.toggle', $dataPost->id) }}" method="post">@csrf
-                        <button class="btn btn-outline-warning">Lưu tin</button>
+
+                {{-- Box bình luận (placeholder) --}}
+                <div class="comment-box">
+                    <h3 class="comment-box__title">Bình luận</h3>
+
+                    <div class="comment-box__empty-state">
+                        <!-- <div class="comment-box__icon-wrap"> <i class="far fa-comment-dots comment-box__icon"></i>
+                        </div>
+                        <p class="comment-box__text">
+                            Chưa có bình luận nào.<br>
+                            Hãy để lại bình luận cho người bán.
+                        </p> -->
+                        <div class="comment-list">
+                            <div class="comment-item">
+                                <div class="comment-avatar">
+                                    @if( Auth::user()->avatar ) 
+                                        <img src="{{ $dataPost->user->avatar }}" alt="Avatar" class="seller__avatar">
+                                    @else
+                                        <img src="{{ asset('images/client/profile/default-avatar.jpg')}}" alt="Avatar" class="seller__avatar">
+                                    @endif
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-bubble">
+                                        <h4 class="comment-author">{{ $dataPost->user->name ?? 'Người dùng Chợ Tốt' }}</h4>
+                                        <p class="comment-text">minh nghèo, mua cho bé về đi học</p>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <span class="action-reply">Trả lời</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item owner">
+                              <div class="comment-avatar">
+                                  <img src="./assets/img/profile/23548389.jpg" alt="">
+                              </div>
+                              <div class="comment-content">
+                                  <div class="comment-bubble">
+                                      <h4 class="comment-author">Nguyễn Thanh Hải</h4>
+                                      <p class="comment-text">Giá đó không được bạn ơi, bớt chút lộc lá thôi nhé.</p>
+                                  </div>
+                                  <div class="comment-actions">
+                                      <span class="action-reply">Trả lời</span>
+                                  </div>
+                              </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="comment-box__input-area">
+                            <input type="text" class="comment-box__input" placeholder="Bình luận...">
+                            
+                            <button class="comment-box__send-btn"> 
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
-            </div>
-        </div>
 
-        <div class="card card-hover">
-            <div class="card-header fw-bold">Báo cáo vi phạm</div>
-            <div class="card-body">
-                <form action="{{ route('reports.store', $dataPost->id) }}" method="post" class="d-grid gap-2">@csrf
-                    <textarea name="reason" rows="3" class="form-control" placeholder="Nhập lý do..." required></textarea>
-                    <button class="btn btn-outline-danger">Gửi báo cáo</button>
-                </form>
-            </div>
+            </main>
         </div>
     </div>
-</div>
+
+    {{-- Phần tin đăng tương tự (Có thể foreach nếu có biến $relatedPosts) --}}
+    @if(isset($relatedPosts) && count($relatedPosts) > 0)
+    <section class="products">
+        <div class="app-container" style="background-color: #fff; padding: 20px 0;">
+            <h2 class="products__title">Tin đăng tương tự</h2>
+            <div class="products__list">
+                @foreach($relatedPosts as $post)
+                <a href="{{ route('posts.show', $post->slug) }}">
+                    <div class="products__item">
+                        <div class="products__img">
+                            <img src="{{ isset($post->images[0]) ? asset($post->images[0]->image_url) : asset('assets/img/default.png') }}" class="products__image" />
+                        </div>
+                        <div class="products__content">
+                            <h2 class="products__title">{{ $post->title }}</h2>
+                            <p class="products__price">{{ number_format($post->price, 0, ',', '.') }} đ</p>
+                            <span class="products__address">{{ Str::limit($post->address, 20) }}</span>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+
+
 @endsection

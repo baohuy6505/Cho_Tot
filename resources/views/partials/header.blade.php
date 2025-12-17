@@ -690,7 +690,7 @@
 
     <div class="header__action-btn">
         @if (Auth::check())
-                            <a href="{{ route('client.posts.list') }}" class="header__login">
+                        <a href="{{ route('client.posts.list') }}" class="header__login">
                             Quản lí tin
                         </a>
                         <a href="{{ route('client.posts.create') }}" class="header__up">Đăng tin</a>

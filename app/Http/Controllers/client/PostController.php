@@ -33,20 +33,20 @@ class PostController extends Controller
             ->where('status', 'active')
             ->latest()
             ->paginate($perPage, ['*'], 'active_page');
-        return View('client.posts.index', compact('activePosts', 'pendingPosts', 'blockedPosts'));
+        return View('client.posts.index', compact('activePosts', 'pendingPosts',));
     }
 
     public function detail($slug)
     {
         //$dataPost = Post::findOrFail($id);
         //$dataImages = PostImage::where('post_id', $id)->get();//lấy ra tat ca gia tri co post_id = $id
-        //return view('client.posts.detail', compact('dataPost', 'dataImages'));
-
+        
         $dataPost = Post::with('images')->where('slug', $slug)->firstOrFail();
-        return response()->json([
-            'message' => 'Post created successfully!',
-            'dataSlug' => $dataPost,
-        ]);
+        return view('client.posts.details', compact('dataPost'));
+        // return response()->json([
+        //     'message' => 'Post created successfully!',
+        //     'dataSlug' => $dataPost,
+        // ]);
     }
     public function createUserPost()
     {
@@ -95,7 +95,10 @@ class PostController extends Controller
     public function editUserPost($id)
     {
         $datdaPost = Post::findOrFail($id);
-        return view('client.posts.edit', compact('datdaPost'));
+        
+        $categories = Category::all();  
+
+        return view('client.posts.edit', compact('datdaPost', 'categories'));
     }
     public function updateUserPost(StorePostRequest $request, $id)
     {

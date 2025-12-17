@@ -56,5 +56,6 @@
         @include('partials.footer')  
 
     <script src="{{ asset('js/client/main.js') }}"></script>
+    <script src="{{ asset('js/client/details.js') }}"></script>
     </body>
 </html>

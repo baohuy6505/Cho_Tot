@@ -72,7 +72,7 @@ console.log(listLink, listSubModal);
 
 // Thay đổi thanh header
 function handleNavbar() {
-    if (window.scrollY > 200) {
+   if (window.scrollY > 200) {
         if (!header.classList.contains("fixed")) {
             header.classList.add("fixed");
             titleUser.classList.add("none");
