@@ -11,7 +11,12 @@ use App\Http\Controllers\client\CommentController;
 // ==========================================
 
 Route::view('/', 'client.home')->name('home');
-
+Route::get('/xe-co', function () {
+    return view('client.vehical');
+});
+Route::get('/quan-ly-tin', function () {
+    return view('client.detail-product');
+});
 // Xem danh sách và chi tiết bài viết thì không cần đăng nhập
 Route::get('/posts', [PostController::class, 'index'])->name('client.posts.list');
 Route::get('/posts/detail/{slug}', [PostController::class, 'detail'])->name('client.posts.detail');
@@ -24,7 +29,6 @@ Route::get('/test-session', function () {
 Route::get('/get-session', function () {
     return session('name');
 });
-
 
 // ==========================================
 // 2. GUEST ROUTES (Chưa đăng nhập mới vào được)
