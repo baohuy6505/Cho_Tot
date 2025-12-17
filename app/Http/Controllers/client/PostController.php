@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\client;
+
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,17 +16,33 @@ class PostController extends Controller
 {
     public function index()
     {
-        //$data = Post::all();
-        $dataPosts = Post::paginate(10);
-        return View('client.posts.index', compact('dataPosts'));
+        $idUser = Auth::user()->id;
+        $perPage = 10;
+        $baseQuery = Post::where('user_id', $idUser);
+        $blockedPosts = (clone $baseQuery)
+            ->where('status', 'blocked')
+            ->latest()
+            ->paginate($perPage, ['*'], 'blocked_page');
+
+        $pendingPosts = (clone $baseQuery)
+            ->where('status', 'pending')
+            ->latest()
+            ->paginate($perPage, ['*'], 'pending_page');
+
+        $activePosts = (clone $baseQuery)
+            ->where('status', 'active')
+            ->latest()
+            ->paginate($perPage, ['*'], 'active_page');
+        return View('client.posts.index', compact('activePosts', 'pendingPosts', 'blockedPosts'));
     }
+
     public function detail($slug)
     {
         //$dataPost = Post::findOrFail($id);
         //$dataImages = PostImage::where('post_id', $id)->get();//lấy ra tat ca gia tri co post_id = $id
         //return view('client.posts.detail', compact('dataPost', 'dataImages'));
 
-        $dataPost = Post::with('images')->where('slug',$slug)->firstOrFail();
+        $dataPost = Post::with('images')->where('slug', $slug)->firstOrFail();
         return response()->json([
             'message' => 'Post created successfully!',
             'dataSlug' => $dataPost,
@@ -38,7 +55,7 @@ class PostController extends Controller
     }
     public function storeUserPost(StorePostRequest $request)
     {
-        
+
         $dataValidated = $request->validated();
         $dataValidated['user_id'] =  Auth::id();
         $dataValidated['status'] = 'pending';
@@ -47,7 +64,7 @@ class PostController extends Controller
         $count = 1;
 
         $imagePaths = [];
-        while(Post::where('slug',$slug)->exists()){
+        while (Post::where('slug', $slug)->exists()) {
             $slug = $originalSlug . '-' . $count;
             $count++;
         }

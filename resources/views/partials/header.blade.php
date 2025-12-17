@@ -3,7 +3,7 @@
       <!-- Nút menu trái -->
       <div class="header__left">
         <button class="header__left-btn">
-          <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-list"></i>
         </button>
 
         <!-- Modal cho menu trái -->
@@ -182,182 +182,180 @@
                   >
                 </li>
 
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">Xe điện</a>
-                </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">Xe điện</a>
+                        </li>
 
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">Xe đạp</a>
-                </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">Xe đạp</a>
+                        </li>
 
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link"
-                    >Phương tiện khác</a
-                  >
-                </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">Phương tiện khác</a>
+                        </li>
 
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">Phụ tùng xe</a>
-                </li>
-              </ul>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">Phụ tùng xe</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub3" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao 3</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub4" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao 4</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub5" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao 5</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub6" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao 6</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub7" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub8" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub9" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub10" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub11" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub12" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub13" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sub14" class="header__left-sub-modal">
+                    <ul class="header__left-sub-modal-list">
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                        <li class="header__left-sub-modal-item">
+                            <a href="" class="header__left-sub-modal-link">xin chao</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="sub3" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao 3</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub4" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao 4</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub5" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao 5</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub6" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao 6</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub7" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub8" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub9" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub10" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub11" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub12" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub13" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-            <div id="sub14" class="header__left-sub-modal">
-              <ul class="header__left-sub-modal-list">
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-                <li class="header__left-sub-modal-item">
-                  <a href="" class="header__left-sub-modal-link">xin chao</a>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
 
         <!-- Logo -->
@@ -651,20 +649,20 @@
       <!-- Thanh NavBar -->
       <nav class="navbar">
         <ul class="navbar__list">
-          <li class="navbar__item">
-            <a href="./index.html" class="navbar__item-link">Chợ tốt</a>
-          </li>
-          <li class="navbar__item">
-            <a href="" class="navbar__item-link">Xem cộ</a>
-          </li>
-          <li class="navbar__item">
-            <a href="" class="navbar__item-link">Bất động sản</a>
-          </li>
-          <li class="navbar__item">
-            <a href="" class="navbar__item-link">Việc làm</a>
-          </li>
+            <li class="navbar__item">
+                <a href="./index.html" class="navbar__item-link">Chợ tốt</a>
+            </li>
+            <li class="navbar__item">
+                <a href="" class="navbar__item-link">Xem cộ</a>
+            </li>
+            <li class="navbar__item">
+                <a href="" class="navbar__item-link">Bất động sản</a>
+            </li>
+            <li class="navbar__item">
+                <a href="" class="navbar__item-link">Việc làm</a>
+            </li>
         </ul>
-      </nav>
+    </nav>
 
       <!-- Ô nhập liệu hiện khi cuộn -->
       <div class="header__input">
@@ -672,9 +670,9 @@
         <input type="text" class="header__inp" placeholder="Tìm kiếm" />
         <span class="close">X</span>
         <div class="icon">
-          <i class="fa-solid fa-magnifying-glass search"></i>
+            <i class="fa-solid fa-magnifying-glass search"></i>
         </div>
-      </div>
+    </div>
 
   <div class="header__right">
 
@@ -691,8 +689,18 @@
             </div>
 
     <div class="header__action-btn">
-          <a href="./manager.html" class="header__login">Đăng nhập</a>
-          <a href="" class="header__up">Đăng tin</a>
+        @if (Auth::check())
+                            <a href="{{ route('client.posts.list') }}" class="header__login">
+                            Quản lí tin
+                        </a>
+                        <a href="{{ route('client.posts.create') }}" class="header__up">Đăng tin</a>
+                        @else
+                        <a href="{{ route('login') }}" class="header__login">
+                            Đăng nhập
+                        </a>
+                        <a href="{{ route('login') }}" class="header__up">Đăng tin</a>
+                        @endif
+
           <button class="header__user">
             <i class="fa-regular fa-user"></i>
             <i class="fa-solid fa-angle-down"></i>
@@ -700,7 +708,7 @@
 
        <div class="header__action-btn-modal">
               <!-- Before Login -->
-            <div class="header__action-btn-modal-top">
+            <div  class="header__action-btn-modal-top">
               <div class="header__action-btn-modal-top-content">
                 <h4 class="header__action-btn-modal-top-title">
                   Mua thì hời, bán thì lời
@@ -717,12 +725,13 @@
                 />
               </div>
               <div class="header__action-btn-modal-top-action">
-                <div class="header__action-btn-modal-top-action-register">
+                <a href="" class="header__action-btn-modal-top-action-register">
                   Đăng kí
-                </div>
-                <div class="header__action-btn-modal-top-action-login">
+                </a>
+
+                <a href="" class="header__action-btn-modal-top-action-login">
                   Đăng nhập
-                </div>
+                </a>
               </div>
             </div>
             <!-- After Login -->
@@ -762,6 +771,7 @@
               </div>
             </div>
 
+              
             <h5 class="header__action-btn-modal-title">Tiện ích</h5>
             <div class="header__action-btn-modal-extensions">
               <ul class="header__action-btn-modal-extensions-list">
@@ -933,23 +943,21 @@
     <section class="banner">
       <h1 class="banner__title">Giá tốt, Gần bạn, Chốt nhanh!</h1>
 
-      <form action="" class="banner__form">
+    <form action="" class="banner__form">
         <div class="banner__form-category">
-          <span class="banner__category-text">Danh mục</span
-          ><i class="fa-solid fa-sort-down"></i>
+            <span class="banner__category-text">Danh mục</span><i class="fa-solid fa-sort-down"></i>
         </div>
           <!-- Modal danh mục -->
         <div class="banner__form-category-modal">
-          <ul class="banner__form-category-modal-list">
-            <li class="banner__form-category-modal-item">
-              <label
-                ><span class="label-text">Tất cả danh mục</span>
-                <input id="category" type="radio" name="category" />
-                <span class="custom__radaio">
-                  <i class="fas fa-check"></i>
-                </span>
-              </label>
-            </li>
+            <ul class="banner__form-category-modal-list">
+                <li class="banner__form-category-modal-item">
+                    <label><span class="label-text">Tất cả danh mục</span>
+                        <input id="category" type="radio" name="category" />
+                        <span class="custom__radaio">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </label>
+                </li>
 
             <li class="banner__form-category-modal-item">
               <label for="category1"
@@ -1094,12 +1102,8 @@
         </div>
 
         <div class="banner__input">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input
-            type="text"
-            class="banner__form-inp"
-            placeholder="Tim sản phẩm..."
-          />
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="banner__form-inp" placeholder="Tim sản phẩm..." />
         </div>
 
         <div class="banner__form-adress">
@@ -1361,5 +1365,5 @@
         </div>
 
         <button class="banner__form-search">Tìm kiếm</button>
-      </form>
-    </section>
+    </form>
+</section>

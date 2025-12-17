@@ -1,0 +1,103 @@
+ .dashboard-stat-card {
+            background: linear-gradient(135deg, var(--card-bg-start), var(--card-bg-end));
+            border: none;
+            border-radius: 16px;
+            padding: 24px;
+            color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .dashboard-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .dashboard-stat-card.stat-primary {
+            --card-bg-start: #667eea;
+            --card-bg-end: #764ba2;
+        }
+
+        .dashboard-stat-card.stat-success {
+            --card-bg-start: #11998e;
+            --card-bg-end: #38ef7d;
+        }
+
+        .dashboard-stat-card.stat-warning {
+            --card-bg-start: #f093fb;
+            --card-bg-end: #f5576c;
+        }
+
+        .dashboard-stat-card.stat-info {
+            --card-bg-start: #4facfe;
+            --card-bg-end: #00f2fe;
+        }
+
+        .dashboard-stat-card.stat-danger {
+            --card-bg-start: #fa709a;
+            --card-bg-end: #fee140;
+        }
+
+        .dashboard-stat-card.stat-purple {
+            --card-bg-start: #a8edea;
+            --card-bg-end: #fed6e3;
+            color: #333;
+        }
+
+        .stat-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 12px 0 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .stat-change {
+            font-size: 12px;
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .chart-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .recent-item {
+            padding: 12px 12px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+
+        .recent-item:hover {
+            background: #f8f9fa;
+            margin: 0 -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .recent-item:last-child {
+            border-bottom: none;
+        }

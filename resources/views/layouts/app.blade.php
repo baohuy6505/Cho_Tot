@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,22 @@
 @endif
 <body>
 
-    @include('partials.header')  
+<body class="bg-light">
+    <div class="custom-toast-container">
+        @if (session('error'))
+            <div class="custom-toast error" data-autohide-delay="5000">
+                <span style="font-weight: 600;">Lỗi:</span> {{ session('error') }}
+                <button type="button" class="custom-toast__close">&times;</button>
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="custom-toast success" data-autohide-delay="4000">
+                <span style="font-weight: 600;">Thành công:</span> {{ session('success') }}
+                <button type="button" class="custom-toast__close">&times;</button>
+            </div>
+        @endif
+    </div>
+    @include('partials.header')
 
     <main>
         @yield('content')

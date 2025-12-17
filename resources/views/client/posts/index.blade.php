@@ -50,7 +50,8 @@
                                 <a class="btn btn-sm btn-outline-primary" href="{{ route('client.posts.detail', $post->slug) }}">Xem</a>
                                 <a class="btn btn-sm btn-outline-secondary" href="{{ route('client.posts.edit', $post->id) }}">Sửa</a>
                                 <form action="{{ route('client.posts.delete', $post->id) }}" method="post" class="d-inline" onsubmit="return confirm('Xóa bài đăng này?');">
-                                    @csrf @method('DELETE')
+                                    @csrf 
+                                    @method('DELETE')
                                     <button class="btn btn-sm btn-outline-danger">Xóa</button>
                                 </form>
                             </td>
