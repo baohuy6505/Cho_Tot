@@ -8,7 +8,7 @@
 .options__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .options__list {
@@ -21,6 +21,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
     color: $color-secondary;
 }
 
@@ -81,7 +83,7 @@
     gap: 20px;
 }
 
-.products__item {
+.products__item-wrapper {
     position: relative;
     z-index: 0;
 }
@@ -90,13 +92,32 @@
     background-color: rgba($color-secondary, 0.4);
 }
 
-.products__item .fa-heart {
+.products__item-wrapper .favorite-form {
     position: absolute;
     top: 1rem;
     right: 1rem;
     font-size: 2.1rem;
     color: $color-white;
     z-index: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #fff;
+}
+
+.heart-btn {
+    cursor: pointer;
+}
+
+.heart-icon {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2;
+    transition: 0.3s;
+}
+
+.favorite-form input:checked + .heart-btn .heart-icon {
+    fill: rgb(207, 102, 120);
+    stroke: white;
 }
 
 .products__item .products__img {

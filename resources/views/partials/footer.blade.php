@@ -103,3 +103,20 @@
     <div class="responsive">
       <p class="text__responsive">Website hiện tại chưa có trên mobile</p>
     </div>
+
+    <div class="login-box">
+      <div class="login-box__body">
+        <p class="login-box__text">Nếu bạn chưa đăng nhập</p>
+        <a href="" class="login-box__action">Đăng nhập</a>
+      </div>
+      <span class="close-login">x</span>
+    </div>
+
+    <div class="advertisement">
+      <img
+        src="{{ asset('images/client/submodalheader/qc.png')}}"
+        alt=""
+        class="advertisement__img"
+      />
+      <span class="advertisement__icon">x</span>
+    </div>

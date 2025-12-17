@@ -3,6 +3,7 @@
 @section('content')
     <section class="options">
       <div class="container">
+        <!-- Danh sách các options -->
         <ul class="options__list">
           <li class="options__item">
             <a href="" class="options__link">
@@ -239,181 +240,417 @@
           <a href="" class="products__top-link">Mới nhất</a>
           <a href="" class="products__top-link">Video</a>
         </div>
+
+        <!-- Danh sách sản phẩm -->
         <div class="products__list">
           <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-              
-                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
-            </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
+          <div class="products__item-wrapper">
 
-          <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
-            </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
+              <!-- FORM YÊU THÍCH -->
+              <form class="favorite-form">
+                  <input type="checkbox" id="favorite" name="favorite" hidden>
 
-          <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
-            </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
+                  <label for="favorite" class="heart-btn">
+                      <svg
+                          class="heart-icon"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                      >
+                          <path
+                              d="M12 21.35l-1.45-1.32
+                                C5.4 15.36 2 12.28 2 8.5
+                                2 5.42 4.42 3 7.5 3
+                                9.24 3 10.91 3.81 12 5.08
+                                13.09 3.81 14.76 3 16.5 3
+                                19.58 3 22 5.42 22 8.5
+                                22 12.28 18.6 15.36 13.45 20.04
+                                L12 21.35z"
+                          />
+                      </svg>
+                  </label>
+              </form>
 
-          <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
-            </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
+              <!-- LINK SẢN PHẨM -->
+              <a href="./details.html" class="products__item">
 
-          <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
-            </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
+                  <div class="products__img">
+                      <img
+                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                          alt=""
+                          class="products__image"
+                      />
 
+                      <div class="products__img-bottom">
+                          <span class="products__img-bottom-title">Hôm qua</span>
+                          <span class="products__img-quantity">
+                              4 <i class="fa-solid fa-image"></i>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="products__content">
+                      <h2 class="products__title">
+                          Hehehehe xin chào tất cả bạn nhé
+                      </h2>
+
+                      <p class="products__desc">
+                          Xin chào các bạn
+                      </p>
+
+                      <p class="products__price">
+                          30000
+                      </p>
+
+                      <div class="products__adress-options">
+                          <span class="products__address">
+                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
+                          </span>
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+                  </div>
+
+              </a>
+          </div>
           <!-- Item 1 -->
-          <a href="./details.html" class="products__item">
-            <i class="fa-regular fa-heart"></i>
-            <div class="products__img">
-              <img
-                src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg')}}"
-                alt=""
-                class="products__image"
-              />
-              <div class="products__img-bottom">
-                <span class="products__img-bottom-title">Hôm qua</span>
-                <span class="products__img-quantity"
-                  >4 <i class="fa-solid fa-image"></i>
-                </span>
-              </div>
+          <div class="products__item-wrapper">
+
+              <!-- FORM YÊU THÍCH -->
+              <form id="favoriteForm" class="favorite-form">
+                  <input type="checkbox" id="favorite2" name="favorite" hidden>
+
+                  <label for="favorite2" class="heart-btn">
+                      <svg
+                          class="heart-icon"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                      >
+                          <path
+                              d="M12 21.35l-1.45-1.32
+                                C5.4 15.36 2 12.28 2 8.5
+                                2 5.42 4.42 3 7.5 3
+                                9.24 3 10.91 3.81 12 5.08
+                                13.09 3.81 14.76 3 16.5 3
+                                19.58 3 22 5.42 22 8.5
+                                22 12.28 18.6 15.36 13.45 20.04
+                                L12 21.35z"
+                          />
+                      </svg>
+                  </label>
+              </form>
+
+              <!-- LINK SẢN PHẨM -->
+              <a href="./details.html" class="products__item">
+
+                  <div class="products__img">
+                      <img
+                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                          alt=""
+                          class="products__image"
+                      />
+
+                      <div class="products__img-bottom">
+                          <span class="products__img-bottom-title">Hôm qua</span>
+                          <span class="products__img-quantity">
+                              4 <i class="fa-solid fa-image"></i>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="products__content">
+                      <h2 class="products__title">
+                          Hehehehe xin chào tất cả bạn nhé
+                      </h2>
+
+                      <p class="products__desc">
+                          Xin chào các bạn
+                      </p>
+
+                      <p class="products__price">
+                          30000
+                      </p>
+
+                      <div class="products__adress-options">
+                          <span class="products__address">
+                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
+                          </span>
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+                  </div>
+
+              </a>
+          </div>
+          <!-- Item 1 -->
+          <div class="products__item-wrapper">
+
+              <!-- FORM YÊU THÍCH -->
+              <form id="favoriteForm" class="favorite-form">
+                  <input type="checkbox" id="favorite3" name="favorite" hidden>
+
+                  <label for="favorite3" class="heart-btn">
+                      <svg
+                          class="heart-icon"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                      >
+                          <path
+                              d="M12 21.35l-1.45-1.32
+                                C5.4 15.36 2 12.28 2 8.5
+                                2 5.42 4.42 3 7.5 3
+                                9.24 3 10.91 3.81 12 5.08
+                                13.09 3.81 14.76 3 16.5 3
+                                19.58 3 22 5.42 22 8.5
+                                22 12.28 18.6 15.36 13.45 20.04
+                                L12 21.35z"
+                          />
+                      </svg>
+                  </label>
+              </form>
+
+              <!-- LINK SẢN PHẨM -->
+              <a href="./details.html" class="products__item">
+
+                  <div class="products__img">
+                      <img
+                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                          alt=""
+                          class="products__image"
+                      />
+
+                      <div class="products__img-bottom">
+                          <span class="products__img-bottom-title">Hôm qua</span>
+                          <span class="products__img-quantity">
+                              4 <i class="fa-solid fa-image"></i>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="products__content">
+                      <h2 class="products__title">
+                          Hehehehe xin chào tất cả bạn nhé
+                      </h2>
+
+                      <p class="products__desc">
+                          Xin chào các bạn
+                      </p>
+
+                      <p class="products__price">
+                          30000
+                      </p>
+
+                      <div class="products__adress-options">
+                          <span class="products__address">
+                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
+                          </span>
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+                  </div>
+
+              </a>
+          </div>
+          <!-- Item 1 -->
+          <div class="products__item-wrapper">
+
+              <!-- FORM YÊU THÍCH -->
+              <form id="favoriteForm" class="favorite-form">
+                  <input type="checkbox" id="favorite4" name="favorite" hidden>
+
+                  <label for="favorite4" class="heart-btn">
+                      <svg
+                          class="heart-icon"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                      >
+                          <path
+                              d="M12 21.35l-1.45-1.32
+                                C5.4 15.36 2 12.28 2 8.5
+                                2 5.42 4.42 3 7.5 3
+                                9.24 3 10.91 3.81 12 5.08
+                                13.09 3.81 14.76 3 16.5 3
+                                19.58 3 22 5.42 22 8.5
+                                22 12.28 18.6 15.36 13.45 20.04
+                                L12 21.35z"
+                          />
+                      </svg>
+                  </label>
+              </form>
+
+              <!-- LINK SẢN PHẨM -->
+              <a href="./details.html" class="products__item">
+
+                  <div class="products__img">
+                      <img
+                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                          alt=""
+                          class="products__image"
+                      />
+
+                      <div class="products__img-bottom">
+                          <span class="products__img-bottom-title">Hôm qua</span>
+                          <span class="products__img-quantity">
+                              4 <i class="fa-solid fa-image"></i>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="products__content">
+                      <h2 class="products__title">
+                          Hehehehe xin chào tất cả bạn nhé
+                      </h2>
+
+                      <p class="products__desc">
+                          Xin chào các bạn
+                      </p>
+
+                      <p class="products__price">
+                          30000
+                      </p>
+
+                      <div class="products__adress-options">
+                          <span class="products__address">
+                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
+                          </span>
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+                  </div>
+
+              </a>
+          </div>
+          <!-- Item 1 -->
+            <div class="products__item-wrapper">
+
+                  <!-- FORM YÊU THÍCH -->
+                  <form id="favoriteForm" class="favorite-form">
+                      <input type="checkbox" id="favorite5" name="favorite" hidden>
+
+                      <label for="favorite5" class="heart-btn">
+                          <svg
+                              class="heart-icon"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                          >
+                              <path
+                                  d="M12 21.35l-1.45-1.32
+                                    C5.4 15.36 2 12.28 2 8.5
+                                    2 5.42 4.42 3 7.5 3
+                                    9.24 3 10.91 3.81 12 5.08
+                                    13.09 3.81 14.76 3 16.5 3
+                                    19.58 3 22 5.42 22 8.5
+                                    22 12.28 18.6 15.36 13.45 20.04
+                                    L12 21.35z"
+                              />
+                          </svg>
+                      </label>
+                  </form>
+
+                  <!-- LINK SẢN PHẨM -->
+                  <a href="./details.html" class="products__item">
+
+                      <div class="products__img">
+                          <img
+                              src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                              alt=""
+                              class="products__image"
+                          />
+
+                          <div class="products__img-bottom">
+                              <span class="products__img-bottom-title">Hôm qua</span>
+                              <span class="products__img-quantity">
+                                  4 <i class="fa-solid fa-image"></i>
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="products__content">
+                          <h2 class="products__title">
+                              Hehehehe xin chào tất cả bạn nhé
+                          </h2>
+
+                          <p class="products__desc">
+                              Xin chào các bạn
+                          </p>
+
+                          <p class="products__price">
+                              30000
+                          </p>
+
+                          <div class="products__adress-options">
+                              <span class="products__address">
+                                  Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
+                              </span>
+                              <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </div>
+                      </div>
+
+                  </a>
             </div>
-            <div class="products__content">
-              <h2 class="products__title">Hehehehe xin caho tat cac ban nhe</h2>
-              <p class="products__desc">XIn chao cac ban</p>
-              <p class="products__price">30000</p>
-              <div class="products__adress-options">
-                <span class="products__address"
-                  >Tam Ky Tam Ky Tam Ky Tam KyTam Ky</span
-                >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-          </a>
+          <!-- Item 1 -->
+          <div class="products__item-wrapper">
+
+              <!-- FORM YÊU THÍCH -->
+              <form id="favoriteForm" class="favorite-form">
+                  <input type="checkbox" id="favorite6" name="favorite" hidden>
+
+                  <label for="favorite6" class="heart-btn">
+                      <svg
+                          class="heart-icon"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                      >
+                          <path
+                              d="M12 21.35l-1.45-1.32
+                                C5.4 15.36 2 12.28 2 8.5
+                                2 5.42 4.42 3 7.5 3
+                                9.24 3 10.91 3.81 12 5.08
+                                13.09 3.81 14.76 3 16.5 3
+                                19.58 3 22 5.42 22 8.5
+                                22 12.28 18.6 15.36 13.45 20.04
+                                L12 21.35z"
+                          />
+                      </svg>
+                  </label>
+              </form>
+
+              <!-- LINK SẢN PHẨM -->
+              <a href="./details.html" class="products__item">
+
+                  <div class="products__img">
+                      <img
+                          src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                          alt=""
+                          class="products__image"
+                      />
+
+                      <div class="products__img-bottom">
+                          <span class="products__img-bottom-title">Hôm qua</span>
+                          <span class="products__img-quantity">
+                              4 <i class="fa-solid fa-image"></i>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="products__content">
+                      <h2 class="products__title">
+                          Hehehehe xin chào tất cả bạn nhé
+                      </h2>
+
+                      <p class="products__desc">
+                          Xin chào các bạn
+                      </p>
+
+                      <p class="products__price">
+                          30000
+                      </p>
+
+                      <div class="products__adress-options">
+                          <span class="products__address">
+                              Tam Ky Tam Ky Tam Ky Tam Ky Tam Ky
+                          </span>
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+                  </div>
+
+              </a>
+          </div>
         </div>
         <div class="products__continute">Xem thêm</div>
       </div>

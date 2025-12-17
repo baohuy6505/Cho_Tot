@@ -1,291 +1,15 @@
 <header class="header" id="header">
+
+      <!-- Nút menu trái -->
       <div class="header__left">
         <button class="header__left-btn">
           <i class="fa-solid fa-list"></i>
         </button>
 
-        <img src="{{ asset('images/client/logo.png')}}" alt="" class="header__left-img" />
-
-        <div class="header__left-title"
-          >Dành cho người bán <i class="fa-solid fa-angle-down"></i>
-
-          <div class="header__left-title-modal">
-            <ul class="header__left-title-modal-list">
-              <li class="header__left-title-modal-item">
-                <img src="{{ asset('images/client/QuanlyTin/qly-tin.svg')}}" alt="" class="header__left-title-modal-img">
-                <a href="" class="header__left-title-modal-link">Quản lí tin</a>
-              </li>
-              <li class="header__left-title-modal-item">
-                <img src="{{ asset('images/client/QuanlyTin/goi-pro.svg')}}" alt="" class="header__left-title-modal-img">
-                <a href="" class="header__left-title-modal-link">Gói Pro</a>
-              </li>
-              <li class="header__left-title-modal-item">
-                <img src="{{ asset('images/client/QuanlyTin/shield-check.svg')}}" alt="" class="header__left-title-modal-img">
-                <a href="" class="header__left-title-modal-link"
-                  >Dành cho đối tác</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="header__address">
-          <i class="fa-solid fa-location-dot"></i><span>Đà Nẵng</span
-          ><i class="fa-solid fa-sort-down"></i>
-          <div class="header__form-adress-modal">
-            <h4 class="header__form-adress-modal-title">Khu vực</h4>
-            <div class="header__form-adress-modal-address">
-              <div class="header__form-adress-modal-conscious">
-                <div class="header__form-adress-modal-conscious-content">
-                  <p class="header__form-adress-modal-conscious-title">
-                    Chọn tỉnh thành
-                  </p>
-                  <p class="header__form-adress-modal-conscious-desc">Hà Nội</p>
-                </div>
-
-                <i class="fa-solid fa-sort-down"></i>
-              </div>
-
-              <div class="header__form-adress-modal-district">
-                <p class="header__form-adress-modal-district-title">
-                  Chọn quận huyện
-                </p>
-                <i class="fa-solid fa-sort-down"></i>
-              </div>
-            </div>
-            <button class="header__form-adress-modal-action">Áp dụng</button>
-
-            <div class="header__form-adress-sub-modal-conscious">
-              <i class="fa-solid fa-arrow-left icon-conscious-header"></i>
-              <h5 class="header__form-adress-sub-modal-conscious-title">
-                Tỉnh thành
-              </h5>
-              <div class="header__form-adress-sub-modal-conscious-input">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                  type="text"
-                  placeholder="Tìm tỉnh thành"
-                  class="header__form-adress-sub-modal-conscious-inp"
-                />
-              </div>
-              <div
-                class="header__form-adress-sub-modal-conscious-container-list"
-              >
-                <ul class="header__form-adress-sub-modal-conscious-list">
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text">Tất cả danh mục</span>
-                      <input id="category" type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Tp Hồ Chí Minh</span
-                      >
-                      <input id="category1" type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Hà Nội</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Đà Nẵng</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Cần Thơ</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Bình Dương</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >An Giang</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-conscious-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Bà Rịa - Vũng Tàu</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="header__form-adress-sub-modal-district">
-              <i class="fa-solid fa-arrow-left icon-district-header"></i>
-              <h5 class="header__form-adress-sub-modal-district-title">
-                Quận huyện
-              </h5>
-              <div class="header__form-adress-sub-modal-district-input">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                  type="text"
-                  placeholder="Tìm tỉnh thành"
-                  class="header__form-adress-sub-modal-district-inp"
-                />
-              </div>
-              <div
-                class="header__form-adress-sub-modal-district-container-list"
-              >
-                <ul class="header__form-adress-sub-modal-district-list">
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text">Tất cả</span>
-                      <input id="category" type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Cẩm Lệ</span
-                      >
-                      <input id="category1" type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Hải Châu</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Liên Chiểu</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Ngũ Hành Sơn</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Sơn Trà</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Thanh Khê</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-
-                  <li class="header__form-adress-sub-modal-district-item">
-                    <label
-                      ><span class="label-text-header-address"
-                        >Quận Hòa Vang</span
-                      >
-                      <input type="radio" name="category" />
-                      <span class="custom__radaio">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <!-- Modal cho menu trái -->
         <div class="header__left-modal">
           <h4 class="header__left-modal-title">Danh mục</h4>
+          <!-- Modal lớn -->
           <div class="header__left-modal-box">
             <ul class="header__left-modal-list">
               <li data-sub="sub1" class="header__left-modal-item">
@@ -430,6 +154,7 @@
               </li>
             </ul>
 
+            <!-- Các Modal phụ -->
             <div id="sub1" class="header__left-sub-modal">
               <ul class="header__left-sub-modal-list">
                 <li class="header__left-sub-modal-item">
@@ -634,8 +359,296 @@
             </div>
           </div>
         </div>
+
+        <!-- Logo -->
+        <img src="{{ asset('images/client/logo.png')}}" alt="" class="header__left-img" />
+
+        <!-- Dành cho người bán hàng -->
+        <div class="header__left-title"
+          >Dành cho người bán <i class="fa-solid fa-angle-down"></i>
+          <div class="header__left-title-modal">
+            <ul class="header__left-title-modal-list">
+              <li class="header__left-title-modal-item">
+                <img src="{{ asset('images/client/QuanlyTin/qly-tin.svg')}}" alt="" class="header__left-title-modal-img">
+                <a href="" class="header__left-title-modal-link">Quản lí tin</a>
+              </li>
+              <li class="header__left-title-modal-item">
+                <img src="{{ asset('images/client/QuanlyTin/goi-pro.svg')}}" alt="" class="header__left-title-modal-img">
+                <a href="" class="header__left-title-modal-link">Gói Pro</a>
+              </li>
+              <li class="header__left-title-modal-item">
+                <img src="{{ asset('images/client/QuanlyTin/shield-check.svg')}}" alt="" class="header__left-title-modal-img">
+                <a href="" class="header__left-title-modal-link"
+                  >Dành cho đối tác</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chọn khu vực hiện ra khi cuộn trang -->
+        <div class="header__address">
+          <i class="fa-solid fa-location-dot"></i><span>Đà Nẵng</span
+          ><i class="fa-solid fa-sort-down"></i>
+          <!-- Modal Khu vực -->
+          <div class="header__form-adress-modal">
+            <h4 class="header__form-adress-modal-title">Khu vực</h4>
+            <div class="header__form-adress-modal-address">
+              <div class="header__form-adress-modal-conscious">
+                <div class="header__form-adress-modal-conscious-content">
+                  <p class="header__form-adress-modal-conscious-title">
+                    Chọn tỉnh thành
+                  </p>
+                  <p class="header__form-adress-modal-conscious-desc">Hà Nội</p>
+                </div>
+
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+              <div class="header__form-adress-modal-district">
+                <p class="header__form-adress-modal-district-title">
+                  Chọn quận huyện
+                </p>
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+            </div>
+            <button class="header__form-adress-modal-action">Áp dụng</button>
+
+            <!-- Modal phụ cho khu vực -->
+            <div class="header__form-adress-sub-modal-conscious">
+              <i class="fa-solid fa-arrow-left icon-conscious-header"></i>
+              <h5 class="header__form-adress-sub-modal-conscious-title">
+                Tỉnh thành
+              </h5>
+              <div class="header__form-adress-sub-modal-conscious-input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  type="text"
+                  placeholder="Tìm tỉnh thành"
+                  class="header__form-adress-sub-modal-conscious-inp"
+                />
+              </div>
+              <div
+                class="header__form-adress-sub-modal-conscious-container-list"
+              >
+                <ul class="header__form-adress-sub-modal-conscious-list">
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text">Tất cả danh mục</span>
+                      <input id="category" type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Tp Hồ Chí Minh</span
+                      >
+                      <input id="category1" type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Hà Nội</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Đà Nẵng</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Cần Thơ</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Bình Dương</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >An Giang</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-conscious-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Bà Rịa - Vũng Tàu</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Modal phụ cho khu vực -->
+            <div class="header__form-adress-sub-modal-district">
+              <i class="fa-solid fa-arrow-left icon-district-header"></i>
+              <h5 class="header__form-adress-sub-modal-district-title">
+                Quận huyện
+              </h5>
+              <div class="header__form-adress-sub-modal-district-input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  type="text"
+                  placeholder="Tìm tỉnh thành"
+                  class="header__form-adress-sub-modal-district-inp"
+                />
+              </div>
+              <div
+                class="header__form-adress-sub-modal-district-container-list"
+              >
+                <ul class="header__form-adress-sub-modal-district-list">
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text">Tất cả</span>
+                      <input id="category" type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Cẩm Lệ</span
+                      >
+                      <input id="category1" type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Hải Châu</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Liên Chiểu</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Ngũ Hành Sơn</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Sơn Trà</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Thanh Khê</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+
+                  <li class="header__form-adress-sub-modal-district-item">
+                    <label
+                      ><span class="label-text-header-address"
+                        >Quận Hòa Vang</span
+                      >
+                      <input type="radio" name="category" />
+                      <span class="custom__radaio">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
       </div>
 
+      <!-- Thanh NavBar -->
       <nav class="navbar">
         <ul class="navbar__list">
           <li class="navbar__item">
@@ -653,6 +666,7 @@
         </ul>
       </nav>
 
+      <!-- Ô nhập liệu hiện khi cuộn -->
       <div class="header__input">
         <div class="icon-1"><i class="fa-solid fa-magnifying-glass"></i></div>
         <input type="text" class="header__inp" placeholder="Tìm kiếm" />
@@ -662,209 +676,258 @@
         </div>
       </div>
 
-      <div class="header__right">
-  <div class="header__action">
-    <button class="header__action-item">
-      <i class="fa-regular fa-heart"></i>
-    </button>
-    <button class="header__action-item">
-      <i class="fa-regular fa-message"></i>
-    </button>
-    <button class="header__action-item">
-      <i class="fa-regular fa-bell"></i>
-    </button>
-  </div>
+  <div class="header__right">
 
-  <div class="header__action-btn">
-    <a href="./manager.html" class="header__login">Đăng nhập</a>
-    <button class="header__up">Đăng tin</button>
-    <button class="header__user">
-      <i class="fa-regular fa-user"></i>
-      <i class="fa-solid fa-angle-down"></i>
-    </button>
+            <div class="header__action">
+              <button class="header__action-item">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="header__action-item">
+                <i class="fa-regular fa-message"></i>
+              </button>
+              <button class="header__action-item">
+                <i class="fa-regular fa-bell"></i>
+              </button>
+            </div>
 
-    <div class="header__action-btn-modal">
-      <div
-        
-        class="header__action-btn-modal-top"
-      >
-        <div class="header__action-btn-modal-top-content">
-          <h4 class="header__action-btn-modal-top-title">
-            Mua thì hời, bán thì lời
-          </h4>
-          <p class="header__action-btn-modal-top-desc">
-            Đăng nhập cái đã!
-          </p>
-        </div>
+    <div class="header__action-btn">
+          <a href="./manager.html" class="header__login">Đăng nhập</a>
+          <a href="" class="header__up">Đăng tin</a>
+          <button class="header__user">
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
 
-        <div class="header__action-btn-modal-top-image">
-          <img
-            src="{{ asset('images/client/happy_right.webp') }}"
-            alt=""
-            class="header__action-btn-modal-top-img"
-          />
-        </div>
+       <div class="header__action-btn-modal">
+              <!-- Before Login -->
+            <div class="header__action-btn-modal-top">
+              <div class="header__action-btn-modal-top-content">
+                <h4 class="header__action-btn-modal-top-title">
+                  Mua thì hời, bán thì lời
+                </h4>
+                <p class="header__action-btn-modal-top-desc">
+                  Đăng nhập cái đã!
+                </p>
+              </div>
+              <div class="header__action-btn-modal-top-image">
+                <img
+                  src="{{ asset('images/client/happy_right.webp') }}"
+                  alt=""
+                  class="header__action-btn-modal-top-img"
+                />
+              </div>
+              <div class="header__action-btn-modal-top-action">
+                <div class="header__action-btn-modal-top-action-register">
+                  Đăng kí
+                </div>
+                <div class="header__action-btn-modal-top-action-login">
+                  Đăng nhập
+                </div>
+              </div>
+            </div>
+            <!-- After Login -->
+            <div style="display: none;" class="header__action-btn-modal-top-after">
+                <div class="header__action-btn-modal-top-after-image">
+                  <img
+                    src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
+                    alt=""
+                    class="header__action-btn-modal-top-after-img"
+                  />
+                  <i class="fa-solid fa-pen"></i>
+                </div>
+                <h3 class="header__action-btn-modal-top-after-name">
+                    Xuan Trung
+                </h3>
+                  <div class="header__action-btn-modal-top-after-desc">
+                    <span class="header__action-btn-modal-top-after-desc-1">
+                      Người theo dõi 0
+                    </span>
+                    <span class="header__action-btn-modal-top-after-desc-2">
+                      Đang theo dõi 0
+                    </span>
+                  </div>
 
-        <div class="header__action-btn-modal-top-action">
-          <div class="header__action-btn-modal-top-action-register">
-            Đăng kí
-          </div>
-          <div class="header__action-btn-modal-top-action-login">
-            Đăng nhập
-          </div>
-        </div>
-      </div>
-  <!-- Box After Login -->
-      <div style="display: none;" class="header__action-btn-modal-top-after">
-        <div class="header__action-btn-modal-top-after-image">
-          <img
-            src="{{ asset('images/client/04cba6c3b5fca452053febc85c22ef2e-2961015904166203709.jpg') }}"
-            alt=""
-            class="header__action-btn-modal-top-after-img"
-          />
-          <i class="fa-solid fa-pen"></i>
-        </div>
+              <div class="header__action-btn-top-after">
+                <div class="header__action-btn-top-after-list">
+                    <div class="header__action-btn-top-after-item-1">
+                      <span>TK Định danh</span>
+                      <span>V000000000000000 <i class="fa-solid fa-copy"></i></span>
+                    </div>
+                    <div class="header__action-btn-top-after-item-2">
+                      <span>Đồng Tốt</span>
+                      <span>0</span>
+                    </div>
+                    <a href="" class="header__action-btn-top-after-item-action">Nạp ngay</a>
+                </div>
+              </div>
+            </div>
 
-         <h3 class="header__action-btn-modal-top-after-name">
-            Xuan Trung
-          </h3>
+            <h5 class="header__action-btn-modal-title">Tiện ích</h5>
+            <div class="header__action-btn-modal-extensions">
+              <ul class="header__action-btn-modal-extensions-list">
+                <li class="header__action-btn-modal-extensions-item">
+                 <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/1.svg')}}" alt="" class="header__action-btn-modal-extensions-item-img">
+                    <a href="" class="header__action-btn-modal-extensions-link">
+                      Tin đăng đã lưu
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-extensions-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/2.svg')}}" alt="" class="header__action-btn-modal-extensions-item-img">
+                    <a href="" class="header__action-btn-modal-extensions-link">
+                      Tìm kiếm đã lưu
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-extensions-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/3.svg')}}" alt="" class="header__action-btn-modal-extensions-item-img">
+                    <a href="" class="header__action-btn-modal-extensions-link">
+                      Lịch sử xem tin
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-extensions-item">
+                   <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/4.svg')}}" alt="" class="header__action-btn-modal-extensions-item-img">
+                    <a href="" class="header__action-btn-modal-extensions-link">
+                      Đánh giá từ tôi
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+              </ul>
+            </div>
 
-          <div class="header__action-btn-modal-top-after-desc">
-            <span class="header__action-btn-modal-top-after-desc-1">
-              Người theo dõi 0
-            </span>
-            <span class="header__action-btn-modal-top-after-desc-2">
-              Đang theo dõi 0
-            </span>
-          </div>
+            <h5 class="header__action-btn-modal-title">Dịch vụ trả phí</h5>
+            <div class="header__action-btn-modal-service">
+              <ul class="header__action-btn-modal-service-list">
+                <li class="header__action-btn-modal-service-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/5.svg')}}" alt="" class="header__action-btn-modal-service-item-img">
+                    <a href="" class="header__action-btn-modal-service-link">
+                      Đồng tốt
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-service-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/6.svg')}}" alt="" class="header__action-btn-modal-service-item-img">
+                    <a href="" class="header__action-btn-modal-service-link">
+                      Gói PRO
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-service-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/7.svg')}}" alt="" class="header__action-btn-modal-service-item-img">
+                    <a href="" class="header__action-btn-modal-service-link">
+                      Kênh đối tác
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-service-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/8.svg')}}" alt="" class="header__action-btn-modal-service-item-img">
+                    <a href="" class="header__action-btn-modal-service-link">
+                      Lịch sử giao dịch
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-service-item">
+                  <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/9.svg')}}" alt="" class="header__action-btn-modal-service-item-img">
+                    <a href="" class="header__action-btn-modal-service-link">
+                      Cửa hàng/ chuyên trang
+                    </a>
+                 </div>
+                  <a
+                    href=""
+                    class="header__action-btn-modal-service-create-now"
+                  >
+                    Tạo ngay
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-       <div class="header__action-btn-top-after">
-        <div class="header__action-btn-top-after-list">
-          <div class="header__action-btn-top-after-item-1">
-            <span>TK Định danh</span>
-            <span>V000000000000000 <i class="fa-solid fa-copy"></i></span>
-          </div>
+            <h5 class="header__action-btn-modal-title">Ưu đãi, khuyến mãi</h5>
+            <div class="header__action-btn-modal-sale">
+              <ul class="header__action-btn-modal-sale-list">
+                <li class="header__action-btn-modal-sale-item">
+                 <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/10.svg')}}" alt="" class="header__action-btn-modal-sale-item-img">
+                    <a href="" class="header__action-btn-modal-sale-link">
+                      Chợ tốt ưu đãi 
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-sale-item">
+                 <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/11.svg')}}" alt="" class="header__action-btn-modal-sale-item-img">
+                    <a href="" class="header__action-btn-modal-sale-link">
+                      Ưu đãi của tôi
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+              </ul>
+            </div>
 
-           <div class="header__action-btn-top-after-item-2">
-            <span>Đồng Tốt</span>
-            <span>0</span>
-          </div>
-
-          <a href="" class="header__action-btn-top-after-item-action">Nạp ngay</a>
-        </div>
-      </div>
-
+            <h5 class="header__action-btn-modal-title">Khác</h5>
+            <div class="header__action-btn-modal-other">
+              <ul class="header__action-btn-modal-other-list">
+                <li class="header__action-btn-modal-other-item">
+                   <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/12.svg')}}" alt="" class="header__action-btn-modal-sale-item-img">
+                    <a href="" class="header__action-btn-modal-sale-link">
+                     Cài đặt tài khoản 
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-other-item">
+                   <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/13.svg')}}" alt="" class="header__action-btn-modal-sale-item-img">
+                    <a href="" class="header__action-btn-modal-sale-link">
+                      Trợ giúp
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="header__action-btn-modal-other-item">
+                   <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/14.svg')}}" alt="" class="header__action-btn-modal-sale-item-img">
+                    <a href="" class="header__action-btn-modal-sale-link">
+                      Đóng góp ý kiến 
+                    </a>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <form class="header__action-btn-modal-other-item-action">
+                   <div class="wrapper">
+                    <img src="{{ asset('images/client/usersIcon/15.svg')}}" alt="" class="header__action-btn-modal-sale-item-img">
+                    <button class="header__action-btn-modal-other-logout">
+                      Đăng xuất
+                    </button>
+                 </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </form>
+              </ul>
+            </div>
+       </div>
     </div>
-
-      <h5 class="header__action-btn-modal-title">Tiện ích</h5>
-      <div class="header__action-btn-modal-extensions">
-        <ul class="header__action-btn-modal-extensions-list">
-          <li class="header__action-btn-modal-extensions-item">
-            <a href="" class="header__action-btn-modal-extensions-link">
-              Tin đăng đã lưu
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-extensions-item">
-            <a href="" class="header__action-btn-modal-extensions-link">
-              Tìm kiếm đã lưu
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-extensions-item">
-            <a href="" class="header__action-btn-modal-extensions-link">
-              Lịch sử xem tin
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-extensions-item">
-            <a href="" class="header__action-btn-modal-extensions-link">
-              Đánh giá từ tôi
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-        </ul>
-      </div>
-
-      <h5 class="header__action-btn-modal-title">Dịch vụ trả phí</h5>
-      <div class="header__action-btn-modal-service">
-        <ul class="header__action-btn-modal-service-list">
-          <li class="header__action-btn-modal-service-item">
-            <a href="" class="header__action-btn-modal-service-link">
-              Đồng tốt
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-service-item">
-            <a href="" class="header__action-btn-modal-service-link">
-              Gói PRO
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-service-item">
-            <a href="" class="header__action-btn-modal-service-link">
-              Kênh đối tác
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-service-item">
-            <a href="" class="header__action-btn-modal-service-link">
-              Lịch sử giao dịch
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-service-item">
-            <a href="" class="header__action-btn-modal-service-link">
-              Cửa hàng/Chuyên trang
-            </a>
-            <a
-              href=""
-              class="header__action-btn-modal-service-create-now"
-            >
-              Tạo ngay
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <h5 class="header__action-btn-modal-title">Ưu đãi, khuyến mãi</h5>
-      <div class="header__action-btn-modal-sale">
-        <ul class="header__action-btn-modal-sale-list">
-          <li class="header__action-btn-modal-sale-item">
-            <a href="" class="header__action-btn-modal-sale-link">
-              Chợ Tốt ưu đãi
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-sale-item">
-            <a href="" class="header__action-btn-modal-sale-link">
-              Ưu đãi của tôi
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-        </ul>
-      </div>
-
-      <h5 class="header__action-btn-modal-title">Khác</h5>
-      <div class="header__action-btn-modal-other">
-        <ul class="header__action-btn-modal-other-list">
-          <li class="header__action-btn-modal-other-item">
-            <a href="" class="header__action-btn-modal-other-link">
-              Cài đặt tài khoản
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-          <li class="header__action-btn-modal-other-item">
-            <a href="" class="header__action-btn-modal-other-link">
-              Trợ giúp
-            </a>
-            <i class="fa-solid fa-chevron-right"></i>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
-</div>
 
 </header>
     <section class="banner">
@@ -875,7 +938,7 @@
           <span class="banner__category-text">Danh mục</span
           ><i class="fa-solid fa-sort-down"></i>
         </div>
-
+          <!-- Modal danh mục -->
         <div class="banner__form-category-modal">
           <ul class="banner__form-category-modal-list">
             <li class="banner__form-category-modal-item">
@@ -1042,10 +1105,11 @@
         <div class="banner__form-adress">
           <i class="fa-solid fa-location-dot"></i><span>Đà Nẵng</span
           ><i class="fa-solid fa-sort-down"></i>
-
+            <!-- Modal vị trí khu vực Banner -->
           <div class="banner__form-adress-modal">
             <h4 class="banner__form-adress-modal-title">Khu vực</h4>
             <div class="banner__form-adress-modal-address">
+              <!-- Nút nhấn mở modal -->
               <div class="banner__form-adress-modal-conscious">
                 <div class="banner__form-adress-modal-conscious-content">
                   <p class="banner__form-adress-modal-conscious-title">
@@ -1056,7 +1120,7 @@
 
                 <i class="fa-solid fa-sort-down"></i>
               </div>
-
+              <!-- Nút nhấn mở modal -->
               <div class="banner__form-adress-modal-district">
                 <p class="banner__form-adress-modal-district-title">
                   Chọn quận huyện
@@ -1065,7 +1129,7 @@
               </div>
             </div>
             <button class="banner__form-adress-modal-action">Áp dụng</button>
-
+              <!-- Modal phụ -->
             <div class="banner__form-adress-sub-modal-conscious">
               <i class="fa-solid fa-arrow-left icon-conscious"></i>
               <h5 class="banner__form-adress-sub-modal-conscious-title">
@@ -1179,7 +1243,7 @@
                 </ul>
               </div>
             </div>
-
+              <!-- Modal phụ -->
             <div class="banner__form-adress-sub-modal-district">
               <i class="fa-solid fa-arrow-left icon-district"></i>
               <h5 class="banner__form-adress-sub-modal-district-title">
