@@ -1,0 +1,41 @@
+// pages/_responsive.scss
+
+.responsive {
+  display: none;
+}
+
+.text__responsive {
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .header,
+  .banner,
+  .options,
+  .products,
+  .news,
+  .key,
+  .banner-download,
+  .footer {
+    display: none;
+  }
+
+  body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .responsive {
+    .text__responsive {
+      text-align: center;
+    }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}

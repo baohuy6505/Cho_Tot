@@ -1,0 +1,85 @@
+// layout/_login-box-and-ads.scss
+
+.login-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  background-color: $color-white;
+  z-index: 15;
+}
+
+.login-box .close-login {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: $color-secondary;
+  color: $color-white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.login-box__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3.2rem auto 0;
+  max-width: 120rem;
+}
+
+.login-box__text {
+  color: $color-secondary;
+  font-weight: bold;
+}
+
+.login-box__action {
+  padding: 1.2rem 2.4rem;
+  border-radius: 1rem;
+  background-color: #ffba01;
+  color: $color-secondary;
+  font-weight: bold;
+}
+
+.login-box.none {
+  display: none;
+}
+
+.advertisement {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  position: fixed;
+  right: 1rem;
+  bottom: 7rem;
+  z-index: 9;
+}
+
+.advertisement__icon {
+  position: absolute;
+  background-color: $color-secondary;
+  color: $color-white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+
+.advertisement__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.advertisement.none {
+  display: none;
+}

@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<!-- <div class="d-flex align-items-center">
             @auth
                 <div class="dropdown ms-2 me-3">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
@@ -20,4 +20,8 @@
                     <a href="{{ route('register') }}" class="fw-bold text-dark text-decoration-none small">Đăng ký</a>
                 </div>
             @endauth
-        </div>
+        </div> -->
+
+
+        
+    

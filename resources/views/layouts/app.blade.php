@@ -4,25 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {{-- Lấy tiêu đề động từ code Dev (xịn hơn), fallback là tên Web --}}
+    
     <title>@yield('title', 'Chợ Tốt Clone')</title>
+    
+    {{-- XÓA CÁC DÒNG NÀY --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    
+    {{-- <link rel="stylesheet" href="{{ asset('css/client/.css') }}"> --}}
 
-    {{-- Dùng Bootstrap 5.3.2 (Mới nhất từ Dev) --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    {{-- Giữ Icons từ code HEAD --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    {{-- Giữ cả 2 file CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/notify.css') }}">
-
-    {{-- Hỗ trợ cả 2 cách inject CSS --}}
-    @yield('styles')
+    {{-- THAY BẰNG LỆNH NÀY --}}
+    @vite(['resources/scss/main.scss'])
+    
+    @yield('styles') 
     @stack('styles')
 </head>
+ 
+@if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+<body>
 
 <body class="bg-light">
     <div class="custom-toast-container">
@@ -41,43 +50,12 @@
     </div>
     @include('partials.header')
 
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toasts = document.querySelectorAll('.custom-toast');
+        @include('partials.footer')  
 
-            toasts.forEach(toast => {
-                // Hiển thị toast
-                setTimeout(() => {
-                    toast.classList.add('show');
-                }, 100); // Đợi 1 chút cho CSS load xong
-
-                const delay = toast.getAttribute('data-autohide-delay') || 5000;
-                
-                // Tự động ẩn sau thời gian delay
-                setTimeout(() => {
-                    hideToast(toast);
-                }, delay);
-
-                // Sự kiện click nút đóng
-                const closeButton = toast.querySelector('.custom-toast__close');
-                closeButton.addEventListener('click', () => {
-                    hideToast(toast);
-                });
-            });
-            
-            function hideToast(toastElement) {
-                toastElement.classList.remove('show');
-                // Xóa khỏi DOM sau khi animation kết thúc (300ms)
-                setTimeout(() => {
-                    toastElement.remove();
-                }, 300);
-            }
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="{{ asset('js/client/main.js') }}"></script>
+    <script src="{{ asset('js/client/details.js') }}"></script>
+    </body>
 </html>

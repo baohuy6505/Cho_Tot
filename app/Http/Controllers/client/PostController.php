@@ -16,34 +16,37 @@ class PostController extends Controller
 {
     public function index()
     {
-        $dataPosts = 10;
-        $blockedPosts = Post::where('status', 'blocked')
-            ->latest() // Sắp xếp theo mới nhất
-            ->paginate($dataPosts, ['*'], 'blocked_page'); 
-        $pendingPosts = Post::where('status', 'pending')
+        $idUser = Auth::user()->id;
+        $perPage = 10;
+        $baseQuery = Post::where('user_id', $idUser);
+        $blockedPosts = (clone $baseQuery)
+            ->where('status', 'blocked')
             ->latest()
-            ->paginate($dataPosts, ['*'], 'pending_page');
-        $activePosts = Post::where('status', 'active')
+            ->paginate($perPage, ['*'], 'blocked_page');
+
+        $pendingPosts = (clone $baseQuery)
+            ->where('status', 'pending')
             ->latest()
-            ->paginate($dataPosts, ['*'], 'active_page'); 
-        // return View('client.posts.index', compact('activePosts','pendingPosts','blockedPosts'));
-        return response()->json([
-            'message' => 'Post created successfully!',
-            'dataSlug' => $blockedPosts,$pendingPosts,$activePosts
-        ]);
+            ->paginate($perPage, ['*'], 'pending_page');
+
+        $activePosts = (clone $baseQuery)
+            ->where('status', 'active')
+            ->latest()
+            ->paginate($perPage, ['*'], 'active_page');
+        return View('client.posts.index', compact('activePosts', 'pendingPosts','blockedPosts'));
     }
 
     public function detail($slug)
     {
         //$dataPost = Post::findOrFail($id);
         //$dataImages = PostImage::where('post_id', $id)->get();//lấy ra tat ca gia tri co post_id = $id
-        //return view('client.posts.detail', compact('dataPost', 'dataImages'));
-
+        
         $dataPost = Post::with('images')->where('slug', $slug)->firstOrFail();
-        return response()->json([
-            'message' => 'Post created successfully!',
-            'dataSlug' => $dataPost,
-        ]);
+        return view('client.posts.details', compact('dataPost'));
+        // return response()->json([
+        //     'message' => 'Post created successfully!',
+        //     'dataSlug' => $dataPost,
+        // ]);
     }
     public function createUserPost()
     {
@@ -92,7 +95,10 @@ class PostController extends Controller
     public function editUserPost($id)
     {
         $datdaPost = Post::findOrFail($id);
-        return view('client.posts.edit', compact('datdaPost'));
+        
+        $categories = Category::all();  
+
+        return view('client.posts.edit', compact('datdaPost', 'categories'));
     }
     public function updateUserPost(StorePostRequest $request, $id)
     {
