@@ -729,7 +729,7 @@
                   Đăng kí
                 </a>
 
-                <a href="" class="header__action-btn-modal-top-action-login">
+                <a href="{{ route('login') }}" class="header__action-btn-modal-top-action-login">
                   Đăng nhập
                 </a>
               </div>
