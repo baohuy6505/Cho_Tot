@@ -275,114 +275,91 @@
                     <div class="comment-box__body">
                         @if ($dataPost->comments->count() > 0)
                             <div class="comment-list">
-                                {{-- Lặp qua danh sách bình luận (Chỉ lấy bình luận cấp 1 nếu bạn làm Reply lồng nhau) --}}
+                                {{-- Lặp qua comment cha --}}
                                 @foreach ($dataPost->comments->where('parent_id', null) as $comment)
-                                    <div
-                                        class="comment-item {{ $comment->user_id == $dataPost->user_id ? 'owner' : '' }}">
+                                    {{-- Kiểm tra xem có phải chủ bài viết hoặc chính mình không để căn phải --}}
+                                    @php
+                                        // Logic: Nếu là người bán (chủ post) thì hiện bên phải (owner)
+                                        $isOwner = $comment->user_id == $dataPost->user_id;
+                                    @endphp
+
+                                    <div class="comment-item {{ $isOwner ? 'owner' : '' }}">
                                         <div class="comment-avatar">
-                                            <img src="{{ $comment->user->avatar ?? asset('images/client/profile/default-avatar.jpg') }}"
-                                                alt="Avatar">
+                                            <img src="{{ $comment->user->avatar ?? asset('images/client/profile/default-avatar.jpg') }}" alt="Avatar">
                                         </div>
-                                        <div class="comment-content">
+
+                                        <div class="comment-content-wrapper">
                                             <div class="comment-bubble">
                                                 <h4 class="comment-author">
                                                     {{ $comment->user->name }}
-                                                    @if ($comment->user_id == $dataPost->user_id)
-                                                        <span class="badge-seller">(Người bán)</span>
-                                                    @endif
                                                 </h4>
                                                 <p class="comment-text">{{ $comment->content }}</p>
                                             </div>
-                                            
-                                            
-                                            <div class="comment-actions">
-                                                <span
-                                                    class="comment-time">{{ $comment->created_at->diffForHumans() }}
-                                                </span>
-                                                @if (Auth::id() == $comment->user_id || Auth::user()->role == 'admin')
-                                                        <form action="{{ route('comments.destroy', $comment->id) }}"
-                                                            method="POST" style="display:inline;">
-                                                            @csrf @method('DELETE')
-                                                            <button type="submit" class="btn-delete-comment"
-                                                                onclick="return confirm('Xóa bình luận này?')">Xóa</button>
-                                                        </form>
-                                                @endif
-                                            </div>
 
-                                          
-                                            
+                                            <div class="comment-actions">
+                                                @if (Auth::id() == $comment->user_id || Auth::user()->role == 'admin')
+                                                    <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" class="delete-form">
+                                                        @csrf @method('DELETE')
+                                                        <button type="submit" class="btn-delete-comment" onclick="return confirm('Xóa bình luận này?')">xóa</button>
+                                                    </form>
+                                                @endif
+
+                                                <span class="comment-time">{{ $comment->created_at->diffForHumans() }}</span>
+                                            </div>
                                         </div>
-                                          
                                     </div>
 
-                                    {{-- Hiển thị các câu trả lời (Replies) --}}
                                     @foreach ($comment->replies as $reply)
-                                        <div class="comment-item is-reply {{ $reply->user_id == $dataPost->user_id ? 'owner' : '' }}"
-                                            style="margin-left: 50px;">
-                                            {{-- Cấu trúc tương tự comment cha --}}
+                                        @php
+                                            $isReplyOwner = $reply->user_id == $dataPost->user_id;
+                                        @endphp
+                                        <div class="comment-item is-reply {{ $isReplyOwner ? 'owner' : '' }}">
                                             <div class="comment-avatar">
-                                                <img src="{{ $reply->user->avatar ?? asset('images/client/profile/default-avatar.jpg') }}"
-                                                    alt="Avatar">
+                                                <img src="{{ $reply->user->avatar ?? asset('images/client/profile/default-avatar.jpg') }}" alt="Avatar">
                                             </div>
-                                            <div class="comment-content">
+                                            <div class="comment-content-wrapper">
                                                 <div class="comment-bubble">
                                                     <h4 class="comment-author">{{ $reply->user->name }}</h4>
                                                     <p class="comment-text">{{ $reply->content }}</p>
                                                 </div>
                                                 <div class="comment-actions">
-                                                    <span
-                                                        class="comment-time">{{ $reply->created_at->diffForHumans() }}</span>
+                                                    @if (Auth::id() == $reply->user_id || Auth::user()->role == 'admin')
+                                                        <form action="{{ route('comments.destroy', $reply->id) }}" method="POST" class="delete-form">
+                                                            @csrf @method('DELETE')
+                                                            <button type="submit" class="btn-delete-comment" onclick="return confirm('Xóa bình luận này?')">xóa</button>
+                                                        </form>
+                                                    @endif
+                                                    <span class="comment-time">{{ $reply->created_at->diffForHumans() }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
+
                                 @endforeach
                             </div>
                         @else
                             <div class="comment-box__empty-state">
                                 <i class="far fa-comment-dots"></i>
-                                <p>Chưa có bình luận nào. </br> Hãy để lại bình luận cho người bán.</p>
+                                <p>Chưa có bình luận nào. <br> Hãy để lại bình luận cho người bán.</p>
                             </div>
                         @endif
                     </div>
 
-                    {{-- Form gửi bình luận --}}
+                    {{-- Form gửi bình luận (Giữ nguyên code cũ của bạn) --}}
                     @auth
-                        {{-- Thêm đoạn này vào trên thẻ <form> hoặc đầu vùng comment --}}
-                        @if ($errors->any())
-                            <div class="alert alert-danger" style="color: red; padding: 10px; background: #ffe6e6; border-radius: 5px; margin-bottom: 10px;">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <form action="{{ route('comments.store', $dataPost->id) }}" method="POST">
+                        <form action="{{ route('comments.store', $dataPost->id) }}" method="POST" style="margin-top: 20px;">
                             @csrf
-                            {{-- Input ẩn để xử lý trả lời bình luận --}}
                             <input type="hidden" name="parent_id" id="parent_id">
-
-                            <div id="reply-label"
-                                style="display:none; padding: 5px 10px; background: #f0f0f0; border-radius: 5px; margin-bottom: 5px;">
+                            <div id="reply-label" style="display:none; padding: 5px 10px; background: #f0f0f0; border-radius: 5px; margin-bottom: 5px;">
                                 Đang trả lời: <span id="reply-name"></span>
                                 <span onclick="cancelReply()" style="cursor:pointer; color:red; float:right;">&times;</span>
                             </div>
-
                             <div class="comment-box__input-area">
-                                <input type="text" name="content" class="comment-box__input"
-                                    placeholder="Viết bình luận..." required>
-                                <button type="submit" class="comment-box__send-btn">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
+                                <input type="text" name="content" class="comment-box__input" placeholder="Viết bình luận..." required>
+                                <button type="submit" class="comment-box__send-btn"><i class="fas fa-paper-plane"></i></button>
                             </div>
                         </form>
-                        @endauth
-                    {{-- @else
-                        <div class="comment-login-prompt">
-                            <p><a href="{{ route('login') }}">Đăng nhập</a> để tham gia bình luận.</p>
-                        </div>
-                    @endauth --}}
+                    @endauth
                 </div>
             </main>
         </div>
