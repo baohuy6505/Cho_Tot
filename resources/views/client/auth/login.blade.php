@@ -51,6 +51,7 @@
                     <button type="submit" class="btn-continue">Tiếp tục</button>
                 @endif
             </form>
+                <a class="text-danger m-2" href="/">Quay lại trang Home</a>
 
             <div class="footer-links">
                 <a href="#">Quy chế hoạt động sàn</a>

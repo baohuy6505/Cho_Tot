@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\PostImage;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -43,12 +44,12 @@ class PostController extends Controller
 
         $dataPost = Post::with([
             'images',
-            'comments.user',    
-            'comments.replies.user', 
+            'comments.user',
+            'comments.replies.user',
             'user'
         ])
-        ->where('slug', $slug)
-        ->firstOrFail();
+            ->where('slug', $slug)
+            ->firstOrFail();
         return view('client.posts.details', compact('dataPost'));
         // return response()->json([
         //     'message' => 'Post created successfully!',
@@ -62,41 +63,51 @@ class PostController extends Controller
     }
     public function storeUserPost(StorePostRequest $request)
     {
-
-        $dataValidated = $request->validated();
-        $dataValidated['user_id'] =  Auth::id();
-        $dataValidated['status'] = 'pending';
-        $slug = Str::slug($dataValidated['title']);
-        $originalSlug = $slug;
-        $count = 1;
-
-        $imagePaths = [];
-        while (Post::where('slug', $slug)->exists()) {
-            $slug = $originalSlug . '-' . $count;
-            $count++;
+        $dataUser = User::findOrFail(Auth::id());
+        $postPrice = 5000; //phi dang bai
+        if ($dataUser->balance < $postPrice) {
+            return back()->with('error', 'Tài khoản của quý khách không đủ tiền');
         }
-        $dataValidated['slug'] = $slug;
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $imagePaths[] = $image->getClientOriginalName();
+        try {
+            $dataValidated = $request->validated();
+            $dataValidated['user_id'] =  Auth::id();
+            $dataValidated['status'] = 'pending';
+            $slug = Str::slug($dataValidated['title']);
+            $originalSlug = $slug;
+            $count = 1;
+            $dataUser->balance -= $postPrice;
+            $dataUser->save();
+
+            $imagePaths = [];
+            while (Post::where('slug', $slug)->exists()) {
+                $slug = $originalSlug . '-' . $count;
+                $count++;
             }
-        }
-        $post = Post::create($dataValidated);
-        // return response()->json([
-        //     'message' => 'Post created successfully!',
-        //     'data' => $dataValidated,
-        // ]);
-
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $imagePath = $image->store('post_images', 'public');
-                PostImage::create([
-                    'post_id' => $post->id,
-                    'image_url' => '/storage/' . $imagePath
-                ]);
+            $dataValidated['slug'] = $slug;
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $image) {
+                    $imagePaths[] = $image->getClientOriginalName();
+                }
             }
+            $post = Post::create($dataValidated);
+            // return response()->json([
+            //     'message' => 'Post created successfully!',
+            //     'data' => $dataValidated,
+            // ]);
+
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $image) {
+                    $imagePath = $image->store('post_images', 'public');
+                    PostImage::create([
+                        'post_id' => $post->id,
+                        'image_url' => '/storage/' . $imagePath
+                    ]);
+                }
+            }
+            return redirect()->route('client.posts.create')->with('success', 'Tạo bài đăng thành công!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Có lỗi xảy ra: ' . $e->getMessage());
         }
-        return redirect()->route('client.posts.create')->with('success', 'Tạo bài đăng thành công!');
     }
 
     public function editUserPost($id)

@@ -554,7 +554,7 @@
                 <a href="{{route('home')}}" class="navbar__item-link">Chợ tốt</a>
             </li>
             <li class="navbar__item">
-                <a href="" class="navbar__item-link">Xem cộ</a>
+                <a href="" class="navbar__item-link">Xe cộ</a>
             </li>
             <li class="navbar__item">
                 <a href="" class="navbar__item-link">Bất động sản</a>
@@ -820,6 +820,7 @@
                             </div>
                             <i class="fa-solid fa-chevron-right"></i>
                         </li>
+                        @auth
                         <form action="{{ route('logout') }}" class="header__action-btn-modal-other-item-action"
                             method="POST">
                             @csrf
@@ -832,6 +833,7 @@
                             </div>
                             <i class="fa-solid fa-chevron-right"></i>
                         </form>
+                        @endauth
                     </ul>
                 </div>
             </div>

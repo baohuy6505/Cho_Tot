@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>@yield('title', 'Chợ Tốt Clone')</title>
-    
+        <link rel="icon" href="{{ asset('images/client/profile/logo.jpg') }}" type="image/x-icon" /> 
     {{-- THAY BẰNG LỆNH NÀY --}}
     @vite(['resources/scss/main.scss'])
     <link rel="stylesheet" href="{{ asset('css/notify.css') }}">    
@@ -14,34 +14,24 @@
     @stack('styles')
 </head>
  
-{{-- @if (session('error'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('error') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
-@if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif --}}
 <body>
 
 <body class="bg-light">
-   <div class="custom-toast-container">
+  <div class="custom-toast-container">
+    {{-- Thông báo lỗi --}}
     @if (session('error'))
         <div class="custom-toast error" id="toast-error">
-            <button class="custom-toast__close" onclick="closeToast('toast-error')">&times;</button>
+            <button class="custom-toast__close" onclick="this.parentElement.remove()">&times;</button>
             <div class="custom-toast__body">
                 Lỗi: {{ session('error') }}
             </div>
         </div>
     @endif
 
+    {{-- Thông báo thành công --}}
     @if (session('success'))
         <div class="custom-toast success" id="toast-success">
-            <button class="custom-toast__close" onclick="closeToast('toast-success')">&times;</button>
+            <button class="custom-toast__close" onclick="this.parentElement.remove()">&times;</button>
             <div class="custom-toast__body">
                 Thành công: {{ session('success') }}
             </div>

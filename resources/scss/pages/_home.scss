@@ -185,6 +185,10 @@
     font-size: 1.4rem;
     color: #8a8888;
     margin-top: 0.5rem;
+     word-wrap: break-word;      /* Cũ nhưng vẫn nên có */
+    overflow-wrap: break-word;  /* Chuẩn hiện đại */
+    word-break: break-word;     /* Bẻ từ khi quá dài */
+    white-space: normal;  
 }
 
 .products__content .products__price {
@@ -208,6 +212,10 @@
     line-height: 2rem;
     font-weight: 300;
     font-size: 1.6rem;
+    word-wrap: break-word;      /* Cũ nhưng vẫn nên có */
+    overflow-wrap: break-word;  /* Chuẩn hiện đại */
+    word-break: break-word;     /* Bẻ từ khi quá dài */
+    white-space: normal;  
 }
 
 .products__top {

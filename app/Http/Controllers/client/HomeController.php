@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $dataPost = Post::with('images')->orderBy('created_at','desc')->limit(20)->get();
+        $dataPost = Post::with('images')
+        ->where('status','active')
+        ->orderBy('created_at','desc')->limit(20)->get();
         return View('client.home',compact('dataPost'));
         //    return response()->json([
         //     'message' => 'Post created successfully!',
