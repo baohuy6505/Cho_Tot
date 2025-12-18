@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\client\AuthController;
@@ -17,6 +17,23 @@ use App\Http\Controllers\client\PaymentController;
 // Route::get('/quan-ly-tin', function () {
 //     return view('client.detail-product');
 // });
+
+Route::get('/setup-database', function() {
+    try {
+        // 1. Chạy lệnh tạo bảng (Migrate) vào TiDB
+        Artisan::call('migrate', ['--force' => true]);
+        
+        // 2. Chạy lệnh link ảnh
+        Artisan::call('storage:link');
+        
+        // 3. Xóa cache để cập nhật
+        Artisan::call('optimize:clear');
+        
+        return '<h1 style="color:green">THÀNH CÔNG! Đã tạo bảng trong TiDB xong.</h1>';
+    } catch (\Exception $e) {
+        return '<h1 style="color:red">LỖI: ' . $e->getMessage() . '</h1>';
+    }
+});
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 
