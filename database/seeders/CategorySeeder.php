@@ -13,11 +13,11 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Technology', 'slug' => 'technology'],
-            ['name' => 'Health', 'slug' => 'health'],
-            ['name' => 'Lifestyle', 'slug' => 'lifestyle'],
-            ['name' => 'Education', 'slug' => 'education'],
-            ['name' => 'Entertainment', 'slug' => 'entertainment'],
+            // ['name' => 'Technology', 'slug' => 'technology'],
+            // ['name' => 'Health', 'slug' => 'health'],
+            // ['name' => 'Lifestyle', 'slug' => 'lifestyle'],
+            // ['name' => 'Education', 'slug' => 'education'],
+            // ['name' => 'Entertainment', 'slug' => 'entertainment'],
         ];
         foreach($categories as $category) {
             \App\Models\Category::create($category);

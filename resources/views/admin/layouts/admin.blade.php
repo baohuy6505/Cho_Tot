@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Shop</title>
-    {{-- <link rel="icon" href="/images/logofile.png" type="image/x-icon" /> --}}
+    <link rel="icon" href="{{ asset('images/client/profile/logo.jpg') }}" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}">
@@ -18,10 +18,10 @@
         <aside class="admin-sidebar">
             <div class="admin-sidebar-header">
                 <div class="admin-sidebar-logo text-center p-3">
-                    <img src="/images/logofile.png" alt="Logo" class="img-fluid" style="max-width: 50px;" />
+                    <img src="{{ asset('images/client/profile/logo.jpg') }}" alt="Logo" class="img-fluid" style="max-width: 50px;" />
                 </div>
 
-                <h2>Shop Shoes Manager</h2>
+                <h2>ChoTot Manager</h2>
             </div>
 
             <div class="admin-sidebar-section">Overview</div>
@@ -64,18 +64,13 @@
                     <div class="collapse" id="roleAccountSubmenu">
                         <ul class="admin-nav-menu ps-3">
                             <li class="admin-nav-item">
-                                <a href="/admin/users" class="admin-nav-link">
+                                <a href="{{ route('admin.role') }}" class="admin-nav-link">
                                     <span class="admin-label">Danh sách TK</span>
                                 </a>
                             </li>
                             <li class="admin-nav-item">
-                                <a href="/admin/users/create" class="admin-nav-link">
+                                <a href="{{ route('admin.role.create') }}" class="admin-nav-link">
                                     <span class="admin-label">Thêm tài khoản</span>
-                                </a>
-                            </li>
-                            <li class="admin-nav-item">
-                                <a href="/Admin/Role" class="admin-nav-link">
-                                    <span class="admin-label">Quản lý Role</span>
                                 </a>
                             </li>
                         </ul>
@@ -84,7 +79,28 @@
             </ul>
 
             <div class="admin-sidebar-divider"></div>
+            <ul class="admin-nav-menu">
+                <li class="admin-nav-item">
+                    <form action="{{ route('logout') }}" method="POST" class="d-grid">
+                        @csrf
+                        <button type="submit"
+                            class="btn btn-light d-flex align-items-center justify-content-between border-0 py-2 px-3 shadow-none w-100 text-start">
+                            <div class="d-flex align-items-center">
+                                {{-- Icon bên trái --}}
+                                <img src="{{ asset('images/client/usersIcon/15.svg') }}" alt="logout" class="me-3"
+                                    style="width: 24px; height: 24px;">
 
+                                {{-- Chữ Đăng xuất --}}
+                                <span class="fw-medium text-dark">Đăng xuất</span>
+                            </div>
+
+                            {{-- Icon mũi tên bên phải --}}
+                            <i class="fa-solid fa-chevron-right text-muted small"></i>
+                        </button>
+                    </form>
+                </li>
+
+            </ul>
 
         </aside>
 
@@ -143,5 +159,4 @@
     <script src="{{ asset('js/admin/admin.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

@@ -29,33 +29,23 @@
 <body>
 
 <body class="bg-light">
-    <div class="custom-toast-container">
-          @if (session('error'))
-                    <div class="toast align-items-center text-white bg-danger border-0" role="alert"
-                        aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
-                        <div class="d-flex">
-                            <div class="toast-body">
-                                Lỗi: {{ session('error') }}
-                            </div>
-                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                                aria-label="Close"></button>
-                        </div>
-                    </div>
-                @endif
+   <div class="custom-toast-container">
+    @if (session('error'))
+        {{-- Chú ý class: custom-toast và error --}}
+        <div class="custom-toast error">
+            <span>{{ session('error') }}</span>
+            <button class="custom-toast__close">&times;</button>
+        </div>
+    @endif
 
-                @if (session('success'))
-                    <div class="toast align-items-center text-white bg-success border-0" role="alert"
-                        aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
-                        <div class="d-flex">
-                            <div class="toast-body">
-                                Thành công: {{ session('success') }}
-                            </div>
-                            <button type="button" class="btn-close btn-close-white me-2 m-auto"
-                                data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                    </div>
-                @endif
-    </div>
+    @if (session('success'))
+        {{-- Chú ý class: custom-toast và success --}}
+        <div class="custom-toast success">
+            <span>{{ session('success') }}</span>
+            <button class="custom-toast__close">&times;</button>
+        </div>
+    @endif
+</div>
     
     <header class="header" id="header">
       
@@ -713,5 +703,42 @@
     </main>
 
     <script src="{{ asset('js/client/store.js') }}"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Lấy tất cả các toast đang có trong HTML
+        const toasts = document.querySelectorAll('.custom-toast');
+
+        toasts.forEach(toast => {
+            // 1. Kích hoạt hiệu ứng hiện ra (Thêm class 'show')
+            // Dùng setTimeout nhỏ để CSS transition bắt được hiệu ứng trượt
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            // 2. Tự động ẩn đi sau 4 giây
+            setTimeout(() => {
+                removeToast(toast);
+            }, 4000);
+
+            // 3. Bắt sự kiện bấm nút X để đóng
+            const closeBtn = toast.querySelector('.custom-toast__close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    removeToast(toast);
+                });
+            }
+        });
+
+        // Hàm xóa toast có hiệu ứng mượt
+        function removeToast(toast) {
+            toast.classList.remove('show'); // Bỏ class show để nó mờ dần (opacity về 0)
+            
+            // Đợi 0.3s (bằng thời gian transition trong CSS) rồi mới xóa khỏi HTML
+            setTimeout(() => {
+                toast.remove();
+            }, 300); 
+        }
+    });
+</script>
     </body>
 </html>

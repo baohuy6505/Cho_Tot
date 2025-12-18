@@ -890,3 +890,153 @@ body {
 .admin-notification-wrapper {
   position: relative;
 }
+/* Container chính */
+.admin-list-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.admin-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.admin-list-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.admin-list-add-btn {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.admin-list-add-btn:hover {
+    background-color: #0b5ed7;
+}
+
+/* Table Design */
+.admin-list-table-wrapper {
+    overflow-x: auto; /* Responsive cho mobile */
+}
+
+.admin-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.admin-list-table th {
+    background-color: #f8f9fa;
+    color: #666;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+}
+
+.admin-list-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #444;
+    vertical-align: middle;
+}
+
+/* User Info Cell */
+.admin-list-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-list-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.admin-list-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-list-name {
+    font-weight: 600;
+    color: #222;
+}
+
+.admin-list-email {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Status Badges */
+.admin-list-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.admin-list-status--success {
+    background-color: #e6fcf5;
+    color: #0ca678;
+}
+
+.admin-list-status--danger {
+    background-color: #fff5f5;
+    color: #fa5252;
+}
+
+/* Action Buttons */
+.admin-list-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-list-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.admin-list-btn--edit {
+    background-color: #fff4e6;
+    color: #fd7e14;
+}
+
+.admin-list-btn--edit:hover {
+    background-color: #fd7e14;
+    color: #fff;
+}
+
+.admin-list-btn--delete {
+    background-color: #fff5f5;
+    color: #fa5252;
+}
+
+.admin-list-btn--delete:hover {
+    background-color: #fa5252;
+    color: #fff;
+}

@@ -14,7 +14,7 @@ return new class extends Migration
         $table->string('email')->unique();
         $table->string('phone')->nullable(); // Thêm SĐT
         $table->string('password');
-        $table->enum('role', ['user', 'admin'])->default('user'); // Thêm quyền
+        $table->enum('role', ['user', 'admin', 'manager'])->default('user'); // Thêm quyền
         $table->integer('reputation')->default(0); // Thêm điểm uy tín
         $table->string('avatar')->nullable();
         $table->timestamp('email_verified_at')->nullable();

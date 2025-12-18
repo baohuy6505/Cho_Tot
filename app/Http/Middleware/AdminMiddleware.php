@@ -10,12 +10,14 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
+        // Kiểm tra: Đã đăng nhập VÀ Role nằm trong danh sách cho phép
+        if (Auth::check() && in_array(Auth::user()->role, ['admin', 'manager'])) {
             return $next($request);
         }
 
+        // Nếu không phải admin hoặc manager -> đuổi về trang chủ
         return redirect()
-            ->route('home')
-            ->with('error', 'Cảnh báo! Chỉ Admin mới có quyền truy cập.');
+            ->route('home') 
+            ->with('error', 'Bạn không có quyền truy cập vào trang quản trị.');
     }
 }

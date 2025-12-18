@@ -17,7 +17,6 @@
 
 </head>
 <body class="bg-light">
-
     <main class="py-5">
         @yield('content')
     </main>
