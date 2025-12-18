@@ -234,8 +234,8 @@
                     <div class="seller__header">
                         <div class="seller__avatar-wrap">
 
-                            @if (Auth::user()->avatar)
-                                <img src="{{ $dataPost->user->avatar }}" alt="Avatar" class="seller__avatar">
+                            @if ($dataPost->user && $dataPost->user->avatar)
+                                <img src="{{ asset($dataPost->user->avatar) }}" alt="Avatar" class="seller__avatar">
                             @else
                                 <img src="{{ asset('images/client/profile/default-avatar.jpg') }}" alt="Avatar"
                                     class="seller__avatar">
@@ -424,11 +424,12 @@
                                 </button>
                             </div>
                         </form>
-                    @else
+                        @endauth
+                    {{-- @else
                         <div class="comment-login-prompt">
                             <p><a href="{{ route('login') }}">Đăng nhập</a> để tham gia bình luận.</p>
                         </div>
-                    @endauth
+                    @endauth --}}
                 </div>
             </main>
         </div>
