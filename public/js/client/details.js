@@ -87,3 +87,8 @@
         });
     }
 
+// Tự động cuộn xuống cuối danh sách bình luận
+    const commentList = document.querySelector('.comment-list');
+    if (commentList) {
+        commentList.scrollTop = commentList.scrollHeight;
+    }

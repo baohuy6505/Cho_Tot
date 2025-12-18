@@ -10,6 +10,8 @@ class CommentController extends Controller
 {
     public function store(Request $request, $postId)
     {
+
+      
         //validate input data
         $request->validate([
             'content' => 'required|string|max:1000', //max = 1000 text

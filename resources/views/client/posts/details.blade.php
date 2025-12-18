@@ -268,65 +268,6 @@
                     </div>
                 </div>
 
-                {{-- Box bình luận (placeholder) --}}
-                {{-- <div class="comment-box">
-                    <h3 class="comment-box__title">Bình luận</h3>
-
-                    <div class="comment-box__empty-state">
-                        <!-- <div class="comment-box__icon-wrap"> <i class="far fa-comment-dots comment-box__icon"></i>
-                                </div>
-                                <p class="comment-box__text">
-                                    Chưa có bình luận nào.<br>
-                                    Hãy để lại bình luận cho người bán.
-                                </p> -->
-                        <div class="comment-list">
-                            <div class="comment-item">
-                                <div class="comment-avatar">
-                                    <img src="{{ asset('images/client/profile/default-avatar.jpg') }}" alt="">
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-bubble">
-                                        <h4 class="comment-author">Nguyễn Thanh Hải</h4>
-                                        <p class="comment-text">minh nghèo, mua cho bé về đi học</p>
-                                    </div>
-                                    <div class="comment-actions">
-                                        <span class="action-reply">Trả lời</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="comment-item owner">
-                                <div class="comment-avatar">
-                                    @if (Auth::user()->avatar)
-                                        <img src="{{ $dataPost->user->avatar }}" alt="Avatar" class="seller__avatar">
-                                    @else
-                                        <img src="{{ asset('images/client/profile/default-avatar.jpg') }}" alt="Avatar"
-                                            class="seller__avatar">
-                                    @endif
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-bubble">
-                                        <h4 class="comment-author">{{ $dataPost->user->name ?? 'Người dùng Chợ Tốt' }}
-                                        </h4>
-                                        <p class="comment-text">Giá đó không được bạn ơi, bớt chút lộc lá thôi nhé.</p>
-                                    </div>
-                                    <div class="comment-actions">
-                                        <span class="action-reply">Trả lời</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <form action="">
-                        <div class="comment-box__input-area">
-                            <input type="text" class="comment-box__input" placeholder="Bình luận...">
-
-                            <button class="comment-box__send-btn">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div> --}}
                 {{-- Box bình luận --}}
                 <div class="comment-box">
                     <h3 class="comment-box__title">Bình luận ({{ $dataPost->comments->count() }})</h3>
@@ -352,24 +293,26 @@
                                                 </h4>
                                                 <p class="comment-text">{{ $comment->content }}</p>
                                             </div>
+                                            
+                                            
                                             <div class="comment-actions">
                                                 <span
-                                                    class="comment-time">{{ $comment->created_at->diffForHumans() }}</span>
-                                                @auth
-                                                    <span class="action-reply"
-                                                        onclick="replyTo('{{ $comment->user->name }}', '{{ $comment->id }}')">Trả
-                                                        lời</span>
-                                                    @if (Auth::id() == $comment->user_id || Auth::user()->role == 'admin')
+                                                    class="comment-time">{{ $comment->created_at->diffForHumans() }}
+                                                </span>
+                                                @if (Auth::id() == $comment->user_id || Auth::user()->role == 'admin')
                                                         <form action="{{ route('comments.destroy', $comment->id) }}"
                                                             method="POST" style="display:inline;">
                                                             @csrf @method('DELETE')
                                                             <button type="submit" class="btn-delete-comment"
                                                                 onclick="return confirm('Xóa bình luận này?')">Xóa</button>
                                                         </form>
-                                                    @endif
-                                                @endauth
+                                                @endif
                                             </div>
+
+                                          
+                                            
                                         </div>
+                                          
                                     </div>
 
                                     {{-- Hiển thị các câu trả lời (Replies) --}}
@@ -398,13 +341,23 @@
                         @else
                             <div class="comment-box__empty-state">
                                 <i class="far fa-comment-dots"></i>
-                                <p>Chưa có bình luận nào. Hãy để lại bình luận cho người bán.</p>
+                                <p>Chưa có bình luận nào. </br> Hãy để lại bình luận cho người bán.</p>
                             </div>
                         @endif
                     </div>
 
                     {{-- Form gửi bình luận --}}
                     @auth
+                        {{-- Thêm đoạn này vào trên thẻ <form> hoặc đầu vùng comment --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger" style="color: red; padding: 10px; background: #ffe6e6; border-radius: 5px; margin-bottom: 10px;">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="{{ route('comments.store', $dataPost->id) }}" method="POST">
                             @csrf
                             {{-- Input ẩn để xử lý trả lời bình luận --}}
@@ -460,17 +413,25 @@
             </div>
         </section>
     @endif
-    <script>
-        function replyTo(userName, commentId) {
-    document.getElementById('parent_id').value = commentId;
-    document.getElementById('reply-name').innerText = userName;
-    document.getElementById('reply-label').style.display = 'block';
-    document.querySelector('.comment-box__input').focus();
-}
+   <script>
+    function replyTo(name, commentId) {
+        // 1. Gán giá trị ID của comment cha vào input hidden
+        document.getElementById('parent_id').value = commentId;
+        
+        // 2. Hiển thị label đang trả lời ai đó
+        document.getElementById('reply-label').style.display = 'block';
+        document.getElementById('reply-name').innerText = name;
+        
+        // 3. Focus vào ô nhập liệu
+        document.querySelector('input[name="content"]').focus();
+    }
 
-function cancelReply() {
-    document.getElementById('parent_id').value = '';
-    document.getElementById('reply-label').style.display = 'none';
-}
-    </script>
+    function cancelReply() {
+        // 1. Reset giá trị parent_id về rỗng
+        document.getElementById('parent_id').value = '';
+        
+        // 2. Ẩn label trả lời
+        document.getElementById('reply-label').style.display = 'none';
+    }
+</script>
 @endsection
