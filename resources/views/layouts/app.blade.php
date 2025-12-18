@@ -8,7 +8,9 @@
     <title>@yield('title', 'Chợ Tốt Clone')</title>
         <link rel="icon" href="{{ asset('images/client/profile/logo.jpg') }}" type="image/x-icon" /> 
     {{-- THAY BẰNG LỆNH NÀY --}}
-    @vite(['resources/scss/main.scss'])
+    {{-- @vite(['resources/scss/main.scss']) --}}
+    @vite(['resources/js/app.js'])
+
     <link rel="stylesheet" href="{{ asset('css/notify.css') }}">    
     @yield('styles') 
     @stack('styles')

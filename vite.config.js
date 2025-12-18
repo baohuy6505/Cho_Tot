@@ -39,7 +39,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                "resources/scss/main.scss",
+                // "resources/scss/main.scss",
                 // "resources/css/app.css", // Chỉ bỏ comment nếu bạn thực sự dùng file này
                 "resources/js/app.js",
             ],
